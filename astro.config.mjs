@@ -2,12 +2,16 @@
 
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
+import icon from 'astro-icon';
 import { defineConfig, fontProviders } from 'astro/config';
 
 // https://astro.build/config
+const pagesUrl = process.env.GITHUB_PAGES_URL;
+const deploymentUrl = new URL(pagesUrl || 'http://localhost:4321');
 export default defineConfig({
-	site: 'https://example.com',
-	integrations: [mdx(), sitemap()],
+	site: deploymentUrl.origin,
+	base: deploymentUrl.pathname,
+	integrations: [mdx(), sitemap(), icon()],
 	fonts: [
 		{
 			provider: fontProviders.local(),

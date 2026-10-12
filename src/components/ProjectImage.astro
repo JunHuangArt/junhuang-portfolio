@@ -1,0 +1,24 @@
+---
+interface Props {
+  image: { file: string; width: number; height: number; alt: string };
+  eager?: boolean;
+  caption?: string;
+}
+const { image, eager = false, caption } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const src = `${base}/images/${image.file.split('/').map(encodeURIComponent).join('/')}`;
+---
+<figure>
+  <div class="frame">
+    <img src={src} alt={image.alt} width={image.width} height={image.height} loading={eager ? 'eager' : 'lazy'} fetchpriority={eager ? 'high' : 'auto'} decoding="async" />
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+<style>
+  figure { margin: 0; min-width: 0; }
+  .frame { overflow: hidden; }
+  img { display: block; width: 100%; height: auto; transition: transform 1.4s cubic-bezier(.22,1,.36,1); }
+  figcaption { padding-top: 14px; text-align: center; color: #aaa6a0; font: 10px/1.6 Consolas, monospace; letter-spacing: .08em; }
+  @media (hover: hover) { img:hover { transform: scale(1.015); } }
+  @media (prefers-reduced-motion: reduce) { img { transition: none; } img:hover { transform: none; } }
+</style>

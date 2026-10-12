@@ -1,0 +1,97 @@
+---
+import { Icon } from 'astro-icon/components';
+import ProjectImage from './ProjectImage.astro';
+interface Props { kind: string; stages?: { title: string; icon: string; tools: { name: string; icon: string }[]; note: string }[]; images?: { file: string; width: number; height: number; alt: string }[]; landscapeImages?: boolean }
+const { kind, stages, images = [], landscapeImages = false } = Astro.props;
+const pipeline = stages ?? [
+  { title: 'Reference capture', icon: 'scan', tools: [{ name: 'RealityScan', icon: 'realityscan.png' }, { name: 'Rotation footage', icon: '' }], note: 'Use rotation footage and site photographs to capture the fragments from multiple angles. Build scan references in RealityScan, treating captured lighting as reference rather than final surface color.' },
+  { title: 'Modeling', icon: 'box', tools: [{ name: 'Maya', icon: 'maya.png' }, { name: 'ZBrush', icon: 'Zbrush.png' }], note: 'Build and clean base geometry in Maya, then refine carved forms in ZBrush. Restore only details supported by the surviving fragments and archaeological references.' },
+  { title: 'Texturing', icon: 'paintbrush', tools: [{ name: 'Substance 3D', icon: 'substance.webp' }, { name: 'Photoshop', icon: 'Photoshop.png' }], note: 'Normalize and patch photo-derived textures in Photoshop, then develop materials in Substance 3D. Preserve erosion, breaks and wear so the original surface history remains visible.' },
+  { title: 'Context & rendering', icon: 'mountain', tools: [{ name: 'Houdini', icon: 'Houdini.jpg' }, { name: 'Unreal', icon: 'Unreal.png' }, { name: 'Quixel', icon: 'Quixelbridge.png' }], note: 'Generate lightweight terrain and vegetation with Houdini heightfields and scattering. Assemble the temple, lighting and cameras in Unreal, using Quixel assets for environmental materials and context.' },
+  { title: 'Finish & outputs', icon: 'film', tools: [{ name: 'Nuke', icon: 'nuke.jpg' }, { name: 'After Effects', icon: 'AfterEffects.png' }], note: 'Composite rendered shots in Nuke and finish the sequences in After Effects. Prepare high-resolution stills and animation for museum projection and digital interpretation.' },
+];
+const layers = [
+  { title: 'Evidential', icon: 'file-check-2', note: 'Directly supported by fragments and documentation', label: 'DIRECT EVIDENCE' },
+  { title: 'Inferential', icon: 'combine', note: 'Extended through constrained reasoning: symmetry, pattern logic and close comparanda', label: 'CONSTRAINED REASONING' },
+  { title: 'Speculative', icon: 'circle-help', note: 'Proposed where evidence is insufficient, kept intentionally revisable', label: 'REVISABLE PROPOSAL' },
+];
+---
+<figure class:list={['diagram', { 'landscape-images': landscapeImages }]}>
+  {kind === 'pipeline' ? (
+    <ol class="pipeline" aria-label="Production pipeline" style={`--steps: ${pipeline.length === 8 ? 4 : pipeline.length}; --tablet-steps: ${pipeline.length === 8 ? 2 : 1}; --row-gap: ${pipeline.length === 8 ? 48 : 32}px;`}>
+      {pipeline.map((stage, index) => (
+        <li class="stage">
+          <div class="step-meta">
+            <span class="number">{String(index + 1).padStart(2, '0')}</span>
+            <Icon name={'lucide:' + stage.icon} size={20} aria-hidden="true" />
+          </div>
+          <h3 class="step-title">{stage.title}</h3>
+          {stage.tools.length > 0 && <div class="tools">
+            {stage.tools.map(tool => (
+              <span class="software">
+                {tool.icon && <img src={import.meta.env.BASE_URL + 'icons/' + tool.icon} width="18" height="18" alt="" loading="lazy" />}
+                <span>{tool.name}</span>
+              </span>
+            ))}
+          </div>}
+          <p class="note">{stage.note}</p>
+          {images[index] && <div class="stage-image"><ProjectImage image={images[index]} eager={images[index].file === 'Embroidery/Final.png'} /></div>}
+        </li>
+      ))}
+    </ol>
+  ) : (
+    <ul class="layers" aria-label="Three tiers of reconstruction decisions">
+      {layers.map(layer => (
+        <li class="layer">
+          <Icon name={'lucide:' + layer.icon} size={26} aria-hidden="true" />
+          <p class="label">{layer.label}</p>
+          <h3>{layer.title}</h3>
+          <p class="note">{layer.note}</p>
+        </li>
+      ))}
+    </ul>
+  )}
+</figure>
+<style>
+  .diagram { margin: 0; padding: 28px 38px; }
+  .pipeline, .layers { display: grid; gap: 32px; list-style: none; margin: 0; padding: 0; }
+  .pipeline { grid-template-columns: repeat(var(--steps, 5), minmax(0, 1fr)); row-gap: var(--row-gap, 32px); }
+  .layers { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6vw; }
+  .layer { text-align: center; }
+  .layer > :global([data-icon]) { display: block; margin-inline: auto; }
+  .stage, .layer { min-width: 0; border-top: 1px solid rgb(238 233 225 / 15%); padding-top: 28px; }
+  .step-meta { position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 14px; }
+  .step-title { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0 0 18px; text-align: center; }
+  .step-meta > :global([data-icon]) { flex: 0 0 20px; }
+  .diagram :global([data-icon]) { color: #baa78f; stroke-width: 1.25; }
+  .number, .label { font: 10px/1.6 Consolas, monospace; letter-spacing: .1em; color: #baa78f; }
+  .label { margin: 22px 0 12px; }
+  h3 { margin: 12px 0 16px; font-size: 18px; font-weight: 400; line-height: 1.3; color: #eee9e1; }
+  .layer h3 { font-family: Georgia, serif; font-size: 28px; }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px 14px; color: #c6b299; font-size: 12px; line-height: 1.7; margin: 0 0 12px; }
+  .software { display: inline-flex; align-items: center; gap: 6px; }
+  .stage .tools { justify-content: center; text-align: center; }
+  .stage .note { text-align: center; }
+  .stage-image { margin-top: 24px; }
+  .stage-image :global(.frame) { position: relative; aspect-ratio: 1 / 1; }
+  .stage-image :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .landscape-images .stage { display: flex; flex-direction: column; }
+  .landscape-images .stage-image { margin-top: auto; padding-top: 24px; }
+  .landscape-images .stage-image :global(.frame) { aspect-ratio: 16 / 9; }
+  .landscape-images .stage-image :global(img) { object-fit: cover; object-position: center; }
+  .software img { display: block; width: 18px; height: 18px; flex: 0 0 18px; object-fit: contain; }
+  .note { color: #aaa6a0; font-size: 13px; line-height: 1.8; margin: 0; }
+  @media (max-width: 1000px) {
+    .pipeline { grid-template-columns: repeat(var(--tablet-steps, 1), minmax(0, 1fr)); gap: 28px; }
+    .stage { padding-top: 20px; }
+  }
+  @media (max-width: 900px) { .diagram { padding-inline: 24px; } }
+  @media (max-width: 650px) {
+    .pipeline { grid-template-columns: 1fr; }
+    .diagram { padding-inline: 18px; }
+    .layers { grid-template-columns: 1fr; gap: 36px; }
+    .layer { display: block; }
+    .label { margin: 16px 0 8px; }
+    .layer h3 { margin: 0 0 12px; }
+  }
+</style>

@@ -1,0 +1,2880 @@
+[
+  {
+    "slug": "phoenix",
+    "title": "Song of the Phoenix in Pingdu",
+    "subtitle": "Cultural Exchange between China and Mexico",
+    "year": "2025",
+    "style": "cinema",
+    "source": "https://www.junhuang.art/phoenix",
+    "intro": [
+      "Song of the Phoenix in Pingdu is a short digital narrative built around a public sculpture from Fengdu, Chongqing, China(Pingdu is the historical name for Fengdu). Instead of filming the sculpture in place, the project translates its form into a flowing, particle-based animation that can travel across screens and social media.",
+      "Together, the film and the sculpture form the core of a cultural exchange program between China and Mexico, presenting Chinese culture and history to audiences who may never encounter the work in person. By turning a city monument into moving light and particles, the piece offers a contemporary way of sharing Chinese aesthetic philosophy and the local myths it grows from, while also pointing to ongoing efforts to preserve and carry forward regional cultural memory."
+    ],
+    "metadata": [
+      [
+        "Type",
+        "Public Screening / Cultural Media Release / Digital Narrative"
+      ],
+      [
+        "Role",
+        "Technical Director / Lead 3D Artist"
+      ],
+      [
+        "Scope",
+        "Workflow Development / Look Development / Modeling / Motion / Simulation"
+      ]
+    ],
+    "hero": {
+      "file": "Phoenix/Header.jpg",
+      "width": 2048,
+      "height": 1152,
+      "alt": "Song of the Phoenix in Pingdu"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Origin: From the Bayu Divine Bird",
+        "text": [
+          "The project began with a single artifact: the Bayu Divine Bird. Rather than treating it as something to replicate, it served as an interpretive starting point—an emblem of protection, migration, renewal, and blessing that could be re-framed for a contemporary city context.",
+          "From there, the idea evolved into a public-facing visual narrative: extracting key motifs, translating them into form and movement, and ultimately materializing them as a landmark sculpture, with a CG short film extending the sculpture’s symbolism into time-based storytelling."
+        ],
+        "mode": "split",
+        "images": [
+          {
+            "file": "Phoenix/Bayu Divine Bird.jpg",
+            "width": 960,
+            "height": 640,
+            "alt": "Bayu Divine Bird ? Three Gorges Museum",
+            "caption": "Bayu Divine Bird ? Three Gorges Museum"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "From Taiji Diagram to Motion Guide",
+        "text": [
+          "At the same time, the design turns to the Taiji diagram as a structuring device. Rather than treating Taiji as a flat symbol, the project draws on its underlying cosmology: opposing forces flowing into one another, cycles of energy, and a sense of the universe as a continuous field rather than a fixed scene."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "Phoenix/Taiji1.jpg",
+            "width": 769,
+            "height": 769,
+            "alt": "Taiji Diagram",
+            "caption": "Taiji Diagram"
+          },
+          {
+            "file": "Phoenix/Taiji2.png",
+            "width": 1141,
+            "height": 1074,
+            "alt": "Curve Flow Guide",
+            "caption": "Curve Flow Guide"
+          },
+          {
+            "file": "Phoenix/Taiji3.png",
+            "width": 1258,
+            "height": 1068,
+            "alt": "Particle Flow Study",
+            "caption": "Particle Flow Study"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Narrative Structure",
+        "text": [
+          "The film follows a clear progression in scale and imagery. It opens with the universe—wide, slow-moving visuals that set a sense of time, space, and creation. From there, it moves closer into the structure of DNA, using the idea of a “code” and repeated patterns to connect cosmic motion to the logic of life. Finally, it lands on the phoenix.",
+          "The phoenix becomes the point where these ideas turn into a recognizable symbol: a visual bridge from the universal to the local, and a way to bring the film back to the sculpture and the city story it represents."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "Phoenix/Final render/1.png",
+            "width": 2560,
+            "height": 1440,
+            "alt": "Final Render 01",
+            "caption": ""
+          },
+          {
+            "file": "Phoenix/Final render/2.jpg",
+            "width": 2048,
+            "height": 1152,
+            "alt": "Final Render 02",
+            "caption": ""
+          },
+          {
+            "file": "Phoenix/Final render/3.png",
+            "width": 2560,
+            "height": 1440,
+            "alt": "Final Render 03",
+            "caption": ""
+          },
+          {
+            "file": "Phoenix/Final render/4.jpg",
+            "width": 2048,
+            "height": 1152,
+            "alt": "Final Render 04",
+            "caption": ""
+          },
+          {
+            "file": "Phoenix/Final render/5.jpg",
+            "width": 2048,
+            "height": 1152,
+            "alt": "Final Render 05",
+            "caption": ""
+          },
+          {
+            "file": "Phoenix/Final render/6.jpg",
+            "width": 2048,
+            "height": 1152,
+            "alt": "Final Render 06",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Motion",
+        "text": [
+          "The animation takes these ideas and translates them into motion. The phoenix is never fully modeled as a solid creature; instead, it appears as a shifting band of particles that circle, stretch, and fold back on themselves. For local viewers, the figure can be read as a phoenix rooted in the Báyú tradition; for international audiences, it functions as a luminous, orbiting presence that suggests a larger cosmology without requiring prior knowledge."
+        ],
+        "mode": "paired",
+        "images": [],
+        "diagram": ""
+      },
+      {
+        "title": "Procedural Animation Workflow",
+        "text": [
+          "The piece was built entirely in Houdini using a volume-to-particles workflow:",
+          "Starting from the sculptural form, a signed distance volume was generated to capture its overall mass.",
+          "Custom velocity fields were then layered on top, based on hand-sketched flow lines that followed imagined flight paths and circular orbits around an invisible center.",
+          "Within Houdini, these fields were refined with VEX to introduce layered noise, directional falloff, and subtle turbulence, allowing some particles to lock into smooth arcs while others break away and rejoin.",
+          "Multiple particle simulations with different lifespans and scales were advected through this velocity field. Each layer contributed a distinct aspect of the phoenix’s behavior: the main body, trailing feathers, and smaller sparks suggesting residual energy.",
+          "This setup kept the silhouette readable from a distance while allowing the interior motion to remain complex and alive. Because everything was driven by fields rather than keyframed paths, the team could continue iterating on timing and density without rebuilding the underlying structure."
+        ],
+        "mode": "full",
+        "images": [
+          {
+            "file": "Phoenix/Procedural Animation Workflow/1.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Flow Guides",
+            "caption": ""
+          },
+          {
+            "file": "Phoenix/Procedural Animation Workflow/2.png",
+            "width": 1955,
+            "height": 1098,
+            "alt": "Velocity Field",
+            "caption": ""
+          },
+          {
+            "file": "Phoenix/Procedural Animation Workflow/3.png",
+            "width": 1954,
+            "height": 1101,
+            "alt": "Particle Source",
+            "caption": ""
+          },
+          {
+            "file": "Phoenix/Procedural Animation Workflow/4.jpg",
+            "width": 2048,
+            "height": 1152,
+            "alt": "Particle Advection",
+            "caption": ""
+          }
+        ],
+        "diagram": "pipeline"
+      },
+      {
+        "title": "Public Presence",
+        "text": [
+          "The sculpture has since been installed in Fengdu as a public landmark. A smaller replica was also presented to Mexico as a cultural gift, extending the project’s presence beyond its original site. While this moment is not central to the project’s creative development, it reflects how the work continued to circulate and be encountered in broader civic and cross-cultural contexts."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "Phoenix/Phoenix in Chongqing.jpg",
+            "width": 1280,
+            "height": 853,
+            "alt": "Phoenix in Chongqing, China",
+            "caption": "Phoenix in Chongqing, China"
+          },
+          {
+            "file": "Phoenix/Phoenix in Guanajuato.JPG",
+            "width": 4032,
+            "height": 2268,
+            "alt": "Phoenix in Guanajuato, Mexico",
+            "caption": "Phoenix in Guanajuato, Mexico"
+          }
+        ],
+        "diagram": ""
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/NlninQQ516U",
+      "https://www.youtube.com/embed/_N7rora4LZ4",
+      "https://www.youtube.com/embed/zJi-sdmgbFY"
+    ]
+  },
+  {
+    "slug": "impression-reassembled",
+    "title": "Impression • Reassembled",
+    "subtitle": "Generative Art · Procedural Image Reconstruction · Houdini",
+    "year": "2025",
+    "style": "exhibition",
+    "source": "https://www.junhuang.art/impressionreassembled",
+    "intro": [
+      "Impression • Reassembled is a generative art project that translates photographs and paintings into compositions built from procedurally generated forms. Visual information from each source guides the colour, scale, density, and orientation of individual elements. Their accumulation reconstructs the image through a new geometric structure while preserving traces of its original composition."
+    ],
+    "metadata": [],
+    "hero": {
+      "file": "ImpressionReassembled/image04.png",
+      "width": 4096,
+      "height": 1818,
+      "alt": "Impression • Reassembled"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "",
+        "text": [],
+        "mode": "collage",
+        "images": [
+          {
+            "file": "ImpressionReassembled/image01.png",
+            "width": 4096,
+            "height": 3183,
+            "alt": "Procedural image reconstruction, composition 1",
+            "caption": ""
+          },
+          {
+            "file": "ImpressionReassembled/image02.png",
+            "width": 4096,
+            "height": 1926,
+            "alt": "Procedural image reconstruction, composition 2",
+            "caption": ""
+          },
+          {
+            "file": "ImpressionReassembled/image03.png",
+            "width": 4096,
+            "height": 2033,
+            "alt": "Procedural image reconstruction, composition 3",
+            "caption": ""
+          },
+          {
+            "file": "ImpressionReassembled/image04.png",
+            "width": 4096,
+            "height": 1818,
+            "alt": "Procedural image reconstruction, composition 4",
+            "caption": ""
+          },
+          {
+            "file": "ImpressionReassembled/image05.png",
+            "width": 4096,
+            "height": 3969,
+            "alt": "Procedural image reconstruction, composition 5",
+            "caption": ""
+          },
+          {
+            "file": "ImpressionReassembled/image06.png",
+            "width": 4096,
+            "height": 2621,
+            "alt": "Procedural image reconstruction, composition 6",
+            "caption": ""
+          },
+          {
+            "file": "ImpressionReassembled/image07.png",
+            "width": 4096,
+            "height": 5076,
+            "alt": "Procedural image reconstruction, composition 7",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Image - Procedural Form",
+        "text": [
+          "The project translates source images into compositions built from procedurally generated forms. Visual information from each image guides the placement, scale, colour, orientation, and density of individual elements. Adaptive spatial packing and procedural shape generation work together to reconstruct the image through a new geometric structure, producing different relationships between detail, abstraction, and recognisability."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "ImpressionReassembled/Breakdown/Step00.jpg",
+            "width": 3305,
+            "height": 4096,
+            "alt": "Image to procedural form, breakdown stage 0",
+            "caption": ""
+          },
+          {
+            "file": "ImpressionReassembled/Breakdown/Step01.png",
+            "width": 886,
+            "height": 1097,
+            "alt": "Image to procedural form, breakdown stage 1",
+            "caption": ""
+          },
+          {
+            "file": "ImpressionReassembled/Breakdown/Step02.png",
+            "width": 886,
+            "height": 1097,
+            "alt": "Image to procedural form, breakdown stage 2",
+            "caption": ""
+          },
+          {
+            "file": "ImpressionReassembled/Breakdown/Step03.png",
+            "width": 886,
+            "height": 1097,
+            "alt": "Image to procedural form, breakdown stage 3",
+            "caption": ""
+          },
+          {
+            "file": "ImpressionReassembled/Breakdown/Step04.png",
+            "width": 886,
+            "height": 1097,
+            "alt": "Image to procedural form, breakdown stage 4",
+            "caption": ""
+          },
+          {
+            "file": "ImpressionReassembled/Breakdown/Step05.png",
+            "width": 4096,
+            "height": 5076,
+            "alt": "Image to procedural form, breakdown stage 5",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "within-the-lines",
+    "title": "Within the Lines",
+    "subtitle": "Procedural · Motion",
+    "year": "2025",
+    "style": "computational",
+    "source": "https://www.junhuang.art/withinthelines",
+    "intro": [
+      "Within the Lines is a small series of procedural studies that compress restless motion into clean, iconic silhouettes. The works are primarily presented as short loops; the stills on this page are representative frames chosen to make structure, density, and boundary behavior easier to read."
+    ],
+    "metadata": [
+      [
+        "Type",
+        "Procedural / Algorithm Art in Houdini"
+      ],
+      [
+        "Role",
+        "Artist / Technical Director (solo)"
+      ],
+      [
+        "Scope",
+        "Procedural system design (Houdini), lookdev, rendering"
+      ]
+    ],
+    "hero": {
+      "file": "withinthelines/header.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "Cyan procedural form with layered internal curves",
+      "caption": ""
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Concept",
+        "text": [
+          "Within the Line explores movement within a fixed boundary. Each piece keeps a stable outer contour while the curves inside loop, drift, cluster, and change direction, creating different densities and rhythms. Repeated lines build into forms that suggest flowing water, tangled roots, wiring, or loosely drawn marks. From a distance, the works read as simple graphic shapes; viewed closely, their interiors reveal layers of movement, accumulation, and erosion."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "withinthelines/01.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Yellow star-shaped procedural study",
+            "caption": ""
+          },
+          {
+            "file": "withinthelines/02.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Red heart-shaped procedural study",
+            "caption": ""
+          },
+          {
+            "file": "withinthelines/03.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Green four-lobed procedural study",
+            "caption": ""
+          },
+          {
+            "file": "withinthelines/04.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Cyan angular procedural study",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "From Outline to Volume",
+        "text": [
+          "This sequence documents how a single outline is converted into a controllable spatial system. The pipeline begins with a clean silhouette and a set of geometric operations that define where structure is allowed to exist (slicing, contour bands, boolean gating). The interior is then resampled and converted into a volume representation, enabling attributes to be accumulated and propagated as a field rather than as static geometry. Once the volume carries the driving information, trajectories are generated by integrating through the field, producing a readable internal topology that remains anchored to the original boundary. The final stages focus on translating those trajectories into a coherent render—preserving the relationship between constraint (outline) and motion (field)."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "withinthelines/breakdown (1).jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Silhouette outline",
+            "caption": "Silhouette outline"
+          },
+          {
+            "file": "withinthelines/breakdown (2).jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Point scattering",
+            "caption": "Point scattering"
+          },
+          {
+            "file": "withinthelines/breakdown (3).jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Line slice",
+            "caption": "Line slice"
+          },
+          {
+            "file": "withinthelines/breakdown (4).jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Contour bands",
+            "caption": "Contour bands"
+          },
+          {
+            "file": "withinthelines/breakdown (5).jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Boolean result",
+            "caption": "Boolean result"
+          },
+          {
+            "file": "withinthelines/breakdown (6).jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Point scattering inside shape",
+            "caption": "Point scattering inside shape"
+          },
+          {
+            "file": "withinthelines/breakdown (7).jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Volume",
+            "caption": "Volume"
+          },
+          {
+            "file": "withinthelines/breakdown (8).jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Volume trail based on velocity",
+            "caption": "Volume trail based on velocity"
+          },
+          {
+            "file": "withinthelines/breakdown (9).jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Color adjustment",
+            "caption": "Color adjustment"
+          },
+          {
+            "file": "withinthelines/breakdown 9).png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Final render",
+            "caption": "Final render"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Generative Process",
+        "text": [
+          "Each piece is built in Houdini using custom flow fields that guide thousands of curves within a fixed shape. By adjusting values such as attraction, noise, decay, and boundary resistance, the lines can gather, drift, or disperse in different ways. These small changes produce distinct visual rhythms and densities, while the overall silhouette remains the same."
+        ],
+        "mode": "full",
+        "images": [
+          {
+            "file": "withinthelines/15.png",
+            "width": 1069,
+            "height": 1076,
+            "alt": "Houdini node network for the generative system",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/WnNbbA-B7EA"
+    ]
+  },
+  {
+    "slug": "huaguang",
+    "title": "Discovering the Myths of Fengdu",
+    "subtitle": "Digital Cultural Storytelling",
+    "year": "2024",
+    "style": "story",
+    "source": "https://www.junhuang.art/huaguang",
+    "intro": [
+      "Discovering the Myths of Fengdu is a hybrid live-action and CG short film that presents Fengdu as a place shaped by both underworld mythology and contemporary urban life. Roughly one-fifth of the runtime consists of fully animated sequences, while the remaining sections use on-location footage to show the city’s current appearance, landscapes, festivals, and everyday scenes.",
+      "The CG portion focuses on iconic elements such as Meng Po’s soup, the Naihe Bridge, and key moments from the story of Huaguang saving his mother, establishing the mythic frame through which viewers later encounter the real city."
+    ],
+    "metadata": [
+      [
+        "Type",
+        "Public Screening / Cultural Media Release"
+      ],
+      [
+        "Role",
+        "Technical Director / Lead 3D Artist"
+      ],
+      [
+        "Scope",
+        "Workflow Development / Look Development / Modeling / Visual Effects"
+      ]
+    ],
+    "hero": {
+      "file": "Cover/Huaguang.png",
+      "width": 3840,
+      "height": 2160,
+      "alt": "Discovering the Myths of Fengdu"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Narrative Structure",
+        "text": [
+          "Mythic and contemporary material are arranged in sequence rather than intercut. The film opens with the CG underworld, introducing Meng Po, the Naihe Bridge, and Huaguang’s rescue in a stylized, self-contained section. Once this narrative and its visual language are established, the film shifts into live-action footage that shows Fengdu’s present-day development, surrounding landforms, temple fairs, festival celebrations, local communities, and food culture.",
+          "This structure invites viewers to carry the earlier mythic imagery with them as they watch the contemporary scenes, reading the current city against the background of the stories and symbols that have long been attached to Fengdu."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "Huaguang/Narrative1.png",
+            "width": 2293,
+            "height": 1290,
+            "alt": "Underworld chamber and illuminated stone gateway",
+            "caption": ""
+          },
+          {
+            "file": "Huaguang/Narrative2.jpg",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Carved circular chamber in the underworld",
+            "caption": ""
+          },
+          {
+            "file": "Huaguang/Narrative3.jpg",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Torch-lit figure before the monumental gateway",
+            "caption": ""
+          },
+          {
+            "file": "Huaguang/Narrative4.jpg",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Dark underworld crossing",
+            "caption": ""
+          },
+          {
+            "file": "Huaguang/Narrative5.jpg",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Flames sweeping through the carved chamber",
+            "caption": ""
+          },
+          {
+            "file": "Huaguang/Narrative6.jpg",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Huaguang in a supernatural confrontation",
+            "caption": ""
+          },
+          {
+            "file": "Huaguang/Narrative7.png",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Stone gateway opening onto the mythic realm",
+            "caption": ""
+          },
+          {
+            "file": "Huaguang/Narrative8.jpg",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Naihe Bridge framed by monumental statues",
+            "caption": ""
+          },
+          {
+            "file": "Huaguang/Narrative9.jpg",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Narrative sequence, shot 9",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Mythic Motifs",
+        "text": [
+          "Huaguang Saves His Mother (华光救母)",
+          "A widely circulated folk tale in which Huaguang undertakes a perilous journey to rescue his mother from the underworld. The story centers on devotion and courage, framing the underworld not only as a place of punishment, but also as a realm where love and resolve are tested.",
+          "Meng Po’s Soup (孟婆汤)",
+          "A legendary potion offered at the threshold of the afterlife, said to erase memories of one’s previous life before reincarnation. In Fengdu’s underworld lore, it represents the final act of letting go—forgetting attachments, regrets, and earthly ties.",
+          "Naihe Bridge (奈何桥)",
+          "A fabled bridge that souls must cross on their way through the underworld. It is often described as a boundary between the living world and the next, marking an irreversible passage where judgment and fate unfold beyond the crossing."
+        ],
+        "mode": "full",
+        "images": [],
+        "diagram": ""
+      },
+      {
+        "title": "Production Pipeline",
+        "text": [
+          "This project follows a modular pipeline built around a Houdini-to-Unreal workflow, with assets and look development prepared upstream and final integration completed in compositing.",
+          "* ZBrush: sculpt hero elements and high-frequency details for key props and set pieces.",
+          "* Substance: author PBR materials and texture sets to support consistent surface response in real-time lighting.",
+          "* Photoshop: refine textures, create masks, and prepare 2D elements used across shading and compositing.",
+          "* Quixel Megascans (Bridge): source environment assets and surface details to accelerate scene dressing and grounding realism.",
+          "* Houdini: build procedural setups and VFX layers (atmosphere, motion systems, and simulation-driven passes), exporting optimized elements for real-time use.",
+          "* Unreal Engine: assemble shots, iterate lighting and camera timing, and render real-time outputs for rapid look and pacing decisions.",
+          "* Nuke: composite CG shots, refine integration across passes, and finalize color and contrast through a real-time Unreal-to-Nuke workflow."
+        ],
+        "mode": "full",
+        "images": [],
+        "diagram": "pipeline"
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/p3gibirQo8c"
+    ]
+  },
+  {
+    "slug": "lu-zuofu",
+    "title": "Lu Zuofu - Documentary Film",
+    "subtitle": "CCTV-9 Documentary Series",
+    "year": "2024",
+    "style": "archive",
+    "source": "https://www.junhuang.art/luzuofu",
+    "intro": [
+      "Lu Zuofu is a documentary series produced for CCTV-9, focusing on the life and work of Lu Zuofu, a key figure in the development of modern industry and education in China. The CG team created the opening sequence for the film: a short, fully animated segment that introduces the themes of river transport, shipbuilding, and industrial reconstruction before the archival footage and interviews begin.",
+      "This sequence sets the visual tone for the documentary, linking Lu Zuofu’s story to the machinery, infrastructure, and waterways that defined his career."
+    ],
+    "metadata": [
+      [
+        "Type",
+        "National Broadcast (CCTV-9)"
+      ],
+      [
+        "Role",
+        "Lead 3D Artist for Title Sequence"
+      ],
+      [
+        "Scope",
+        "Workflow development / Look Development / Modeling / Compositing / Lighting / Texturing / Visual Effects"
+      ]
+    ],
+    "hero": {
+      "file": "Cover/Luzuofu.png",
+      "width": 1920,
+      "height": 803,
+      "alt": "Lu Zuofu - Documentary Film"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Visual Concept",
+        "text": [
+          "The opening treats early industrial China as its main visual reference: steel frameworks, ship hulls, riveted plates, and the reflective surfaces of metal. Forms emerge from darkness as fragments of beams, ribs, and plates, then gradually lock together into recognizable ship structures.",
+          "Rather than illustrating specific historical events literally, the sequence uses these transformations to suggest a movement from fragmentation to coherence—echoing both the rebuilding of national infrastructure and Lu Zuofu’s role in organizing transport along the Yangtze and its tributaries."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "Luzuofu/Frame1.png",
+            "width": 1920,
+            "height": 803,
+            "alt": "Lu Zuofu title sequence, frame 1",
+            "caption": ""
+          },
+          {
+            "file": "Luzuofu/Frame2.png",
+            "width": 1920,
+            "height": 803,
+            "alt": "Lu Zuofu title sequence, frame 2",
+            "caption": ""
+          },
+          {
+            "file": "Luzuofu/Frame3.png",
+            "width": 1920,
+            "height": 803,
+            "alt": "Lu Zuofu title sequence, frame 3",
+            "caption": ""
+          },
+          {
+            "file": "Luzuofu/Frame4.jpg",
+            "width": 3845,
+            "height": 1608,
+            "alt": "Lu Zuofu title sequence, frame 4",
+            "caption": ""
+          },
+          {
+            "file": "Luzuofu/Frame5.jpg",
+            "width": 3845,
+            "height": 1608,
+            "alt": "Lu Zuofu title sequence, frame 5",
+            "caption": ""
+          },
+          {
+            "file": "Luzuofu/Frame6.jpg",
+            "width": 3845,
+            "height": 1608,
+            "alt": "Lu Zuofu title sequence, frame 6",
+            "caption": ""
+          },
+          {
+            "file": "Luzuofu/Frame7.jpg",
+            "width": 3845,
+            "height": 1608,
+            "alt": "Lu Zuofu title sequence, frame 7",
+            "caption": ""
+          },
+          {
+            "file": "Luzuofu/Frame8.png",
+            "width": 1920,
+            "height": 803,
+            "alt": "Lu Zuofu title sequence, frame 8",
+            "caption": ""
+          },
+          {
+            "file": "Luzuofu/Frame9.png",
+            "width": 3737,
+            "height": 1602,
+            "alt": "Lu Zuofu title sequence, frame 9",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Motion & Symbolism",
+        "text": [
+          "Motion design in the sequence is built around ideas of flow and assembly. Metal appears first as fluid, pulled by invisible forces into lines and planes; these then solidify into the ribs and skins of ships. Camera moves follow this process closely, tracking along emerging structures and revealing how individual components add up to a larger system.",
+          "The transitions from abstract metal currents to readable ship silhouettes are designed to mirror the documentary’s larger narrative: individual efforts, policies, and projects gradually combine into a broader story of modernization."
+        ],
+        "mode": "paired",
+        "images": [],
+        "diagram": ""
+      },
+      {
+        "title": "Technical Approach",
+        "text": [
+          "This project follows a Maya-centered CG pipeline, with sculpting, texturing, and 2D prep feeding into shot production, and Houdini integrated as a procedural/FX branch for iterative simulation work. Final images are finished through compositing and motion-graphics passes before being assembled for delivery.",
+          "* ZBrush ↔ Maya: sculpt high-detail models and refine hero assets, then round-trip meshes for clean production topology and shot-ready setup.",
+          "* Substance Painter → Maya: author PBR materials and texture sets for consistent surface response across shots.",
+          "* Photoshop → Maya: prepare supporting 2D elements, masks, and texture refinements used in shading and finishing.",
+          "* Houdini ↔ Maya: build procedural systems and FX (e.g., atmosphere/sim-driven motion) and iterate with Maya shot contexts as needed.",
+          "* Maya / Houdini → Nuke: composite CG renders and passes, manage multi-pass integration, depth/atmosphere control, and final color/contrast continuity.",
+          "* Maya → After Effects: create targeted 2D finishing elements (titles/graphic overlays or additional timing-focused polish, as needed).",
+          "* Nuke / After Effects → Premiere: assemble the final sequence, lock timing, and export delivery-ready outputs."
+        ],
+        "mode": "full",
+        "images": [],
+        "diagram": "pipeline"
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/rtXs14-k1XE",
+      "https://www.youtube.com/embed/gDBtdSyad94",
+      "https://www.youtube.com/embed/uCpdHIScYuo",
+      "https://www.youtube.com/embed/ZVU1wmRMMCU",
+      "https://www.youtube.com/embed/clFHW_T1Jsw",
+      "https://www.youtube.com/embed/gKFqH0nGYQg",
+      "https://www.youtube.com/embed/oFIKk8rvzvs",
+      "https://www.youtube.com/embed/RMn4RuE2Pbs",
+      "https://www.youtube.com/embed/VoPAKLeW2XM",
+      "https://www.youtube.com/embed/5yemD-XZOvA",
+      "https://www.youtube.com/embed/rcl_AD3kJVo"
+    ]
+  },
+  {
+    "slug": "esl-digital-worlds",
+    "title": "ESL Digital Worlds: Level Up",
+    "subtitle": "The Strong National Museum of Play",
+    "year": "2023",
+    "style": "installation",
+    "source": "https://www.junhuang.art/esl",
+    "intro": [
+      "ESL Digital Worlds: Level Up is an interactive exhibition at The Strong National Museum of Play that invites visitors to explore digital games through hands-on play. As part of the exhibition, two custom games were developed to run on large displays with physical controls: Demolition Derby, a chaotic driving game, and a Tower Defense game that uses physical towers as input devices.",
+      "Both pieces are designed for children and families, and they focus on how people come to understand systems—speed, collision, defense, and strategy—by playing with them rather than reading about them."
+    ],
+    "metadata": [
+      [
+        "Company",
+        "Unified Field"
+      ],
+      [
+        "Type",
+        "Interactive Museum Exhibition"
+      ],
+      [
+        "Role",
+        "3D Artist"
+      ],
+      [
+        "Game",
+        "Demolition Derby / Tower Defense"
+      ],
+      [
+        "Scope",
+        "LookDev /  Animation / Real-Time Visualization / Technical Workflow / Visual Effects"
+      ]
+    ],
+    "hero": {
+      "file": "Strong/Header.jpg",
+      "width": 1440,
+      "height": 700,
+      "alt": "Entrance to ESL Digital Worlds: Level Up at The Strong National Museum of Play",
+      "caption": ""
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Demolition Derby — Concept & Player Experience",
+        "text": [
+          "Demolition Derby is a top-down arena driving game projected at large scale. Up to four players steer their cars using physical wheels, sharing a single space where survival and destruction are the only goals. The game is designed to feel noisy and immediate: crashes, explosions, and sudden turns make it easy for passersby to understand what is happening even if they only watch for a few seconds."
+        ],
+        "mode": "full",
+        "images": [
+          {
+            "file": "Strong/​Demolition Derby.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Visitors playing Demolition Derby using physical steering wheels",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Visual Style & Pixel Aesthetics",
+        "text": [
+          "The game adopts a stylized pixel-art look that sits somewhere between retro arcade games and contemporary effects. Many base assets originated from the Unity Asset Store, but textures were repainted and visual effects retuned so that everything fits into a cohesive aesthetic. A key challenge was preserving a crisp, low-resolution pixel style while still relying on real-time 3D lighting.",
+          "Materials, light rigs, and post-processing were carefully balanced so that highlights, shadows, and explosions feel dynamic without softening or blurring the pixels."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "Strong/DD_Look development1.jpg",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Arena and vehicle look development",
+            "caption": ""
+          },
+          {
+            "file": "Strong/DD_Look development2.png",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Vehicle lineup in the arena",
+            "caption": ""
+          },
+          {
+            "file": "Strong/DD_Look development3.png",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Pixel-style vehicle color variations",
+            "caption": ""
+          },
+          {
+            "file": "Strong/DD_Look development4.jpg",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Vehicle designs and material treatments",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Crowd Simulation & Atmosphere",
+        "text": [
+          "Around the arena, the audience in the stands is generated procedurally. Crowd positions are scattered in Houdini and then imported into Unity, where a simple random-action system drives cheering, reactions, and idle movements. This virtual crowd turns the game into a small performance inside the museum: visitors play in front of spectators who never leave, adding an extra layer of energy and context to the chaos on the screen."
+        ],
+        "mode": "full",
+        "images": [],
+        "diagram": ""
+      },
+      {
+        "title": "Tower Defense — Concept",
+        "text": [
+          "The Tower Defense game shifts the emphasis from reflexes to planning. Visitors place physical tower pieces on a table; embedded sensors detect their positions, and corresponding towers appear in the digital scene. As enemy units follow winding paths across the landscape, players experiment with where to drop towers to protect the stronghold.",
+          "The tangible interface makes the rules of a tower defense game easier to grasp, especially for younger visitors, because strategy becomes something that is literally arranged on the table."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "Strong/Towerdefense.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Physical tower controls and the Tower Defense exhibition display",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Procedural Tools & Level Generation",
+        "text": [
+          "To support quick iteration on maps, a procedural level-generation workflow was built in Houdini. Using a PDG-based setup, designers can sketch paths and regions inside Houdini and then bake out an HDA that Unity reads directly. From a single tool, the system generates:",
+          "* terrain layouts for the tower defense arenas",
+          "* spline-based paths that serve as enemy movement routes",
+          "* 2D masks derived from heightfields to control how different textures blend across the map",
+          "In Unity, these outputs allow designers to produce new levels rapidly. The paths define where enemies travel, while the masks are used to mix contrasting texture sets—such as light and dark ground—so that “path” and “background” remain clearly distinguished. PDG makes it possible to batch-generate many variations, turning level design into a series of experiments with difficulty, pacing, and readability rather than a slow manual process."
+        ],
+        "mode": "collage",
+        "images": [
+          {
+            "file": "Strong/PDG workflow1.jpg",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Procedurally generated terrain and enemy route",
+            "caption": ""
+          },
+          {
+            "file": "Strong/PDG workflow2.jpg",
+            "width": 3840,
+            "height": 2160,
+            "alt": "Tower defense level variation with curved routes",
+            "caption": ""
+          },
+          {
+            "file": "Strong/PDG workflow3.png",
+            "width": 2296,
+            "height": 1293,
+            "alt": "Terrain and path layout generated by the PDG workflow",
+            "caption": ""
+          },
+          {
+            "file": "Strong/PDG workflow4.png",
+            "width": 943,
+            "height": 942,
+            "alt": "Texture mask controlling terrain and path regions",
+            "caption": ""
+          },
+          {
+            "file": "Strong/3D pringting.png",
+            "width": 3002,
+            "height": 1280,
+            "alt": "Three tower models prepared for physical fabrication",
+            "caption": "Physical tower models"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Visual Clarity & Strategy",
+        "text": [
+          "The digital environment is viewed from above, with clear separation between enemy routes and surrounding terrain. Color, value, and motion are all tuned for legibility: where enemies come from, where they are going, and how each tower influences the field. Because placing or moving a physical tower immediately changes the configuration on screen, visitors can see cause and effect in real time, learning the basic logic of tower defense games through direct manipulation rather than instruction."
+        ],
+        "mode": "paired",
+        "images": [],
+        "diagram": ""
+      }
+    ],
+    "videos": [
+      "https://player.vimeo.com/video/995085908",
+      "https://www.youtube.com/embed/1E7xRcAERUc",
+      "https://www.youtube.com/embed/pIy1PV7LAEw"
+    ]
+  },
+  {
+    "slug": "procedural-worldbuilding",
+    "title": "Procedural Worldbuilding",
+    "subtitle": "Rule-Based Environment Generation through Terrain, Biomes, Materials, and Code.",
+    "year": "2020–2023",
+    "style": "landscape",
+    "source": "https://www.junhuang.art/procedual",
+    "intro": [
+      "This project focuses on building large-scale environments through procedural generation. The goal is to explore how rule-based systems, custom attributes, and code-driven tools can create complex scenes with high flexibility and rapid iteration.",
+      "This project expands from generative image-making into a reusable environment workflow in Houdini. The system focuses on art-directable controls—terrain formation, biome-driven scattering, and mask-based material blending—so a single setup can generate many consistent variations while remaining editable at every stage."
+    ],
+    "metadata": [
+      [
+        "Type",
+        "Personal Project"
+      ],
+      [
+        "Role",
+        "3D Artist"
+      ],
+      [
+        "Scope",
+        "Workflow | Look Development | Procedural Modeling | Programming"
+      ],
+      [
+        "Tools",
+        "Houdini | Maya | Nuke | ZBrush | SpeedTree | Substance Painter | Python | VEX"
+      ]
+    ],
+    "hero": {
+      "file": "Cover/ProceduralWorld.jpg",
+      "width": 2560,
+      "height": 1441,
+      "alt": "Procedural Worldbuilding"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "HeightField Terrain Generation",
+        "text": [
+          "Terrain is created with Houdini HeightFields and treated as a layered dataset rather than a single height map. Primary forms are established first, then refined through erosion and filtering passes. Derived fields—slope, flow, curvature, and custom masks—become shared control signals for both scattering and surfacing, keeping terrain shape and look development in sync."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "ProceduralWorld/HeightField Terrain Generation.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Houdini HeightField terrain generation setup",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Biome Vegetation Scattering System",
+        "text": [
+          "Vegetation distribution is generated through biome rules driven by HeightField attributes. Density is controlled by altitude and slope thresholds, with additional breakup masks for clustering, clearings, and edge variation. Instances inherit orientation and scale from the terrain field, allowing consistent placement while keeping enough stochastic variation for natural results."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "ProceduralWorld/Biome.png",
+            "width": 1292,
+            "height": 974,
+            "alt": "Biome distribution chart relating vegetation to temperature and precipitation",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Mask-Driven Material Blending",
+        "text": [
+          "Surfacing is controlled through a mask stack derived from HeightFields, including slope- and height-based layers plus authored masks for art direction. These masks drive material blending to maintain coherent transitions (e.g., rock-to-soil, soil-to-grass) and keep the visual language consistent with the scattering logic."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "ProceduralWorld/Mask (1).png",
+            "width": 1133,
+            "height": 1055,
+            "alt": "Terrain material blending mask 1",
+            "caption": ""
+          },
+          {
+            "file": "ProceduralWorld/Mask (2).png",
+            "width": 1133,
+            "height": 1055,
+            "alt": "Terrain material blending mask 2",
+            "caption": ""
+          },
+          {
+            "file": "ProceduralWorld/Mask (3).png",
+            "width": 1133,
+            "height": 1055,
+            "alt": "Terrain material blending mask 3",
+            "caption": ""
+          },
+          {
+            "file": "ProceduralWorld/Mask (4).png",
+            "width": 1133,
+            "height": 1055,
+            "alt": "Terrain material blending mask 4",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "",
+        "text": [],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "ProceduralWorld/Harbor city.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Final rendered procedural harbor city",
+            "caption": ""
+          },
+          {
+            "file": "ProceduralWorld/Mirrorlake.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Vegetation scattered across a mountain lake environment",
+            "caption": ""
+          },
+          {
+            "file": "ProceduralWorld/Snowlake.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Rendered mountain and lake environment generated from terrain fields",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "MaterialX Automation (Python HDA)",
+        "text": [
+          "To reduce repetitive shader setup, a Python-driven HDA generates MaterialX networks automatically from standardized texture sets and naming conventions. The tool builds a consistent node graph, connects maps, exposes common look-dev controls, and enforces uniform parameter interfaces—making materials faster to iterate and easier to reuse across scenes."
+        ],
+        "mode": "full",
+        "images": [
+          {
+            "file": "ProceduralWorld/Python HDA.gif",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Animated demonstration of Python-driven MaterialX network generation",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Render Breakdown",
+        "text": [
+          "The harbor city render is separated into lighting, reflection, ambient occlusion, background, and masking passes. These layers allow the scene to be balanced in compositing, refining depth, contrast, and atmosphere in the final image."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "ProceduralWorld/Breakdown/AO.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, AO",
+            "caption": "AO"
+          },
+          {
+            "file": "ProceduralWorld/Breakdown/cc.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, cc",
+            "caption": "CC"
+          },
+          {
+            "file": "ProceduralWorld/Breakdown/cover.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, cover",
+            "caption": "COVER"
+          },
+          {
+            "file": "ProceduralWorld/Breakdown/dd.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, dd",
+            "caption": "DD"
+          },
+          {
+            "file": "ProceduralWorld/Breakdown/did.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, did",
+            "caption": "DID"
+          },
+          {
+            "file": "ProceduralWorld/Breakdown/rl.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, rl",
+            "caption": "RL"
+          },
+          {
+            "file": "ProceduralWorld/Breakdown/sd.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, sd",
+            "caption": "SD"
+          },
+          {
+            "file": "ProceduralWorld/Breakdown/sid.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, sid",
+            "caption": "SID"
+          },
+          {
+            "file": "ProceduralWorld/Breakdown/ti.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, ti",
+            "caption": "TI"
+          },
+          {
+            "file": "ProceduralWorld/Breakdown/alpha.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, alpha",
+            "caption": "ALPHA"
+          },
+          {
+            "file": "ProceduralWorld/Breakdown/bg.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, bg",
+            "caption": "BG"
+          },
+          {
+            "file": "ProceduralWorld/Breakdown/m.jpg",
+            "width": 2560,
+            "height": 1441,
+            "alt": "Harbor city rendering breakdown, m",
+            "caption": "M"
+          }
+        ],
+        "diagram": ""
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/QDb_e5jpCjw"
+    ]
+  },
+  {
+    "slug": "digital-embroidery",
+    "title": "Digital Embroidery",
+    "subtitle": "Directional Thread Reconstruction",
+    "year": "2022",
+    "style": "specimen",
+    "source": "https://www.junhuang.art/embroidery",
+    "intro": [
+      "This project began as an exploration of embroidery-like structures, but gradually evolved into a study of directional organization and procedural surface reconstruction.",
+      "Rather than replicating traditional embroidery techniques or visual styles, the system focuses on how thread-like structures can emerge from guide directions, vector fields, density variation, and layered flow behaviors.",
+      "The project combines manually designed directional guides with procedural generation systems to organize continuous linear structures across complex organic forms."
+    ],
+    "metadata": [
+      [
+        "Type",
+        "Computational Design / Surface Reconstruction/Houdini Generative Systems"
+      ],
+      [
+        "Scope",
+        "All"
+      ]
+    ],
+    "hero": {
+      "file": "Embroidery/cover.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "Bird reconstructed with directional embroidery-like threads",
+      "caption": ""
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "System Workflow",
+        "text": [
+          "* Shape Segmentation",
+          "Complex forms are separated into multiple directional regions to establish controllable flow behavior across different structural areas.",
+          "* Directional Guide Design",
+          "Guide curves are manually designed to define primary directional movement, local curvature, and structural hierarchy.",
+          "Different regions use distinct directional organizations, including radial, layered, and spiral flow structures.",
+          "* Vector Field Construction",
+          "Directional guides are converted into continuous vector fields used to organize thread movement and local orientation.",
+          "* Procedural Thread Generation",
+          "Thread-like structures are procedurally generated by advecting curves through directional fields, producing layered linear formations across the surface.",
+          "* Surface Reconstruction",
+          "Through density accumulation, overlap, and directional continuity, linear elements gradually reconstruct image-like surfaces and organic structures."
+        ],
+        "mode": "full",
+        "images": [
+          {
+            "file": "Embroidery/Shape Segmentation.png",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Shape Segmentation",
+            "caption": "Shape Segmentation"
+          },
+          {
+            "file": "Embroidery/Directional Guide Design.png",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Directional Guide Design",
+            "caption": "Directional Guide Design"
+          },
+          {
+            "file": "Embroidery/Procedural Thread Generation.png",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Procedural Thread Generation",
+            "caption": "Procedural Thread Generation"
+          },
+          {
+            "file": "Embroidery/Surface Reconstruction.png",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Surface reconstruction from accumulated directional threads",
+            "caption": "Surface Reconstruction"
+          },
+          {
+            "file": "Embroidery/Final.png",
+            "width": 1103,
+            "height": 1103,
+            "alt": "Final surface reconstruction using directional threads",
+            "caption": "Final"
+          }
+        ],
+        "diagram": "pipeline"
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/e8xrvp9MJIA"
+    ]
+  },
+  {
+    "slug": "dynamic-mosaic",
+    "title": "Dynamic Mosaic Surface",
+    "subtitle": "Fragmented Sculptural Reconstruction",
+    "year": "2022",
+    "style": "material",
+    "source": "https://www.junhuang.art/copy-of-template",
+    "intro": [
+      "Dynamic Mosaic Surface is a procedural visual experiment exploring digital surfaces and fragmented reconstruction.",
+      "The project transforms continuous 3D surfaces into hundreds of irregular moving fragments that continuously reorganize across the form, creating a shifting state between material, structure, and digital skin."
+    ],
+    "metadata": [],
+    "hero": {
+      "file": "Mosaic/Header.jpg",
+      "width": 1920,
+      "height": 720,
+      "alt": "Dynamic Mosaic Surface"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Concept",
+        "text": [
+          "A continuous sculptural surface becomes a fragmented, shifting digital skin. Moving elements preserve the overall form while exploring the tension between wholeness and fragmentation, stillness and motion."
+        ],
+        "mode": "split",
+        "images": [
+          {
+            "file": "Mosaic/mosaic.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Dynamic Mosaic Surface ? Final Render",
+            "caption": "Dynamic Mosaic Surface ? Final Render"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Surface and Structure",
+        "text": [
+          "Fragments reorganize the surface rather than simply decorate it. As they move and reconnect, the form remains visually continuous while its structure shifts and transforms."
+        ],
+        "mode": "full",
+        "images": [],
+        "diagram": ""
+      },
+      {
+        "title": "Procedural Generation",
+        "text": [
+          "The project was developed through a procedural workflow.",
+          "Rather than manually placing each fragment, the structure is generated through rules and spatial relationships, producing different:",
+          "* boundaries",
+          "* densities",
+          "* surface rhythms",
+          "with every iteration.",
+          "This unpredictability became an important part of the project."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "Mosaic/Breakdown/1.jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Original Surface",
+            "caption": "Original Surface"
+          },
+          {
+            "file": "Mosaic/Breakdown/2.jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Fragmented Structure",
+            "caption": "Fragmented Structure"
+          },
+          {
+            "file": "Mosaic/Breakdown/3.jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Point Distribution",
+            "caption": "Point Distribution"
+          },
+          {
+            "file": "Mosaic/Breakdown/4.jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Mosaic Reconstruction",
+            "caption": "Mosaic Reconstruction"
+          }
+        ],
+        "diagram": "pipeline"
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/L2mRjFnlrJ4"
+    ]
+  },
+  {
+    "slug": "khirbet-et-tannur",
+    "title": "Re-envisioning Khirbet et-Tannur",
+    "subtitle": "Cincinnati Art Museum",
+    "year": "2022",
+    "style": "heritage",
+    "source": "https://www.junhuang.art/khirbet",
+    "intro": [
+      "Re-envisioning Khirbet et-Tannur is a digital reconstruction of a Nabataean temple created for museum-facing interpretation. The project aims to restore spatial understanding, how architecture, carved fragments, and landscape context work together—through a model designed to be explored in motion as well as in still views."
+    ],
+    "metadata": [
+      [
+        "Company",
+        "Unified Field"
+      ],
+      [
+        "Type",
+        "Public Screening / Digital Heritage"
+      ],
+      [
+        "Role",
+        "3D Artist"
+      ],
+      [
+        "Scope",
+        "Modeling / LookDev / Animation /Real-Time Visualization"
+      ]
+    ],
+    "hero": {
+      "file": "CAM/Temple Reconstruction2.png",
+      "width": 2613,
+      "height": 1470,
+      "alt": "Reconstructed temple exterior within the surrounding landscape",
+      "caption": ""
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Viewing Experience",
+        "text": [
+          "The work is structured to be read at multiple scales. Close shots emphasize carving, breakage, and material history; wider moves re-establish overall massing, orientation, and the temple’s relationship to the surrounding plateau and drop-offs. Camera and lighting are treated as interpretive tools—guiding attention from fragment to structure to site, so viewers can understand both detail and placement without needing specialist background."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "CAM/ViewingExperience1.jpeg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Wide terrain view around the reconstructed site",
+            "caption": "Wide — site context"
+          },
+          {
+            "file": "CAM/ViewingExperience2.png",
+            "width": 2465,
+            "height": 1286,
+            "alt": "Temple entrance with reconstructed columns and carved pediment",
+            "caption": "Mid — temple entrance"
+          },
+          {
+            "file": "CAM/ViewingExperience3.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Close view of the eagle and serpent sculpture in the reconstructed exhibition",
+            "caption": "Detail — carved sculpture"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Craft Highlights",
+        "text": [
+          "* Evidence-forward surface treatment: erosion, breaks, and wear are preserved so damage remains legible rather than cosmetically “fixed.”",
+          "* Scale legibility: assets and materials are tuned to hold up in close detail while still reading coherently at architectural distance.",
+          "* Stylized context for clarity: landscape and atmosphere are simplified to support spatial comprehension and reduce visual noise.",
+          "* Continuity across outputs: stills and moving views are designed to share the same lighting logic and material cues for consistent interpretation."
+        ],
+        "mode": "full",
+        "images": [
+          {
+            "file": "CAM/Craft Highlights.jpeg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Collection of reconstructed architectural fragments and sculptures",
+            "caption": "3D Collection"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Temple Reconstruction",
+        "text": [
+          "The temple model is built from surviving fragments, excavation documentation, and museum-held references. Missing portions are reconstructed through constrained comparison—using related Nabataean sites and regional stylistic patterns to propose plausible continuations without overstating certainty. Select areas remain simplified or fragmentary to preserve the reading of what is directly supported versus what is interpretive reconstruction."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "CAM/Temple Reconstruction1.png",
+            "width": 2713,
+            "height": 1526,
+            "alt": "Reconstructed temple facade",
+            "caption": ""
+          },
+          {
+            "file": "CAM/Temple Reconstruction2.png",
+            "width": 2613,
+            "height": 1470,
+            "alt": "Reconstructed temple exterior and terrain",
+            "caption": ""
+          },
+          {
+            "file": "CAM/Temple Reconstruction3.png",
+            "width": 2465,
+            "height": 1286,
+            "alt": "Reconstructed columns and entrance relief",
+            "caption": ""
+          },
+          {
+            "file": "CAM/Temple Reconstruction4.png",
+            "width": 2039,
+            "height": 1147,
+            "alt": "Reconstructed temple interior",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Archaeological References & Site Landscape",
+        "text": [
+          "The surrounding terrain is recreated as a contextual stage rather than a literal, survey-accurate duplicate. Broad landform cues and elevation relationships support wayfinding and viewpoint logic, helping the viewer understand why the temple reads as elevated and how the site “sits” within the regional geography."
+        ],
+        "mode": "collage",
+        "images": [
+          {
+            "file": "CAM/site photo (1).png",
+            "width": 671,
+            "height": 1009,
+            "alt": "Stone remains at the archaeological site",
+            "caption": ""
+          },
+          {
+            "file": "CAM/site photo (2).png",
+            "width": 696,
+            "height": 748,
+            "alt": "Archival photograph of fallen architectural fragments",
+            "caption": ""
+          },
+          {
+            "file": "CAM/site photo (3).png",
+            "width": 731,
+            "height": 767,
+            "alt": "Archival photograph of an architectural doorway",
+            "caption": ""
+          },
+          {
+            "file": "CAM/site photo (4).png",
+            "width": 732,
+            "height": 844,
+            "alt": "Photographed carved face fragment",
+            "caption": ""
+          },
+          {
+            "file": "CAM/site photo (5).png",
+            "width": 531,
+            "height": 741,
+            "alt": "Photographed carved architectural relief",
+            "caption": ""
+          },
+          {
+            "file": "CAM/site photo (6).png",
+            "width": 797,
+            "height": 534,
+            "alt": "Museum-held carved pediment relief",
+            "caption": ""
+          },
+          {
+            "file": "CAM/site_design (1).jpg",
+            "width": 1918,
+            "height": 2216,
+            "alt": "Architectural plan reference",
+            "caption": ""
+          },
+          {
+            "file": "CAM/site_design (1).png",
+            "width": 767,
+            "height": 767,
+            "alt": "Architectural elevation reference",
+            "caption": ""
+          },
+          {
+            "file": "CAM/site_design (2).png",
+            "width": 780,
+            "height": 989,
+            "alt": "Doorway and carving reference drawings",
+            "caption": ""
+          },
+          {
+            "file": "CAM/SiteLandscape1.png",
+            "width": 726,
+            "height": 745,
+            "alt": "Monochrome site terrain study",
+            "caption": ""
+          },
+          {
+            "file": "CAM/SiteLandscape2.jpeg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Rendered site terrain and surrounding landscape",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Original Footage & 3D Scan",
+        "text": [],
+        "mode": "paired",
+        "diagram": "",
+        "images": [
+          {
+            "file": "CAM/Original Video.gif",
+            "width": 520,
+            "height": 550,
+            "alt": "Original rotation video of the sculpture used for comparison with the 3D scan",
+            "caption": "Original Rotation Footage"
+          },
+          {
+            "file": "CAM/3DModel.gif",
+            "width": 540,
+            "height": 720,
+            "alt": "Rotating view of the sculpture model produced by 3D scanning",
+            "caption": "3D Scanned Model"
+          }
+        ]
+      },
+      {
+        "title": "Production Pipeline",
+        "text": [
+          "* Reference capture (RealityScan + rotation footage): Rotation video and on-site photos provide consistent coverage. Captured lighting is treated as reference to be normalized, not copied verbatim.",
+          "* Modeling (Maya + ZBrush): Base geometry is built and cleaned in Maya, then refined in ZBrush with targeted restoration that avoids speculative detail.",
+          "* Texturing (Substance 3D + Photoshop): Photo-derived textures are normalized and patched in Photoshop, then authored in Substance 3D for coherent materials and readable aging.",
+          "* Context & rendering (Houdini + Unreal + Quixel): Houdini generates lightweight terrain/vegetation context (heightfields + scattering). Assets are assembled and rendered in Unreal, with Quixel Megascans supporting environmental materials and set dressing.",
+          "* Finish & outputs (Nuke + After Effects): Nuke compositing and AE finishing for high-res stills and animation deliverables for projection and digital interpretive use."
+        ],
+        "mode": "full",
+        "images": [],
+        "diagram": "pipeline"
+      },
+      {
+        "title": "Making Uncertainty Visible",
+        "text": [
+          "A core goal is to keep interpretive uncertainty readable instead of hidden. Reconstruction decisions are treated in three tiers:",
+          "* Evidential: directly supported by fragments and documentation",
+          "* Inferential: extended through constrained reasoning (symmetry, pattern logic, close comparanda)",
+          "* Speculative: proposed where evidence is insufficient, kept intentionally revisable"
+        ],
+        "mode": "full",
+        "images": [],
+        "diagram": "layers"
+      }
+    ],
+    "videos": [
+      "https://player.vimeo.com/video/710387587"
+    ]
+  },
+  {
+    "slug": "nation-of-speed",
+    "title": "Nation of Speed",
+    "subtitle": "Smithsonian's National Air and Space Museum",
+    "year": "2022",
+    "style": "installation",
+    "source": "https://www.junhuang.art/nationofspeed",
+    "intro": [
+      "Nation of Speed is the signature animation for the Nation of Speed gallery at the Smithsonian’s National Air and Space Museum. The film plays as an immersive, large-scale projection at the entrance to the exhibition, introducing visitors to a wide range of high-performance machines—aircraft, rockets, race cars, and experimental vehicles—and setting up speed as the gallery’s central theme.",
+      "Rather than explaining each object in detail, the piece creates an immediate, visceral impression of motion and acceleration before visitors encounter the artifacts themselves."
+    ],
+    "metadata": [
+      [
+        "Company",
+        "Unified Field"
+      ],
+      [
+        "Type",
+        "Public Screening / Exhibition Installation"
+      ],
+      [
+        "Role",
+        "3D Artist"
+      ],
+      [
+        "Scope",
+        "Modeling / Texturing / Rigging / Animation / VFX / Lighting / Rendering"
+      ]
+    ],
+    "hero": {
+      "file": "Cover/NASM.png",
+      "width": 1732,
+      "height": 959,
+      "alt": "Nation of Speed"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Asset & Motion System",
+        "text": [
+          "All assets were modeled to closely match historically existing vehicles and machines—racing cars, buses, aircraft, experimental craft, and rockets—reconstructed with attention to proportion, silhouette, and recognizable mechanical features. Look development focused on maintaining material clarity and stable highlights under motion so forms remain readable at exhibition viewing distance.",
+          "Motion was treated as a coordinated system across shots: mechanical rhythms, reveal timing, and camera emphasis were choreographed to communicate acceleration and engineering momentum while keeping the loop coherent through repeated playback."
+        ],
+        "mode": "collage",
+        "images": [
+          {
+            "file": "NASM/3Drender/blackbird.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Blackbird",
+            "caption": "Blackbird"
+          },
+          {
+            "file": "NASM/3Drender/Cale28.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Cale No. 28",
+            "caption": "Cale No. 28"
+          },
+          {
+            "file": "NASM/3Drender/Greyhound.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Greyhound",
+            "caption": "Greyhound"
+          },
+          {
+            "file": "NASM/3Drender/Hawk.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Hawk",
+            "caption": "Hawk"
+          },
+          {
+            "file": "NASM/3Drender/jumpsuit.png",
+            "width": 700,
+            "height": 1080,
+            "alt": "Jumpsuit",
+            "caption": "Jumpsuit"
+          },
+          {
+            "file": "NASM/3Drender/Marcoux.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Marcoux",
+            "caption": "Marcoux"
+          },
+          {
+            "file": "NASM/3Drender/Pontiac.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Pontiac",
+            "caption": "Pontiac"
+          },
+          {
+            "file": "NASM/3Drender/RT14.png",
+            "width": 1920,
+            "height": 1080,
+            "alt": "RT14",
+            "caption": "RT14"
+          },
+          {
+            "file": "NASM/3Drender/Titan.png",
+            "width": 500,
+            "height": 1080,
+            "alt": "Titan",
+            "caption": "Titan"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Visual References",
+        "text": [
+          "The visual language is grounded in archival imagery and engineering materials associated with the museum’s collection. Historic photographs inform proportion and silhouette, while blueprint-like linework and technical markings inspire graphic structure and transitions. These references are not treated as literal replicas; instead, they are translated into a cohesive set of cues—form, material, and motion—that communicate innovation and engineering momentum at a glance."
+        ],
+        "mode": "collage",
+        "images": [
+          {
+            "file": "NASM/reference/reference (1).jpg",
+            "width": 455,
+            "height": 525,
+            "alt": "Jumpsuit Reference",
+            "caption": "Jumpsuit Reference"
+          },
+          {
+            "file": "NASM/reference/reference (1).png",
+            "width": 736,
+            "height": 483,
+            "alt": "Stock Car References",
+            "caption": "Stock Car References"
+          },
+          {
+            "file": "NASM/reference/reference (2).jpg",
+            "width": 1225,
+            "height": 1500,
+            "alt": "Rocket Reference",
+            "caption": "Rocket Reference"
+          },
+          {
+            "file": "NASM/reference/reference (3).jpg",
+            "width": 2000,
+            "height": 1500,
+            "alt": "Aircraft Reference",
+            "caption": "Aircraft Reference"
+          },
+          {
+            "file": "NASM/reference/reference (4).jpg",
+            "width": 600,
+            "height": 450,
+            "alt": "Cale No. 28 Reference",
+            "caption": "Cale No. 28 Reference"
+          },
+          {
+            "file": "NASM/reference/reference (4).png",
+            "width": 1729,
+            "height": 966,
+            "alt": "Pontiac Reference",
+            "caption": "Pontiac Reference"
+          },
+          {
+            "file": "NASM/reference/reference (5).jpg",
+            "width": 500,
+            "height": 328,
+            "alt": "Greyhound Reference",
+            "caption": "Greyhound Reference"
+          },
+          {
+            "file": "NASM/reference/reference (5).png",
+            "width": 1715,
+            "height": 955,
+            "alt": "Hawk Reference",
+            "caption": "Hawk Reference"
+          },
+          {
+            "file": "NASM/reference/reference (6).png",
+            "width": 1520,
+            "height": 924,
+            "alt": "Aircraft Exhibit",
+            "caption": "Aircraft Exhibit"
+          },
+          {
+            "file": "NASM/reference/reference (7).png",
+            "width": 1642,
+            "height": 967,
+            "alt": "Engine Reference",
+            "caption": "Engine Reference"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Production Workflow",
+        "text": [
+          "A real-time workflow enabled rapid iteration on lighting, camera timing, and shot continuity, making it possible to validate rhythm and readability quickly. Final deliverables were rendered as high-resolution offline outputs to ensure stable, repeatable playback in a museum environment. This hybrid approach combines the speed of real-time look development with the reliability and image quality required for long-running exhibition display."
+        ],
+        "mode": "full",
+        "images": [],
+        "diagram": "pipeline"
+      },
+      {
+        "title": "Exhibition Context",
+        "text": [
+          "Designed for continuous playback in a gallery setting, the loop is built to be readable for visitors who encounter it while walking, pausing briefly, or re-entering the sequence mid-way. Composition and contrast prioritize long-distance legibility, while the pacing avoids overloading attention during repeat viewing. The result functions as both an atmospheric anchor and a thematic guide—introducing “speed” as an experiential idea rather than a single linear story."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "NASM/reference/reference (2).png",
+            "width": 2200,
+            "height": 1178,
+            "alt": "Gallery Entrance",
+            "caption": "Gallery Entrance"
+          },
+          {
+            "file": "NASM/Exhibition Context.png",
+            "width": 1732,
+            "height": 959,
+            "alt": "Exhibition Context",
+            "caption": "Exhibition Context"
+          }
+        ],
+        "diagram": ""
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/lG5oTf-CojA"
+    ]
+  },
+  {
+    "slug": "chunkey",
+    "title": "Chunkey: Interactive Game",
+    "subtitle": "First Americans Museum",
+    "year": "2021",
+    "style": "game",
+    "source": "https://www.junhuang.art/chunkey",
+    "intro": [
+      "Chunkey is a Gesture-driven museum interactive project that translates a traditional Indigenous field game into a short, replayable gallery experience. The piece emphasizes projection-first clarity and real-time visual storytelling, so visitors can quickly understand motion, timing, and outcomes through readable forms and restrained visual noise."
+    ],
+    "metadata": [
+      [
+        "Company",
+        "Unified Field"
+      ],
+      [
+        "Type",
+        "Interactive Installation"
+      ],
+      [
+        "Role",
+        "3D Artist"
+      ],
+      [
+        "Scope",
+        "Modeling / LookDev / Rigging / Animation /Visualization"
+      ]
+    ],
+    "hero": {
+      "file": "Cover/FAM.png",
+      "width": 1920,
+      "height": 1200,
+      "alt": "Chunkey: Interactive Game"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Cultural & Historical Background",
+        "text": [
+          "Chunkey is framed within museum interpretation of Indigenous sports and games—practices that encode skill, social life, and community knowledge. The installation introduces historical references briefly, then shifts the focus to embodied understanding through play and observation."
+        ],
+        "mode": "collage",
+        "images": [
+          {
+            "file": "FAM/Refernence/Refernence (1).jpg",
+            "width": 1799,
+            "height": 1916,
+            "alt": "Chunkey Stone Reference",
+            "caption": "Chunkey Stone Reference"
+          },
+          {
+            "file": "FAM/Refernence/Refernence (1).png",
+            "width": 602,
+            "height": 200,
+            "alt": "Cahokia Landscape",
+            "caption": "Cahokia Landscape"
+          },
+          {
+            "file": "FAM/Refernence/Refernence (2).jpg",
+            "width": 800,
+            "height": 600,
+            "alt": "Chunkey in Play",
+            "caption": "Chunkey in Play"
+          },
+          {
+            "file": "FAM/Refernence/Refernence (3).jpg",
+            "width": 345,
+            "height": 165,
+            "alt": "Historical Gameplay Illustration",
+            "caption": "Historical Gameplay Illustration"
+          },
+          {
+            "file": "FAM/Refernence/Refernence (4).jpg",
+            "width": 1600,
+            "height": 604,
+            "alt": "Cahokia Reconstruction",
+            "caption": "Cahokia Reconstruction"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Visual System & Look Development",
+        "text": [
+          "The visual system is built for large-scale projection: clean value separation, controlled contrast, and simplified surface detail so key motion remains legible at a glance. Materials and lighting are calibrated to reduce specular blowout and to preserve consistent readability under different ambient conditions.",
+          "Archaeological and graphic references inform motif language and pattern density, but the final look prioritizes clarity over ornament. The result aims to feel contemporary and stylized while remaining respectful to the cultural sources it draws from."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "FAM/Visual/visual (1).png",
+            "width": 3827,
+            "height": 1930,
+            "alt": "Environment Study 01",
+            "caption": "Environment Study 01"
+          },
+          {
+            "file": "FAM/Visual/visual (3).png",
+            "width": 1920,
+            "height": 1200,
+            "alt": "Environment Study 03",
+            "caption": "Environment Study 03"
+          },
+          {
+            "file": "FAM/Visual/visual (4).png",
+            "width": 3824,
+            "height": 1926,
+            "alt": "Environment Study 04",
+            "caption": "Environment Study 04"
+          },
+          {
+            "file": "FAM/Visual/visual (5).png",
+            "width": 3824,
+            "height": 1926,
+            "alt": "Environment Study 05",
+            "caption": "Environment Study 05"
+          },
+          {
+            "file": "FAM/Visual/visual (6).png",
+            "width": 3824,
+            "height": 1926,
+            "alt": "Environment Study 06",
+            "caption": "Environment Study 06"
+          },
+          {
+            "file": "FAM/Visual/visual (7).png",
+            "width": 3824,
+            "height": 1926,
+            "alt": "Environment Study 07",
+            "caption": "Environment Study 07"
+          },
+          {
+            "file": "FAM/Visual/visual (8).png",
+            "width": 3827,
+            "height": 1930,
+            "alt": "Environment Study 08",
+            "caption": "Environment Study 08"
+          },
+          {
+            "file": "FAM/Visual/tron (1).png",
+            "width": 3829,
+            "height": 1931,
+            "alt": "Wireframe Look Development 01",
+            "caption": "Wireframe Look Development 01"
+          },
+          {
+            "file": "FAM/Visual/tron (2).png",
+            "width": 1920,
+            "height": 899,
+            "alt": "Wireframe Look Development 02",
+            "caption": "Wireframe Look Development 02"
+          },
+          {
+            "file": "FAM/Visual/tron (3).png",
+            "width": 1920,
+            "height": 899,
+            "alt": "Wireframe Look Development 03",
+            "caption": "Wireframe Look Development 03"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Character & Asset Development",
+        "text": [
+          "Focused on bringing the playable world to production quality for a real-time, exhibition environment:",
+          "* Character rigging and animation tuned for gesture-driven actions (roll / throw / run).",
+          "* Look development and material calibration for projection readability and consistent lighting.",
+          "* Prop and environment assets optimized for stable performance and clear silhouettes.",
+          "* Real-time integration support to ensure animations, timing, and camera framing read cleanly during gameplay."
+        ],
+        "mode": "collage",
+        "images": [
+          {
+            "file": "FAM/Character1.jpg",
+            "width": 4769,
+            "height": 2040,
+            "alt": "Character Study 01",
+            "caption": "Character Study 01"
+          },
+          {
+            "file": "FAM/Character2.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Character Study 02",
+            "caption": "Character Study 02"
+          },
+          {
+            "file": "FAM/Asset1.png",
+            "width": 2611,
+            "height": 1705,
+            "alt": "Chunkey Stone",
+            "caption": "Chunkey Stone"
+          },
+          {
+            "file": "FAM/Asset2.png",
+            "width": 1000,
+            "height": 4000,
+            "alt": "Throwing Spear",
+            "caption": "Throwing Spear"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Gameplay & Visitor Experience",
+        "text": [
+          "Visitors use gesture-based controls to respond to a rolling Chunkey stone, testing timing and prediction in a short, replayable game. Clear visuals and on-screen guidance make the experience easy to follow across projection viewing distances.",
+          "The Kinect-tracked wall projection supports one or two players, with an AI opponent for solo play. Sessions last approximately four minutes, with regular and wheelchair-accessible modes."
+        ],
+        "mode": "triple",
+        "images": [],
+        "diagram": ""
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/-cbdoV8ZPR0"
+    ]
+  },
+  {
+    "slug": "purlieu",
+    "title": "Purlieu",
+    "subtitle": "Personal Short Film",
+    "year": "2020",
+    "style": "film",
+    "source": "https://www.junhuang.art/purlieu",
+    "intro": [
+      "Purlieu is a short narrative animation inspired by Chinese mythology and the figure of Tudigong, the guardian of local land. The film follows a young boy living in a small, protected patch of land slowly being consumed by desolation. When a falling star disrupts the guardian force, the land begins to decay. The boy ultimately sacrifices himself to return the star to the sky, restoring peace and vitality to the world."
+    ],
+    "metadata": [],
+    "hero": {
+      "file": "purlieu/Final Render1.jpg",
+      "width": 1920,
+      "height": 1080,
+      "alt": "Purlieu ? Forest and Guardian"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Artistic Concept",
+        "text": [
+          "The visual style blends mythological symbolism with a quiet, atmospheric narrative. Themes of protection, decay, rebirth, and self-sacrifice shape the emotional arc of the story. Character design draws from traditional guardian imagery, while the environment reflects the contrast between threatened land and its eventual renewal."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "purlieu/Final Render1.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Purlieu ? Final Render1",
+            "caption": ""
+          },
+          {
+            "file": "purlieu/Final Render2.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Purlieu ? Final Render2",
+            "caption": ""
+          },
+          {
+            "file": "purlieu/Final Render3.jpeg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Purlieu ? Final Render3",
+            "caption": ""
+          },
+          {
+            "file": "purlieu/Final Render4.jpeg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Purlieu ? Final Render4",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Technical Approach",
+        "text": [
+          "The character assets were sculpted in ZBrush, retopologized for deformation, and prepared with animation-ready UVs. Environment assets were built in Maya, combining modular structures with large-scale vegetation systems.",
+          "Vegetation and ground-cover elements were generated through a particle-instancing pipeline, enabling controlled density, species variation, and directional flow across the terrain.",
+          "Character hair was groomed using XGen, with guide-based grooming and expression-driven modifiers for subtle secondary motion. Fabric components—such as clothing and accessory elements—were simulated using nCloth, integrating dynamic constraints, collision layers, and cache management for reliable playback.",
+          "Lighting, layout, and final renders were completed in Maya, blending procedural distribution, simulation caches, and character animation into a cohesive cinematic workflow."
+        ],
+        "mode": "full",
+        "images": [],
+        "diagram": "pipeline"
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/L6hOZsl1css",
+      "https://www.youtube.com/embed/jU5Yf7JGvyM"
+    ]
+  },
+  {
+    "slug": "secret-of-witch",
+    "title": "Secret of Witch",
+    "subtitle": "DDA 614 - 3D Computer Modeling",
+    "year": "2019",
+    "style": "compact",
+    "source": "https://www.junhuang.art/secret",
+    "intro": [
+      "Secret of Witch is a CG still frame created as an in-class demonstration for the graduate course DDA 614 – 3D Computer Modeling. It introduces practical workflows in UV mapping, texture development and multi-pass compositing through a fully constructed 3D scene.",
+      "The scene blends stylized fantasy with traditional Chinese material culture. Carved furnishings, bronze objects, ceramics and Nuo ritual motifs shape a mystical interior, with layered surface detail giving the space a tactile, lived-in character."
+    ],
+    "metadata": [
+      [
+        "Role",
+        "Guest Demonstration Instructor"
+      ],
+      [
+        "Type",
+        "in-class Demonstration"
+      ]
+    ],
+    "hero": {
+      "file": "secret/Final Render.jpg",
+      "width": 5331,
+      "height": 3000,
+      "alt": "Secret of Witch ? Final Render"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Technical Approach",
+        "text": [
+          "All assets were modeled in Maya and ZBrush, with UVs authored for demonstrational clarity.",
+          "Textures were created in Substance Painter, utilizing PBR workflows for wood, metal, and ceramic surfaces.",
+          "The final image was rendered through a multi-pass lighting setup, then composited in Nuke to illustrate layer-based adjustments, grading, and visual integration techniques."
+        ],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "secret/Ambient Occlusion.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Ambient Occlusion",
+            "caption": "Ambient Occlusion"
+          },
+          {
+            "file": "secret/Base Light.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Base Light",
+            "caption": "Base Light"
+          },
+          {
+            "file": "secret/Diffuse Color.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Diffuse Color",
+            "caption": "Diffuse Color"
+          },
+          {
+            "file": "secret/Subsurface Scattering.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Subsurface Scattering",
+            "caption": "Subsurface Scattering"
+          },
+          {
+            "file": "secret/Specular.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Specular",
+            "caption": "Specular"
+          },
+          {
+            "file": "secret/Reflection.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Reflection",
+            "caption": "Reflection"
+          },
+          {
+            "file": "secret/Global Illumination.jpg",
+            "width": 1920,
+            "height": 1080,
+            "alt": "Global Illumination",
+            "caption": "Global Illumination"
+          },
+          {
+            "file": "secret/Final Render.jpg",
+            "width": 5331,
+            "height": 3000,
+            "alt": "Secret of Witch ? Final Render",
+            "caption": "Final Render"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Props & Material Studies",
+        "text": [
+          "The asset design combines traditional decorative motifs with tactile, weathered surfaces to establish a cohesive visual language. Variations in grain, roughness and surface wear distinguish materials while keeping them consistent with the scene’s subdued, mystical atmosphere."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "secret/Asset_Box.webp",
+            "width": 1920,
+            "height": 1200,
+            "alt": "Wooden Chest",
+            "caption": "Wooden Chest"
+          },
+          {
+            "file": "secret/Asset_Mirror.webp",
+            "width": 1200,
+            "height": 1200,
+            "alt": "Engraved Bronze Mirror",
+            "caption": "Engraved Bronze Mirror"
+          },
+          {
+            "file": "secret/Asset_Nuo_Mask.webp",
+            "width": 1200,
+            "height": 1200,
+            "alt": "Painted Nuo Mask",
+            "caption": "Painted Nuo Mask"
+          },
+          {
+            "file": "secret/Asset_Box_B.webp",
+            "width": 1080,
+            "height": 720,
+            "alt": "Carved Wooden Container",
+            "caption": "Carved Wooden Container"
+          }
+        ],
+        "diagram": ""
+      }
+    ],
+    "videos": [
+      "https://player.vimeo.com/video/680059792"
+    ]
+  },
+  {
+    "slug": "fairy-island",
+    "title": "Fairy Island Pop-up Exhibition",
+    "subtitle": "New York",
+    "year": "2018",
+    "style": "exhibition",
+    "source": "https://www.junhuang.art/fairyisland",
+    "intro": [
+      "Fairy Island is a pop-up exhibition concept developed through 3D visualization.",
+      "The project establishes the spatial mood, thematic direction, and overall visual identity for the exhibition, providing a clear design reference for production and promotional materials."
+    ],
+    "metadata": [
+      [
+        "Type",
+        "Pop-up Art Exhibition"
+      ],
+      [
+        "Role",
+        "3D Artist / CG Concept Designer"
+      ],
+      [
+        "Scope",
+        "Modeling / LookDev / Design"
+      ]
+    ],
+    "hero": {
+      "file": "Fairy island/Final (1).jpeg",
+      "width": 1920,
+      "height": 1417,
+      "alt": "Fairy Island Pop-up Exhibition"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Artistic Concept",
+        "text": [
+          "The exhibition imagines a fantastical island world filled with floating forms, luminous structures, and playful color palettes.",
+          "The design blends whimsical storytelling with stylized environmental elements to create an immersive, dreamlike atmosphere suitable for public engagement and promotional imagery."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "Fairy island/Final (1).jpeg",
+            "width": 1920,
+            "height": 1417,
+            "alt": "Fairy Island ? Final (1)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Final (2).jpg",
+            "width": 1464,
+            "height": 1080,
+            "alt": "Fairy Island ? Final (2)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Final (3).jpg",
+            "width": 1920,
+            "height": 1418,
+            "alt": "Fairy Island ? Final (3)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Final (4).jpg",
+            "width": 1920,
+            "height": 1418,
+            "alt": "Fairy Island ? Final (4)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Final (5).jpg",
+            "width": 1080,
+            "height": 1527,
+            "alt": "Fairy Island ? Final (5)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Final (6).jpg",
+            "width": 1464,
+            "height": 1080,
+            "alt": "Fairy Island ? Final (6)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Final (7).jpg",
+            "width": 1464,
+            "height": 1080,
+            "alt": "Fairy Island ? Final (7)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Final (8).jpg",
+            "width": 4065,
+            "height": 3000,
+            "alt": "Fairy Island ? Final (8)",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Exhibition View",
+        "text": [],
+        "mode": "collage",
+        "images": [
+          {
+            "file": "Fairy island/Exhibition View (1).jpg",
+            "width": 1080,
+            "height": 1080,
+            "alt": "Fairy Island ? Exhibition View (1)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Exhibition View (2).jpg",
+            "width": 1080,
+            "height": 1080,
+            "alt": "Fairy Island ? Exhibition View (2)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Exhibition View (3).jpg",
+            "width": 1080,
+            "height": 1349,
+            "alt": "Fairy Island ? Exhibition View (3)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Exhibition View (4).jpg",
+            "width": 1080,
+            "height": 1309,
+            "alt": "Fairy Island ? Exhibition View (4)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Exhibition View (5).jpg",
+            "width": 1080,
+            "height": 1080,
+            "alt": "Fairy Island ? Exhibition View (5)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Exhibition View (6).jpg",
+            "width": 1060,
+            "height": 1060,
+            "alt": "Fairy Island ? Exhibition View (6)",
+            "caption": ""
+          },
+          {
+            "file": "Fairy island/Exhibition View (7).jpg",
+            "width": 1080,
+            "height": 1080,
+            "alt": "Fairy Island ? Exhibition View (7)",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      }
+    ],
+    "videos": []
+  },
+  {
+    "slug": "transformers-online",
+    "title": "Transformers Online",
+    "subtitle": "Tencent Game",
+    "year": "2017",
+    "style": "production",
+    "source": "https://www.junhuang.art/transformers",
+    "intro": [
+      "This project involves 3D asset production for Transformers Online, a multiplayer action game based on the Transformers.",
+      "NDA note: Production files cannot be shared. Technical breakdowns show a personal practice asset using the same pipeline; game screenshots are presented separately for visual context."
+    ],
+    "metadata": [
+      [
+        "Type",
+        "Commercial Game Production"
+      ],
+      [
+        "Role",
+        "3D Environment Artist"
+      ],
+      [
+        "Scope",
+        "Modeling/ Texturing / Uvmapping / LOD"
+      ]
+    ],
+    "hero": {
+      "file": "Transformer/head.png",
+      "width": 1920,
+      "height": 1080,
+      "alt": "Transformers Online"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Hard-Surface Environment Modeling",
+        "text": [
+          "Hard-surface environment assets are built as a modular kit to maximize reuse and ensure consistent scale, proportions, and visual language across a level. Wall panels, trims, frames, pipes, and structural supports follow a shared grid and snapping logic, with repeating elements designed for instancing and efficient draw calls.",
+          "Detail is prioritized where players get close—silhouette, intersections, and focal read—while secondary complexity is reduced through simplified geometry, baked normals, and controlled material variation. The kit is designed to integrate cleanly with LODs, lightmap/UV requirements, and PBR channel-packed textures for stable real-time performance."
+        ],
+        "mode": "paired",
+        "images": [],
+        "diagram": ""
+      },
+      {
+        "title": "UV Layout & Padding",
+        "text": [
+          "In standard game pipelines, UV packing is treated as a production constraint rather than an aesthetic choice. For a 1024 texture set, 4–6 pixels of spacing between UV islands (with mip expansion in mind) helps minimize bleeding and preserve usable texel area. This padding discipline increases effective texture fidelity in-engine."
+        ],
+        "mode": "full",
+        "images": [
+          {
+            "file": "Transformer/UV Layout.png",
+            "width": 788,
+            "height": 788,
+            "alt": "UV Layout",
+            "caption": "UV Layout"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Texel Density & Readability",
+        "text": [
+          "Texel density is kept consistent across related assets so materials read coherently at the same camera distance. When budgets require trade-offs, resolution is prioritized for player-facing surfaces and silhouette-critical areas, while less visible regions share space or receive lower density. This maintains clarity without unnecessary memory cost."
+        ],
+        "mode": "full",
+        "images": [
+          {
+            "file": "Transformer/Texel Density.png",
+            "width": 1586,
+            "height": 1029,
+            "alt": "Texel Density",
+            "caption": "Texel Density"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "PBR Workflow: Channel Packing",
+        "text": [
+          "In real-time PBR workflows, grayscale maps such as Roughness, Metallic, and Ambient Occlusion are commonly packed into separate RGB channels of a single PNG texture (often referred to as ORM/RMA packing). This reduces texture count, lowers memory bandwidth, and improves streaming efficiency while keeping the shading response consistent in-engine.",
+          "Typical conventions place AO in one channel, Roughness in another, and Metallic in the remaining channel, with the exact channel order aligned to the target engine/material template to avoid mismatches."
+        ],
+        "mode": "full",
+        "images": [
+          {
+            "file": "Transformer/Channel Packing.jpg",
+            "width": 1024,
+            "height": 1024,
+            "alt": "Channel Packing",
+            "caption": "Channel Packing"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Game Views",
+        "text": [],
+        "mode": "triple",
+        "images": [
+          {
+            "file": "Transformer/ingameplay  (1).jpg",
+            "width": 700,
+            "height": 437,
+            "alt": "Game View 01",
+            "caption": "Game View 01"
+          },
+          {
+            "file": "Transformer/ingameplay  (1).png",
+            "width": 1883,
+            "height": 893,
+            "alt": "Game View 02",
+            "caption": "Game View 02"
+          },
+          {
+            "file": "Transformer/ingameplay  (2).jpg",
+            "width": 1000,
+            "height": 623,
+            "alt": "Game View 03",
+            "caption": "Game View 03"
+          },
+          {
+            "file": "Transformer/ingameplay  (2).png",
+            "width": 1896,
+            "height": 911,
+            "alt": "Game View 04",
+            "caption": "Game View 04"
+          },
+          {
+            "file": "Transformer/ingameplay  (3).jpg",
+            "width": 1000,
+            "height": 626,
+            "alt": "Game View 05",
+            "caption": "Game View 05"
+          },
+          {
+            "file": "Transformer/ingameplay  (3).png",
+            "width": 1892,
+            "height": 910,
+            "alt": "Game View 06",
+            "caption": "Game View 06"
+          },
+          {
+            "file": "Transformer/ingameplay  (4).jpg",
+            "width": 1000,
+            "height": 626,
+            "alt": "Game View 07",
+            "caption": "Game View 07"
+          },
+          {
+            "file": "Transformer/ingameplay  (4).png",
+            "width": 1877,
+            "height": 906,
+            "alt": "Game View 08",
+            "caption": "Game View 08"
+          }
+        ],
+        "diagram": ""
+      }
+    ],
+    "videos": [
+      "https://www.youtube.com/embed/k4mJ-4HKCrQ",
+      "https://www.youtube.com/embed/ImCDNkCo8no"
+    ]
+  },
+  {
+    "slug": "nuo",
+    "title": "Nuo",
+    "subtitle": "Dashahe Chinese Nuo City",
+    "year": "2016",
+    "style": "sculpture",
+    "source": "https://www.junhuang.art/nuo",
+    "intro": [
+      "This project explores the transformation of Nuo ritual culture—a traditional Chinese folk belief system known for its expressive masks and guardian deities—into  contemporary digital-to-physical sculptures.",
+      "The goal was to reinterpret Nuo visual language through digital sculpting and bring the design into physical form for cultural and artistic presentation."
+    ],
+    "metadata": [
+      [
+        "Type",
+        "Public Art Installation"
+      ],
+      [
+        "Role",
+        "Lead 3D Artist"
+      ],
+      [
+        "Scope",
+        "Modeling / Design / Texturing / Rendering"
+      ]
+    ],
+    "hero": {
+      "file": "Nuo/Nuo.png",
+      "width": 1736,
+      "height": 900,
+      "alt": "Nuo digital sculpture"
+    },
+    "video": "",
+    "filmLink": false,
+    "chapters": [
+      {
+        "title": "Nuo Culture & Visual Language",
+        "text": [
+          "Nuo masks and ritual figures provided the references for the sculptures. Exaggerated facial features, horns and carved ornaments were reworked into new designs rather than copied from a single artifact. The figures retain these recognizable details, with clear silhouettes and profiles that can be read across a public square."
+        ],
+        "mode": "collage",
+        "images": [
+          {
+            "file": "Nuo/Visual_ref1.jpeg",
+            "width": 960,
+            "height": 1280,
+            "alt": "Nuo Cultural Reference 01",
+            "caption": "Nuo Cultural Reference 01"
+          },
+          {
+            "file": "Nuo/Visual_ref2.jpg",
+            "width": 2048,
+            "height": 2730,
+            "alt": "Nuo Cultural Reference 02",
+            "caption": "Nuo Cultural Reference 02"
+          },
+          {
+            "file": "Nuo/Visual_ref3.jpeg",
+            "width": 1795,
+            "height": 1205,
+            "alt": "Nuo Cultural Reference 03",
+            "caption": "Nuo Cultural Reference 03"
+          },
+          {
+            "file": "Nuo/Visual_ref尖角将军.jpg",
+            "width": 900,
+            "height": 1355,
+            "alt": "Nuo Cultural Reference 04",
+            "caption": "Nuo Cultural Reference 04"
+          },
+          {
+            "file": "Nuo/Visual_ref傩面具.jpg",
+            "width": 1280,
+            "height": 1927,
+            "alt": "Nuo Cultural Reference 05",
+            "caption": "Nuo Cultural Reference 05"
+          },
+          {
+            "file": "Nuo/Visual_ref傩婆.JPG",
+            "width": 900,
+            "height": 1355,
+            "alt": "Nuo Cultural Reference 06",
+            "caption": "Nuo Cultural Reference 06"
+          },
+          {
+            "file": "Nuo/Visual_ref杨泗.jpg",
+            "width": 900,
+            "height": 1355,
+            "alt": "Nuo Cultural Reference 07",
+            "caption": "Nuo Cultural Reference 07"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Digital Modeling",
+        "text": [
+          "The figures, accompanying creatures and supporting elements were sculpted in 3D, both as individual pieces and as grouped compositions. Proportions, poses and surface details were adjusted in the models before fabrication. Reviewing each design from different angles and viewing heights helped establish how the sculptures would relate to one another at full scale."
+        ],
+        "mode": "triple",
+        "images": [],
+        "diagram": ""
+      },
+      {
+        "title": "From 3D Model to Physical Sculpture",
+        "text": [
+          "The digital models guided the full-scale fabrication, including the proportions and arrangement of each sculptural group. Fabricators adapted the forms for outdoor construction, adjusting thickness, joints and internal supports. The aim was to retain the contours and layered details of the digital designs while making the finished sculptures suitable for installation."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "Nuo/Nuo.png",
+            "width": 1736,
+            "height": 900,
+            "alt": "Digital Sculpture",
+            "caption": "Digital Sculpture"
+          },
+          {
+            "file": "Nuo/Installation (1).jpeg",
+            "width": 1280,
+            "height": 670,
+            "alt": "Installed Sculpture",
+            "caption": "Installed Sculpture"
+          }
+        ],
+        "diagram": ""
+      },
+      {
+        "title": "Installation & Presence",
+        "text": [
+          "The finished sculptures were installed in a public plaza, where visitors can walk around the figures and see them from different distances. Close views reveal the facial details and ornament; wider views show the grouped forms against the surrounding buildings. The installation photographs document their scale, placement and relationship to the site."
+        ],
+        "mode": "paired",
+        "images": [
+          {
+            "file": "Nuo/Installation (1).jpeg",
+            "width": 1280,
+            "height": 670,
+            "alt": "Installation View 01",
+            "caption": ""
+          },
+          {
+            "file": "Nuo/Installation (2).png",
+            "width": 1267,
+            "height": 721,
+            "alt": "Installation View 02",
+            "caption": ""
+          },
+          {
+            "file": "Nuo/Installation (3).jpg",
+            "width": 1600,
+            "height": 780,
+            "alt": "Installation View 03",
+            "caption": ""
+          },
+          {
+            "file": "Nuo/Installation (4).jpg",
+            "width": 1600,
+            "height": 900,
+            "alt": "Installation View 04",
+            "caption": ""
+          }
+        ],
+        "diagram": ""
+      }
+    ],
+    "videos": []
+  }
+]

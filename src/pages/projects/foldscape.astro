@@ -1,0 +1,207 @@
+---
+import ProjectGallery from '../../layouts/ProjectGallery.astro';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const image = (file: string) => `${base}/images/webp/Foldscape/${encodeURIComponent(file.replace(/\.[^.]+$/, '.webp'))}`;
+const systemStages = [
+          { file: 'system (1).png', width: 1674, height: 1022, caption: 'OSM building extraction', alt: 'Building data extracted from OpenStreetMap' },
+          { file: 'system (2).png', width: 1716, height: 1033, caption: 'street network extraction', alt: 'Extracted street network defining the urban field' },
+          { file: 'system (3).png', width: 1714, height: 985, caption: 'height-based analysis', alt: 'Color-coded building footprints in the procedural system' },
+          { file: 'system (4).png', width: 1598, height: 1062, caption: 'spatial scattering', alt: 'Scattered elements distributed across the building footprints' },
+          { file: 'system (5).png', width: 1695, height: 1016, caption: 'volumetric trail generation', alt: 'Vertical trails generating folded architectural volumes' },
+          { file: 'system (6).png', width: 1920, height: 1080, caption: 'procedural folding and vertical stretching', alt: 'Final rendered procedural landscape of Chongqing' },
+        ];
+---
+
+<ProjectGallery title="Foldscape" description="A procedural urban landscape shaped by density, accumulation, and spatial pressure.">
+  <main id="project">
+    <figure class="hero" aria-label="Foldscape procedural city panorama">
+      <div class="image-frame hero-frame">
+        <img src={image('header.png')} alt="Panoramic profile of the folded procedural city landscape" width="2090" height="385" fetchpriority="high" />
+      </div>
+      <figcaption class="image-label"><span>FROM DATA TO TERRAIN</span><span>DENSITYGENERATION</span></figcaption>
+    </figure>
+
+    <section class="introduction inset" aria-labelledby="project-title">
+      <div class="title-block" data-reveal>
+        <p class="micro">PROJECT / 2026</p>
+        <h1 id="project-title">Foldscape<span class="title-dot">.</span></h1>
+        <p class="discipline">A procedural urban landscape shaped by density, accumulation, and spatial pressure.</p>
+      </div>
+      <div class="intro-detail" data-reveal>
+        <p class="intro-text">Foldscape is a speculative urban visualization project that transforms OpenStreetMap building data into folded architectural landscapes. Building height and spatial density drive procedural deformation, causing urban forms to stretch, twist, and accumulate. The project treats density as a spatial force and explores how urban data can generate emergent spatial forms.</p>
+        <dl class="metadata">
+          <div><dt>TYPE</dt><dd>Data Visualization | Personal Project</dd></div>
+          <div><dt>ROLE</dt><dd>3D Artist | Technical Director</dd></div>
+          <div><dt>SCOPE</dt><dd>Procedural Design | Data Visualization | Lookdev</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    {[
+      { id: 'chongqing', number: '01', name: 'Chongqing', country: 'CHINA', coordinates: '29.56&#176; N, 106.55&#176; E', visual: 'Chongqing.png', map: 'Open Street Map_CH.png', mapWidth: 1716, mapHeight: 1033, heading: 'Layered | Mountainous Fabric', description: 'Irregular urban density shaped by steep terrain, layered roads, and hillside development.' },
+      { id: 'new-york', number: '02', name: 'New York', country: 'USA', coordinates: '40.71&#176; N, 74.01&#176; W', visual: 'NewYork.png', map: 'Open Street Map_NY.png', mapWidth: 1853, mapHeight: 1060, heading: 'Gridded | Vertical Fabric', description: 'Orthogonal blocks and concentrated vertical growth shaped by a rigid street grid and regular parcels.' },
+    ].map(city => <section class="city-section inset" aria-labelledby={city.id + '-title'}>
+      <header class="city-heading" data-reveal>
+        <span class="micro city-number">{city.number}</span>
+        <div>
+          <div class="city-name"><h2 id={city.id + '-title'}>{city.name}</h2><span class="city-country">{city.country}</span></div>
+          <p class="micro coordinates" set:html={city.coordinates} />
+        </div>
+      </header>
+      <figure data-reveal>
+        <div class="image-frame city-render"><img src={image(city.visual)} alt={city.name + ' reinterpreted as a folded procedural urban landscape'} width="1920" height="1080" loading="lazy" decoding="async" /></div>
+      </figure>
+      <div class="city-context" data-reveal>
+        <figure>
+          <div class="image-frame city-map"><img src={image(city.map)} alt={city.name + ' street network and urban layout from OpenStreetMap'} width={city.mapWidth} height={city.mapHeight} loading="lazy" decoding="async" /></div>
+          <figcaption>&copy; OpenStreetMap contributors</figcaption>
+        </figure>
+        <div class="city-description"><h3>{city.heading}</h3><p>{city.description}</p></div>
+      </div>
+    </section>)}
+
+    <section class="mapping inset" aria-labelledby="mapping-title">
+      <div class="section-label"><h2 id="mapping-title">Urban Pressure as Form</h2><span>DATA / FORM</span></div>
+      <p class="section-text" data-reveal>Foldscape interprets urban density as a force acting on architecture. Buildings bend, stretch, and accumulate until the skyline becomes a compressed terrain. The resulting landscapes are not simulations of real urban conditions, but speculative forms generated through procedural rules.</p>
+      <div class="pressure-maps">
+      <figure data-reveal>
+        <div class="image-frame"><img src={image('osm.png')} alt="OpenStreetMap view of Chongqing's streets and river bends" width="1520" height="992" loading="lazy" decoding="async" /></div>
+        <figcaption>OPENSTREETMAP / SOURCE DATA</figcaption>
+      </figure>
+      <figure data-reveal>
+        <div class="image-frame"><img src={image('Open Street Map_CH.png')} alt="Extracted Chongqing street network from OpenStreetMap" width="1716" height="1033" loading="lazy" decoding="async" /></div>
+        <figcaption>CHONGQING / STREET NETWORK</figcaption>
+      </figure>
+      </div>
+    </section>
+
+    <section class="system inset" aria-labelledby="system-title">
+      <div class="section-label"><h2 id="system-title">System</h2><span>03</span></div>
+      <div class="system-content" data-reveal>
+        <p class="section-text">The system transforms urban geometry through multiple stages:</p>
+        <ol class="system-stages">
+          {systemStages.map(stage => <li>{stage.caption}</li>)}
+        </ol>
+      </div>
+      <div class="system-gallery">
+        {systemStages.map((stage, index) => <figure data-reveal>
+          <div class="image-frame"><img src={image(stage.file)} alt={stage.alt} width={stage.width} height={stage.height} loading="lazy" decoding="async" /></div>
+          <figcaption>{String(index + 1).padStart(2, '0')} / {stage.caption}</figcaption>
+        </figure>)}
+      </div>
+    </section>
+
+    <div class="project-end inset"><a href={`${base}/`}>← ALL PROJECTS</a><span class="micro">END / FOLDSCAPE</span></div>
+  </main>
+</ProjectGallery>
+
+<style>
+  main { --line: rgb(238 233 225 / 14%); --muted: #aaa6a0; --accent: #baa78f; }
+  figure { margin: 0; min-width: 0; }
+  .inset { padding-inline: 38px; }
+  .image-frame { overflow: hidden; background: #171719; }
+  .image-frame img { display: block; width: 100%; height: auto; transition: transform 1.2s cubic-bezier(.22,1,.36,1); }
+  @media (hover: hover) { .image-frame:hover img { transform: scale(1.018); } }
+  .hero-frame { height: clamp(160px, 28svh, 400px); }
+  .hero-frame img { height: 100%; object-fit: cover; }
+  .system-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 24px 16px; margin-top: 36px; }
+  .system-gallery .image-frame { position: relative; aspect-ratio: 16 / 9; }
+  .system-gallery img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  @media (max-width: 650px) { .system-gallery { gap: 20px 12px; } }
+  .image-label, figcaption, .section-label, .micro, .metadata, .project-end a {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 10px; font-weight: 400; line-height: 1.6; letter-spacing: 0.08em;
+  }
+  figcaption { display: flex; flex-wrap: wrap; justify-content: center; text-align: center; gap: 10px; padding-top: 14px; color: var(--muted); }
+  .hero .image-label { padding: 16px 38px; border-bottom: 1px solid var(--line); }
+  .introduction { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 4vw, 72px); max-width: 1440px; margin-inline: auto; padding-block: 82px 110px; }
+  .micro { color: var(--accent); margin: 0; }
+  h1 { margin: 12px 0 16px; font-size: clamp(56px, 8vw, 128px); font-weight: 400; letter-spacing: -0.065em; line-height: .95; }
+  .title-dot { color: var(--accent); }
+  .discipline { margin: 0; color: var(--muted); font-size: 14px; letter-spacing: 0.025em; }
+  .intro-detail { max-width: 560px; padding-top: 30px; }
+  .intro-text { margin: 0 0 32px; font-size: clamp(16px, 1.35vw, 20px); line-height: 1.65; color: #d0ccc5; }
+  .section-text { max-width: 700px; margin: 0 0 40px; color: #d0ccc5; font-size: 16px; line-height: 1.75; }
+  .discipline { max-width: 420px; line-height: 1.7; }
+  .system { padding-bottom: 80px; }
+  .system-content { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 4vw, 72px); max-width: 1364px; margin-inline: auto; }
+  .system-stages { margin: 0; padding: 0; list-style: none; counter-reset: stage; }
+  .system-stages li { counter-increment: stage; border-top: 1px solid var(--line); padding: 14px 0; display: flex; gap: 20px; color: #d0ccc5; font-size: 14px; }
+  .system-stages li::before { content: counter(stage, decimal-leading-zero); color: var(--accent); font: 11px/1.8 Consolas, monospace; }
+  .metadata { margin: 0; }
+  .metadata div { display: grid; grid-template-columns: 140px 1fr; gap: 16px; padding: 10px 0; border-top: 1px solid var(--line); }
+  dt { color: var(--accent); } dd { margin: 0; color: var(--muted); }
+  .section-label { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; border-top: 1px solid var(--line); padding-block: 16px 28px; color: var(--muted); }
+  .section-label h2 { margin: 0; font: inherit; color: #eee9e1; }
+  .city-section { padding-bottom: 110px; }
+  .city-heading { display: flex; align-items: flex-start; gap: 22px; border-top: 1px solid var(--line); padding-top: 24px; margin-bottom: 28px; }
+  .city-number { padding-top: 10px; }
+  .city-name { display: flex; align-items: baseline; flex-wrap: wrap; gap: 24px; }
+  .city-name h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(22px, 3vw, 44px); font-weight: 400; letter-spacing: -.045em; line-height: 1.1; }
+  .city-country { font-family: Georgia, serif; font-size: 18px; color: var(--muted); letter-spacing: .04em; }
+  .coordinates { margin-top: 12px; color: var(--muted); }
+  .city-render { aspect-ratio: 16 / 9; }
+  .city-section { max-width: 1600px; margin-inline: auto; }
+  .hero { width: 100%; }
+  .city-render img { width: 100%; height: 100%; object-fit: cover; }
+  .city-context { display: grid; grid-template-columns: minmax(180px, 28%) 1fr; gap: 32px; align-items: start; margin-top: 28px; }
+  .city-map img { width: 100%; height: auto; }
+  .city-description { max-width: 650px; padding-top: 4px; }
+  .city-description h3 { margin: 0 0 22px; font-family: Georgia, serif; font-size: clamp(20px, 2vw, 28px); font-weight: 400; letter-spacing: .025em; color: #d0ccc5; }
+  .city-description p { margin: 0; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; line-height: 1.8; }
+  .pressure-maps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .pressure-maps .image-frame { aspect-ratio: 16 / 10; }
+  .pressure-maps img { height: 100%; object-fit: cover; }
+  @media (max-width: 650px) {
+    .city-section { padding-bottom: 65px; }
+    .city-heading { gap: 12px; }
+    .city-name { gap: 12px; }
+    .city-context { grid-template-columns: 1fr; gap: 22px; }
+    .city-context figure { width: min(100%, 360px); margin-inline: auto; }
+  }
+  .map-grid { display: grid; grid-template-columns: 5fr 7fr; gap: 5vw; align-items: start; }
+  .network { padding-top: 100px; }
+  .mapping { padding-bottom: 120px; }
+  .spatial { padding-bottom: 120px; }
+  .full-bleed img { aspect-ratio: 16 / 9; object-fit: cover; }
+  .city-study { display: grid; grid-template-columns: 1fr 2.3fr; gap: 7vw; align-items: center; padding-bottom: 130px; }
+  .study-note { border-top: 1px solid var(--line); padding-top: 18px; }
+  .study-note h2 { font-size: clamp(32px, 3.2vw, 52px); font-weight: 400; letter-spacing: -0.04em; line-height: 1.1; margin: 26px 0 20px; }
+  .study-note > p:not(.micro) { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 32px; }
+  .panorama { padding-bottom: 90px; }
+  .panorama-frame img { width: 100%; height: auto; }
+  .project-end { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 55px; }
+  .project-end a { padding-block: 12px; color: #e3ccb0; }
+  @media (max-width: 900px) {
+    .inset { padding-inline: 24px; } .hero .image-label { padding-inline: 24px; }
+    .introduction { gap: 40px; padding-block: 60px 80px; }
+    .map-grid { gap: 24px; } .network { padding-top: 60px; }
+    .mapping, .spatial, .city-study { padding-bottom: 80px; }
+  }
+  @media (max-width: 650px) {
+    .inset { padding-inline: 18px; } .hero .image-label { padding-inline: 18px; }
+    .introduction { grid-template-columns: 1fr; gap: 28px; padding-block: 45px 60px; }
+    .intro-detail { padding-top: 0; } .metadata div { grid-template-columns: 110px 1fr; }
+    .map-grid, .city-study { grid-template-columns: 1fr; gap: 36px; }
+    .system-content { grid-template-columns: 1fr; gap: 0; }
+    .network { padding-top: 0; } .mapping, .spatial, .city-study { padding-bottom: 60px; }
+    .panorama { padding-bottom: 60px; }
+    .panorama-frame { overflow-x: auto; } .panorama-frame img { min-width: 760px; }
+    .section-label, figcaption, .micro, .metadata { font-size: 9px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .image-frame img { transition: none; } .image-frame:hover img { transform: none; } }
+</style>
+
+<script>
+  import '../../scripts/balanced-gallery';
+  import { animate, inView } from 'motion';
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const animations: ReturnType<typeof animate>[] = [];
+  const stop = inView('[data-reveal]', element => {
+    if (reduced.matches) return;
+    animations.push(animate(element, { opacity: [0.4, 1], transform: ['translateY(20px)', 'translateY(0)'] }, { duration: 0.7, ease: [0.22, 1, 0.36, 1] }));
+  });
+  reduced.addEventListener('change', () => {
+    if (reduced.matches) { stop(); animations.forEach(animation => animation.complete()); }
+  });
+</script>

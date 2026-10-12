@@ -1,5 +1,7 @@
 # build output
 dist/
+# local migration references and visual checks
+.tmp/
 # generated types
 .astro/
 

@@ -1,0 +1,22 @@
+---
+import ProjectGallery from '../layouts/ProjectGallery.astro';
+---
+<ProjectGallery title="Demoreel" description="Real-time visualizations, procedural environments, motion design, and digital heritage reconstruction by Jun Huang.">
+  <main>
+    <header><p class="label">MOVING IMAGE / SELECTED WORK</p><h1>Demoreel</h1></header>
+    <div class="player"><iframe src="https://www.youtube.com/embed/H-ThXvn2ZKY" title="Jun Huang Demoreel" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+    <div class="details"><ul><li>Focuses on real-time visualizations for museums and cultural spaces.</li><li>Showcases procedural environments, particle-based motion design, and digital heritage reconstruction.</li><li>All works are either publicly exhibited or developed in collaboration with cultural institutions.</li></ul><div><a href="https://youtu.be/H-ThXvn2ZKY" target="_blank" rel="noopener noreferrer">Watch on YouTube &nearr;</a><p class="note">Mainland China visitors may need a VPN to load the videos.</p></div></div>
+  </main>
+</ProjectGallery>
+<style>
+  main { max-width: 1600px; margin: auto; padding: 70px 38px 100px; }
+  .label { font: 10px/1.7 Consolas, monospace; letter-spacing: .1em; color: #baa78f; }
+  h1 { margin: 12px 0 40px; font: 400 clamp(48px, 7vw, 100px)/1.1 Georgia, serif; letter-spacing: -.045em; }
+  .player { position: relative; aspect-ratio: 16 / 9; background: #000; }
+  iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .details { display: grid; grid-template-columns: 2fr 1fr; gap: 7vw; border-top: 1px solid rgb(238 233 225 / 15%); margin-top: 32px; padding-top: 26px; }
+  ul { margin: 0; padding-left: 18px; } li { color: #c8c3bc; font-size: 15px; line-height: 1.8; margin-bottom: 10px; }
+  .details a { color: #e3ccb0; font: 11px/1.8 Consolas, monospace; letter-spacing: .06em; } .note { color: #aaa6a0; font-size: 12px; line-height: 1.8; }
+  @media(max-width: 900px) { main { padding: 50px 24px 80px; } }
+  @media(max-width: 650px) { main { padding: 40px 18px 60px; } .details { grid-template-columns: 1fr; gap: 20px; } }
+</style>

@@ -1,49 +1,776 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { Icon } from 'astro-icon/components';
+import projectPages from '../data/projects.json';
+// Use curated Cover images when available; retain existing images for unmatched projects.
+// Match filename casing for GitHub Pages.
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const localUrl = (path: string) => base + "/" + path.replace(/^\//, "");
+const currentYear = new Date().getFullYear();
+const projects = [
+  {
+    title: "Foldscape",
+    year: "2026",
+    subtitle: "OSM Data Visualization",
+    folder: "webp/Cover",
+    cover: "Foldscape.webp",
+    href: "/projects/foldscape",
+  },
+
+  {
+    title: "Song of the Phoenix in Pingdu",
+    year: "2025",
+    subtitle: "Cultural Exchange between China and Mexico",
+    folder: "Cover",
+    cover: "Phoenix.png",
+    href: "/projects/phoenix",
+  },
+
+  {
+    title: "Impression • Reassembled",
+    year: "2025",
+    subtitle: "Generative Art",
+    folder: "Cover",
+    cover: "ImpressionReassembled.png",
+    href: "/projects/impression-reassembled",
+  },
+
+  {
+    title: "Digital Embroidery",
+    year: "2022",
+    subtitle: "Procedural Surface Reconstruction",
+    folder: "Cover",
+    cover: "Embroidery.jpg",
+    href: "/projects/digital-embroidery",
+  },
+
+  {
+    title: "Dynamic Mosaic Surface",
+    year: "2022",
+    subtitle: "Fragmented Surface Reconstruction",
+    folder: "Cover",
+    cover: "mosaic.png",
+    href: "/projects/dynamic-mosaic",
+  },
+
+  {
+    title: "Re-envisioning Khirbet et-Tannur",
+    year: "2022",
+    subtitle: "Cincinnati Art Museum",
+    folder: "Cover",
+    cover: "CAM.jpeg",
+    href: "/projects/khirbet-et-tannur",
+  },
+
+  {
+    title: "Nation of Speed",
+    year: "2022",
+    subtitle: "Smithsonian National Air and Space Museum",
+    folder: "Cover",
+    cover: "NASM.png",
+    href: "/projects/nation-of-speed",
+  },
+
+  {
+    title: "Chunkey: Interactive Game",
+    year: "2021",
+    subtitle: "First Americans Museum",
+    folder: "Cover",
+    cover: "FAM.png",
+    href: "/projects/chunkey",
+  },
+
+  {
+    title: "ESL Digital Worlds: Level Up",
+    year: "2023",
+    subtitle: "The Strong National Museum of Play",
+    folder: "Cover",
+    cover: "Strong.jpg",
+    href: "/projects/esl-digital-worlds",
+  },
+
+  {
+    title: "Fairy Island Pop-up Exhibition",
+    year: "2018",
+    subtitle: "New York",
+    folder: "Cover",
+    cover: "Fairy island.jpeg",
+    href: "/projects/fairy-island",
+  },
+
+  {
+    title: "Transformers Online",
+    year: "2017",
+    subtitle: "Tencent Game",
+    folder: "Cover",
+    cover: "Transformer.png",
+    href: "/projects/transformers-online",
+  },
+
+  {
+    title: "Digital to Physical Sculpture: Nuo",
+    year: "2016",
+    subtitle: "Dashahe Chinese Nuo City",
+    folder: "Cover",
+    cover: "Nuo.jpeg",
+    href: "/projects/nuo",
+  },
+
+  {
+    title: "Procedural Worldbuilding",
+    year: "2020–2023",
+    subtitle: "Heightfields & VEX",
+    folder: "Cover",
+    cover: "ProceduralWorld.jpg",
+    href: "/projects/procedural-worldbuilding",
+  },
+
+  {
+    title: "Discovering the Myths of Fengdu",
+    year: "2024",
+    subtitle: "Digital Cultural Storytelling",
+    folder: "Cover",
+    cover: "Huaguang.png",
+    href: "/projects/huaguang",
+  },
+
+  {
+    title: "Lu Zuofu — Documentary Film",
+    year: "2024",
+    subtitle: "CCTV-9 Documentary Series",
+    folder: "Cover",
+    cover: "Luzuofu.png",
+    href: "/projects/lu-zuofu",
+  },
+];
+// Include the newly migrated projects while preserving the existing homepage design.
+for (const project of projectPages) {
+  if (projects.some(item => item.href === `/projects/${project.slug}`)) continue;
+  const [folder, ...filename] = project.hero.file.split('/');
+  projects.push({
+    title: project.title,
+    year: project.year,
+    subtitle: project.subtitle,
+    folder,
+    cover: filename.join('/'),
+    href: `/projects/${project.slug}`,
+  });
+}
+// Sort year ranges by their most recent year; retain existing order for ties.
+const latestYear = (year: string) => Math.max(0, ...(year.match(/\d{4}/g) ?? []).map(Number));
+projects.sort((a, b) => latestYear(b.year) - latestYear(a.year));
+
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your{' '}
-				<code>astro.config.mjs</code> file. You can customize your setup with{' '}
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to{' '}
-				<a href="https://docs.astro.build/">read the docs</a>{' '}
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out{' '}
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>{' '}
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <title>Projects | Jun Huang</title>
+    <meta name="theme-color" content="#111113" />
+
+    <meta
+      name="description"
+      content="Jun Huang — Digital artist, designer and researcher working across digital art, procedural systems, 3D visualization, digital heritage and interactive media."
+    />
+
+    <style>
+      :global(*) {
+        box-sizing: border-box;
+      }
+      :global([hidden]) { display: none !important; }
+
+      :global(html) {
+        color-scheme: dark;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+
+      :global(body) {
+        margin: 0;
+        padding: 0;
+
+        min-height: 100vh;
+        background:
+          radial-gradient(ellipse 80% 650px at 0% 0%, rgb(150 119 82 / 10%), transparent 75%),
+          radial-gradient(ellipse 60% 800px at 100% 25%, rgb(82 96 126 / 7%), transparent 75%),
+          #111113;
+        color: #eee9e1;
+
+        font-family:
+          "Helvetica Neue",
+          "Segoe UI",
+          Arial,
+          sans-serif;
+        line-height: 1.6;
+
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      :global(a) {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      :global(img) {
+        max-width: 100%;
+      }
+
+      :global(::selection) {
+        background: #c8ad86;
+        color: #111113;
+      }
+
+
+      /* =========================
+         HEADER
+      ========================= */
+
+      .site-header {
+        width: 100%;
+
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 28px 38px 26px;
+        border-bottom: 1px solid rgb(238 233 225 / 9%);
+      }
+
+      .brand {
+        color: #e3ccb0;
+        font-family: "Bodoni MT", Didot, "Times New Roman", serif;
+        font-size: 32px;
+        font-weight: 400;
+        letter-spacing: 0.12em;
+        line-height: 1.2;
+        white-space: nowrap;
+      }
+
+      .brand-group { display: flex; align-items: center; gap: 24px; }
+      .brand-tagline { margin: 0; color: #baa78f; font-size: 10px; letter-spacing: 0.16em; }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .nav-link {
+        position: relative;
+        color: #b5b0a9;
+        transition: color 0.3s ease;
+
+        font-size: 16.5px;
+        font-weight: 500;
+
+        letter-spacing: 0.16em;
+        line-height: 1.5;
+      }
+
+      .nav-link::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+        bottom: -6px;
+
+        width: 100%;
+        height: 1px;
+
+        background: currentColor;
+
+        transform: scaleX(0);
+        transform-origin: right center;
+
+        transition:
+          transform
+          0.3s
+          cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .nav-link:hover::after, .nav-link:focus-visible::after, .nav-link[aria-current="page"]::after {
+        transform: scaleX(1);
+        transform-origin: left center;
+      }
+
+      .nav-link:hover,
+      .nav-link:focus-visible,
+      .nav-link[aria-current="page"] {
+        color: #e3ccb0;
+      }
+
+
+      /* =========================
+         PROJECT AREA
+      ========================= */
+
+      .projects {
+        width: 100%;
+
+        padding:
+          54px
+          38px
+          100px;
+      }
+
+      .project-grid {
+        display: grid;
+
+        grid-template-columns:
+          repeat(auto-fit, minmax(min(100%, 560px), 1fr));
+
+        column-gap: 24px;
+        row-gap: 42px;
+      }
+
+
+      /* =========================
+         PROJECT CARD
+      ========================= */
+
+      .project {
+        position: relative;
+        display: block;
+        min-width: 0;
+      }
+
+      .image-container {
+        position: relative;
+
+        width: 100%;
+        aspect-ratio: 16 / 9;
+
+        overflow: hidden;
+
+        background: #202023;
+        border-radius: 14px;
+        box-shadow:
+          0 0 0 1px rgb(238 233 225 / 9%),
+          0 4px 12px rgb(0 0 0 / 22%),
+          0 20px 40px -14px rgb(0 0 0 / 55%);
+        transition: box-shadow 0.4s ease;
+      }
+
+      :global(button:focus-visible) { outline: 2px solid #e3ccb0; outline-offset: 4px; }
+      .scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 20; background: #e3ccb0; transform: scaleX(0); transform-origin: left; pointer-events: none; }
+      .back-top { position: fixed; bottom: 24px; right: 24px; z-index: 5; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #655849; border-radius: 50%; background: #202023; color: #e3ccb0; }
+      .back-top[hidden] { display: none; }
+      @media (max-width: 650px) {
+        .site-header { flex-wrap: wrap; gap: 20px; }
+        .brand-group { gap: 12px; }
+        .brand-tagline { font-size: 9px; letter-spacing: 0.08em; }
+      }
+
+
+      .project-image {
+        position: absolute;
+        inset: 0;
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        transform: scale(1);
+
+        transition:
+          transform
+          0.8s
+          cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .project:hover .project-image {
+        transform: scale(1.018);
+      }
+
+      .project:hover .image-container,
+      .project:focus-visible .image-container {
+        box-shadow:
+          0 0 0 1px rgb(227 204 176 / 28%),
+          0 6px 16px rgb(0 0 0 / 28%),
+          0 26px 50px -14px rgb(0 0 0 / 65%);
+      }
+
+
+      /* =========================
+         PROJECT INFO
+      ========================= */
+
+      .project-info {
+        display: grid;
+
+        grid-template-columns: minmax(0, 1fr);
+        text-align: center;
+
+        gap: 8px;
+
+        padding-top: 18px;
+      }
+
+      .project-main {
+        min-width: 0;
+      }
+
+      .project-heading {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: baseline;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .project-title {
+        margin: 0;
+        min-width: 0;
+
+        font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+        font-size: clamp(20px, 1.5vw, 25px);
+
+        font-weight: 400;
+
+        line-height: 1.3;
+
+        letter-spacing: -0.025em;
+        text-wrap: pretty;
+        transition: color 0.3s ease;
+      }
+
+      .project:hover .project-title,
+      .project:focus-visible .project-title {
+        color: #e3ccb0;
+      }
+
+      .project-subtitle {
+        margin-top: 8px;
+
+        font-size: 12px;
+
+        line-height: 1.6;
+        letter-spacing: 0.025em;
+
+        color: #aaa6a0;
+      }
+
+      .project-year {
+        flex: 0 0 auto;
+        padding-top: 0;
+
+        font-size: 11px;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.08em;
+
+        color: #baa78f;
+
+        white-space: nowrap;
+      }
+
+
+      /* =========================
+         FOOTER
+      ========================= */
+
+      .footer {
+        margin:
+          0
+          38px;
+
+        border-top:
+          1px solid
+          rgb(238 233 225 / 12%);
+
+        padding:
+          25px
+          0
+          35px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 30px;
+
+        font-size: 11px;
+
+        letter-spacing: 0.12em;
+
+        color: #aaa6a0;
+      }
+
+
+      /* =========================
+         TABLET
+      ========================= */
+
+      @media (max-width: 900px) {
+        .site-header {
+          padding:
+            24px
+            24px;
+        }
+
+        .projects {
+          padding:
+            45px
+            24px
+            80px;
+        }
+
+        .project-grid {
+          column-gap: 18px;
+          row-gap: 36px;
+        }
+
+        .footer {
+          margin:
+            0
+            24px;
+        }
+      }
+
+
+      /* =========================
+         MOBILE
+      ========================= */
+
+      @media (max-width: 650px) {
+        .site-header {
+          padding:
+            20px
+            18px;
+
+          align-items: flex-start;
+        }
+
+        .brand {
+          font-size: 28px;
+        }
+
+        .nav {
+          gap: 17px;
+        }
+
+        .nav-link {
+          font-size: 15px;
+        }
+
+        .projects {
+          padding:
+            38px
+            18px
+            70px;
+        }
+
+        .project-grid {
+          grid-template-columns: 1fr;
+
+          row-gap: 36px;
+        }
+
+        .project-title {
+          font-size: 20px;
+        }
+
+        .footer {
+          margin:
+            0
+            18px;
+
+          flex-direction: column;
+
+          align-items: flex-start;
+
+          gap: 8px;
+        }
+      }
+
+
+      /* =========================
+         SMALL MOBILE
+      ========================= */
+
+      @media (max-width: 430px) {
+        .site-header {
+          display: block;
+        }
+
+        .nav {
+          margin-top: 18px;
+
+          width: 100%;
+
+          justify-content: space-between;
+        }
+      }
+      :global(a:focus-visible) { outline: 2px solid currentColor; outline-offset: 6px; }
+      .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+      .skip-link { position: absolute; top: 12px; left: 18px; z-index: 10; padding: 12px 16px; background: #111; color: #fff; transform: translateY(-200%); }
+      .skip-link:focus { transform: translateY(0); }
+      @media (prefers-reduced-motion: reduce) {
+        :global(html) { scroll-behavior: auto; }
+        .project-image, .image-container, .project-title, .nav-link, .nav-link::after { transition: none; }
+        .project:hover .project-image { transform: none; }
+      }
+    </style>
+  </head>
+
+
+  <body id="top">
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <a class="skip-link" href="#projects">Skip to projects</a>
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+      <div class="brand-group">
+      <a
+        class="brand"
+        href={localUrl("/")}
+      >
+        JUN HUANG
+      </a>
+        <p class="brand-tagline">Digital art · Design · Research</p>
+      </div>
+
+
+      <nav class="nav" aria-label="Main navigation">
+
+        <a
+          class="nav-link"
+          href={localUrl("/")}
+          aria-current="page"
+        >
+          PROJECTS
+        </a>
+
+        <a
+          class="nav-link"
+          href={localUrl('/demoreel/')}
+        >
+          DEMOREEL
+        </a>
+
+        <a
+          class="nav-link"
+          href={localUrl('/about/')}
+        >
+          ABOUT
+        </a>
+
+      </nav>
+
+    </header>
+
+
+
+    <!-- PROJECTS -->
+
+    <main>
+
+      <section class="projects" id="projects" aria-labelledby="projects-heading">
+        <h1 class="sr-only" id="projects-heading">Projects</h1>
+
+        <div class="project-grid">
+
+          {
+            projects.map((project, index) => (
+
+              <article class="project">
+              <a class="project-link" href={localUrl(project.href)}>
+
+                <div class="image-container">
+
+                  <img
+                    class="project-image"
+                    src={localUrl(`images/${project.folder.split('/').map(encodeURIComponent).join('/')}/${encodeURIComponent(project.cover)}`)}
+                    alt={project.title}
+                    loading={index < 2 ? "eager" : "lazy"}
+                    fetchpriority={index === 0 ? "high" : "auto"}
+                    decoding="async"
+                    width="1600"
+                    height="900"
+                  />
+
+                </div>
+
+
+                <div class="project-info">
+
+                  <div class="project-main">
+
+                    <div class="project-heading">
+                      <h2 class="project-title">
+                        {project.title}
+                      </h2>
+                      {
+                        project.year && (
+                          <span class="project-year">{project.year}</span>
+                        )
+                      }
+                    </div>
+
+
+                    {
+                      project.subtitle && (
+
+                        <div class="project-subtitle">
+                          {project.subtitle}
+                        </div>
+
+                      )
+                    }
+
+                  </div>
+
+
+                </div>
+
+              </a>
+              </article>
+
+            ))
+          }
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+      <span>
+        © {currentYear} JUN HUANG
+      </span>
+
+      <span>
+        DIGITAL ART · DESIGN · RESEARCH
+      </span>
+
+    </footer>
+
+    <a class="back-top" href="#top" aria-label="Back to top" hidden><Icon name="lucide:arrow-up" size={18} aria-hidden="true" /></a>
+    <script>
+      import '../scripts/gallery';
+    </script>
+
+  </body>
+
 </html>
