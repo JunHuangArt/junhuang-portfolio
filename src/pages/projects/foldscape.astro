@@ -1,5 +1,6 @@
 ---
 import ProjectGallery from '../../layouts/ProjectGallery.astro';
+import HeritageDiagram from '../../components/HeritageDiagram.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const image = (file: string) => `${base}/images/webp/Foldscape/${encodeURIComponent(file.replace(/\.[^.]+$/, '.webp'))}`;
 const systemStages = [
@@ -10,6 +11,19 @@ const systemStages = [
           { file: 'system (5).webp', width: 1695, height: 1016, caption: 'volumetric trail generation', alt: 'Vertical trails generating folded architectural volumes' },
           { file: 'system (6).webp', width: 1920, height: 1080, caption: 'procedural folding and vertical stretching', alt: 'Final rendered procedural landscape of Chongqing' },
         ];
+const systemPipeline = systemStages.map((stage, index) => ({
+  title: stage.caption,
+  icon: ['building-2', 'route', 'chart-no-axes-column', 'scatter-chart', 'wind', 'layers'][index],
+  tools: [],
+  note: [
+    'Extract building footprints from OpenStreetMap as the starting geometry.',
+    'Extract the street network to define the urban layout.',
+    'Use building height and spatial density to guide deformation.',
+    'Distribute points across the footprints to prepare the generated forms.',
+    'Generate vertical trails through the volume to build the spatial structure.',
+    'Fold and stretch the generated forms into the final urban landscape.',
+  ][index],
+}));
 ---
 
 <ProjectGallery title="Foldscape" description="A procedural urban landscape shaped by density, accumulation, and spatial pressure.">
@@ -77,12 +91,7 @@ const systemStages = [
 
     <section class="system inset" aria-labelledby="system-title">
       <div class="section-label"><h2 id="system-title">System</h2><span>03</span></div>
-      <div class="system-content" data-reveal>
-        <p class="section-text">The system transforms urban geometry through multiple stages:</p>
-        <ol class="system-stages">
-          {systemStages.map(stage => <li>{stage.caption}</li>)}
-        </ol>
-      </div>
+      <div class="system-pipeline" data-reveal><HeritageDiagram kind="pipeline" stages={systemPipeline} /></div>
       <div class="system-gallery">
         {systemStages.map((stage, index) => <figure data-reveal>
           <div class="image-frame"><img src={image(stage.file)} alt={stage.alt} width={stage.width} height={stage.height} loading="lazy" decoding="async" /></div>
@@ -91,7 +100,7 @@ const systemStages = [
       </div>
     </section>
 
-    <div class="project-end inset"><a href={`${base}/`}>← ALL PROJECTS</a><span class="micro">END / FOLDSCAPE</span></div>
+    <div class="project-end inset"><a href={`${base}/`}>← ALL PROJECTS</a></div>
   </main>
 </ProjectGallery>
 

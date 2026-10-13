@@ -111,6 +111,7 @@ const collageRows = (images: typeof project.hero[], columns = 3) => {
         'nuo-references': project.slug === 'nuo' && chapter.title === 'Nuo Culture & Visual Language',
         'game-views': project.slug === 'transformers-online' && chapter.title === 'Game Views',
         'phoenix-origin': project.slug === 'phoenix' && chapter.title === 'Origin: From the Bayu Divine Bird',
+        'phoenix-narrative': project.slug === 'phoenix' && chapter.title === 'Narrative Structure',
         'phoenix-taiji': project.slug === 'phoenix' && chapter.title === 'From Taiji Diagram to Motion Guide',
         'phoenix-presence': project.slug === 'phoenix' && chapter.title === 'Public Presence',
       }]} aria-label={chapter.title || `${project.title} visual sequence ${index + 1}`}>
@@ -123,9 +124,9 @@ const collageRows = (images: typeof project.hero[], columns = 3) => {
             chapter.text.map(text => text.startsWith('* ') ? <p class="list-item">{text.slice(2)}</p> : <p>{text}</p>))}
         </div>}
         {chapter.diagram && <div data-reveal><HeritageDiagram kind={chapter.diagram} stages={productionPipelines[project.slug as keyof typeof productionPipelines]} images={['digital-embroidery', 'phoenix'].includes(project.slug) ? chapter.images : undefined} landscapeImages={project.slug === 'phoenix'} /></div>}
-        {chapter.mode === 'collage' && chapter.images.length > 0 ? <div class:list={['collage-images', { 'white-collage': project.slug === 'impression-reassembled', 'responsive-exhibition': project.slug === 'fairy-island' || project.slug === 'nuo' }]} data-reveal>
+        {chapter.mode === 'collage' && chapter.images.length > 0 ? <div class:list={['collage-images', { 'white-collage': project.slug === 'impression-reassembled', 'impression-collage': project.slug === 'impression-reassembled', 'responsive-exhibition': ['fairy-island', 'nuo', 'impression-reassembled'].includes(project.slug) }]} data-reveal>
           {collageRows(chapter.images, project.slug === 'khirbet-et-tannur' && chapter.title === 'Archaeological References & Site Landscape' ? 6 : project.slug === 'impression-reassembled' ? 2 : 3).map(row => <div class="collage-row" style={`grid-template-columns: ${row.map(image => `${image.width / image.height}fr`).join(' ')};`}>
-            {row.map(image => <div class="collage-cell" style={`aspect-ratio: ${image.width} / ${image.height};`}><ProjectImage image={image} /></div>)}
+            {row.map(image => <div class="collage-cell" style={`aspect-ratio: ${image.width} / ${image.height}; --image-ratio: ${image.width / image.height};`}><ProjectImage image={image} /></div>)}
           </div>)}
         </div> : chapter.images.length > 0 && !(['digital-embroidery', 'phoenix'].includes(project.slug) && chapter.diagram === 'pipeline') && <div class="chapter-images">
           {chapter.images.map((image, imageIndex) => <div class="visual" data-reveal={image.file === 'Embroidery/Final.webp' ? undefined : true}>
@@ -314,10 +315,16 @@ const collageRows = (images: typeof project.hero[], columns = 3) => {
   .collage-images.responsive-exhibition { width: 100%; max-width: none; display: flex; flex-wrap: wrap; justify-content: center; }
   .responsive-exhibition .collage-row { display: contents; }
   .responsive-exhibition .collage-cell { flex: 0 0 calc(100% / var(--collage-columns, 1)); aspect-ratio: 4 / 5 !important; }
-  .nuo-references .responsive-exhibition { gap: 12px; }
+  .nuo-references .responsive-exhibition { gap: 12px; align-items: flex-start; }
   .nuo-references.split { display: block; }
   .nuo-references.split .chapter-copy { margin-bottom: 36px; }
-  .nuo-references .collage-cell { flex-basis: calc((100% - (var(--collage-columns, 1) - 1) * 12px) / var(--collage-columns, 1)); }
+  .nuo-references .collage-cell { flex: 0 0 auto; height: var(--collage-height, 220px); width: calc(var(--collage-height, 220px) * var(--image-ratio)); aspect-ratio: auto !important; }
+  .nuo-references .collage-cell :global(figure), .nuo-references .collage-cell :global(.frame) { height: 100%; }
+  .nuo-references .collage-cell :global(img) { position: static; width: 100%; height: 100%; max-height: none; object-fit: contain; }
+  .collage-images.impression-collage { width: 100%; max-width: none; gap: 0; align-items: flex-start; }
+  .impression-collage .collage-cell { flex: 0 0 auto; aspect-ratio: auto !important; }
+  .impression-collage .collage-cell :global(figure), .impression-collage .collage-cell :global(.frame) { height: 100%; }
+  .impression-collage .collage-cell :global(img) { position: static; width: 100%; height: 100%; max-height: none; object-fit: contain; }
   @media (max-width: 800px) {
     .compact-references .collage-row { display: flex; flex-wrap: wrap; }
     .compact-references .collage-cell { flex: 0 0 50%; }

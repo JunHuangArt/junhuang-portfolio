@@ -116,7 +116,7 @@ const sections = [
 <ProjectGallery title="About" description="Jun Huang is a digital artist working with procedural systems, 3D simulation, and real-time engines.">
   <main>
     <header class="intro">
-      <div><p class="label">ABOUT</p><h1>Jun Huang</h1><a class="email" href="mailto:juniushwang@gmail.com">juniushwang@gmail.com</a></div>
+      <div><h1>Jun Huang</h1><a class="email" href="mailto:juniushwang@gmail.com">juniushwang@gmail.com</a></div>
       <div class="statement"><h2>Artist Statement</h2><p>Jun Huang is a digital artist with a background in 3D visualization, moving image, and digital cultural heritage. He uses procedural systems, 3D simulation, and real-time engines to explore how cultural narratives are constructed and experienced across museum exhibitions, cultural heritage reconstructions, and public art projects in the United States and China.</p></div>
     </header>
     {sections.map(section => <section class="cv-section"><h2>{section.title}</h2><div>{section.rows.map(([year,title,detail]) => <article class="cv-row"><span class="year">{year}</span><div><h3>{title}</h3>{detail && <p>{detail}</p>}</div></article>)}</div></section>)}
