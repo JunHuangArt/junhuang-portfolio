@@ -328,13 +328,10 @@ projects.sort((a, b) => latestYear(b.year) - latestYear(a.year));
         display: grid;
 
         grid-template-columns:
-          repeat(auto-fit, minmax(min(100%, 480px), 1fr));
+          repeat(auto-fit, minmax(min(100%, 360px), 1fr));
 
         column-gap: 24px;
         row-gap: 42px;
-      }
-      @media (min-width: 1676px) {
-        .project-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
       }
 
 
@@ -343,6 +340,7 @@ projects.sort((a, b) => latestYear(b.year) - latestYear(a.year));
       ========================= */
 
       .project {
+        container-type: inline-size;
         position: relative;
         display: block;
         min-width: 0;
@@ -439,7 +437,7 @@ projects.sort((a, b) => latestYear(b.year) - latestYear(a.year));
         min-width: 0;
 
         font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
-        font-size: clamp(20px, 1.5vw, 25px);
+        font-size: clamp(18px, 5cqi, 24px);
 
         font-weight: 400;
 

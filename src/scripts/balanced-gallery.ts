@@ -1,4 +1,4 @@
-// Choose only column counts that divide the number of images into complete rows.
+// Homepage columns grow one at a time; project galleries retain complete rows.
 const grids = document.querySelectorAll<HTMLElement>('.chapter-images, .system-gallery, .project-grid');
 const observer = new ResizeObserver(entries => {
   for (const entry of entries) {
@@ -6,14 +6,14 @@ const observer = new ResizeObserver(entries => {
     const count = grid.children.length;
     if (!count) continue;
     const gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
-    const minimum = grid.matches('.project-grid') ? 480 : grid.matches('.phoenix-taiji .chapter-images') ? 300 : grid.matches('.paired .chapter-images') ? 560 : 400;
+    const homepage = grid.matches('.project-grid');
+    const minimum = homepage ? 360 : grid.matches('.phoenix-taiji .chapter-images') ? 300 : grid.matches('.paired .chapter-images') ? 560 : 400;
     const width = entry.contentRect.width;
-    const capacity = grid.matches('.project-grid')
-      ? width >= 1600 ? 6 : width >= 1000 ? 3 : width >= 650 ? 2 : 1
-      : Math.max(1, Math.floor((width + gap) / (minimum + gap)));
+    const capacity = Math.max(1, Math.floor((width + gap) / (minimum + gap)));
     let columns = Math.min(count, capacity);
+    if (homepage) columns = Math.min(columns, 6);
     if (grid.matches('.phoenix-narrative .chapter-images')) columns = Math.min(columns, Math.max(1, Math.floor(count / 2)));
-    while (count % columns !== 0) columns--;
+    if (!homepage) while (count % columns !== 0) columns--;
     grid.style.gridTemplateColumns = `repeat(${columns}, minmax(0, 1fr))`;
   }
 });
