@@ -25,7 +25,7 @@
       ]
     ],
     "hero": {
-      "file": "Phoenix/Header.jpg",
+      "file": "Phoenix/Header.webp",
       "width": 2048,
       "height": 1152,
       "alt": "Song of the Phoenix in Pingdu"
@@ -42,7 +42,7 @@
         "mode": "split",
         "images": [
           {
-            "file": "Phoenix/Bayu Divine Bird.jpg",
+            "file": "Phoenix/Bayu Divine Bird.webp",
             "width": 960,
             "height": 640,
             "alt": "Bayu Divine Bird ? Three Gorges Museum",
@@ -59,21 +59,21 @@
         "mode": "triple",
         "images": [
           {
-            "file": "Phoenix/Taiji1.jpg",
+            "file": "Phoenix/Taiji1.webp",
             "width": 769,
             "height": 769,
             "alt": "Taiji Diagram",
             "caption": "Taiji Diagram"
           },
           {
-            "file": "Phoenix/Taiji2.png",
+            "file": "Phoenix/Taiji2.webp",
             "width": 1141,
             "height": 1074,
             "alt": "Curve Flow Guide",
             "caption": "Curve Flow Guide"
           },
           {
-            "file": "Phoenix/Taiji3.png",
+            "file": "Phoenix/Taiji3.webp",
             "width": 1258,
             "height": 1068,
             "alt": "Particle Flow Study",
@@ -91,42 +91,42 @@
         "mode": "triple",
         "images": [
           {
-            "file": "Phoenix/Final render/1.png",
+            "file": "Phoenix/Final render/1.webp",
             "width": 2560,
             "height": 1440,
             "alt": "Final Render 01",
             "caption": ""
           },
           {
-            "file": "Phoenix/Final render/2.jpg",
+            "file": "Phoenix/Final render/2.webp",
             "width": 2048,
             "height": 1152,
             "alt": "Final Render 02",
             "caption": ""
           },
           {
-            "file": "Phoenix/Final render/3.png",
+            "file": "Phoenix/Final render/3.webp",
             "width": 2560,
             "height": 1440,
             "alt": "Final Render 03",
             "caption": ""
           },
           {
-            "file": "Phoenix/Final render/4.jpg",
+            "file": "Phoenix/Final render/4.webp",
             "width": 2048,
             "height": 1152,
             "alt": "Final Render 04",
             "caption": ""
           },
           {
-            "file": "Phoenix/Final render/5.jpg",
+            "file": "Phoenix/Final render/5.webp",
             "width": 2048,
             "height": 1152,
             "alt": "Final Render 05",
             "caption": ""
           },
           {
-            "file": "Phoenix/Final render/6.jpg",
+            "file": "Phoenix/Final render/6.webp",
             "width": 2048,
             "height": 1152,
             "alt": "Final Render 06",
@@ -157,28 +157,28 @@
         "mode": "full",
         "images": [
           {
-            "file": "Phoenix/Procedural Animation Workflow/1.jpg",
+            "file": "Phoenix/Procedural Animation Workflow/1.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Flow Guides",
             "caption": ""
           },
           {
-            "file": "Phoenix/Procedural Animation Workflow/2.png",
+            "file": "Phoenix/Procedural Animation Workflow/2.webp",
             "width": 1955,
             "height": 1098,
             "alt": "Velocity Field",
             "caption": ""
           },
           {
-            "file": "Phoenix/Procedural Animation Workflow/3.png",
+            "file": "Phoenix/Procedural Animation Workflow/3.webp",
             "width": 1954,
             "height": 1101,
             "alt": "Particle Source",
             "caption": ""
           },
           {
-            "file": "Phoenix/Procedural Animation Workflow/4.jpg",
+            "file": "Phoenix/Procedural Animation Workflow/4.webp",
             "width": 2048,
             "height": 1152,
             "alt": "Particle Advection",
@@ -195,14 +195,14 @@
         "mode": "paired",
         "images": [
           {
-            "file": "Phoenix/Phoenix in Chongqing.jpg",
+            "file": "Phoenix/Phoenix in Chongqing.webp",
             "width": 1280,
             "height": 853,
             "alt": "Phoenix in Chongqing, China",
             "caption": "Phoenix in Chongqing, China"
           },
           {
-            "file": "Phoenix/Phoenix in Guanajuato.JPG",
+            "file": "Phoenix/Phoenix in Guanajuato.webp",
             "width": 4032,
             "height": 2268,
             "alt": "Phoenix in Guanajuato, Mexico",
@@ -230,7 +230,7 @@
     ],
     "metadata": [],
     "hero": {
-      "file": "ImpressionReassembled/image04.png",
+      "file": "ImpressionReassembled/image04.webp",
       "width": 4096,
       "height": 1818,
       "alt": "Impression • Reassembled"
@@ -244,49 +244,49 @@
         "mode": "collage",
         "images": [
           {
-            "file": "ImpressionReassembled/image01.png",
+            "file": "ImpressionReassembled/image01.webp",
             "width": 4096,
             "height": 3183,
             "alt": "Procedural image reconstruction, composition 1",
             "caption": ""
           },
           {
-            "file": "ImpressionReassembled/image02.png",
+            "file": "ImpressionReassembled/image02.webp",
             "width": 4096,
             "height": 1926,
             "alt": "Procedural image reconstruction, composition 2",
             "caption": ""
           },
           {
-            "file": "ImpressionReassembled/image03.png",
+            "file": "ImpressionReassembled/image03.webp",
             "width": 4096,
             "height": 2033,
             "alt": "Procedural image reconstruction, composition 3",
             "caption": ""
           },
           {
-            "file": "ImpressionReassembled/image04.png",
+            "file": "ImpressionReassembled/image04.webp",
             "width": 4096,
             "height": 1818,
             "alt": "Procedural image reconstruction, composition 4",
             "caption": ""
           },
           {
-            "file": "ImpressionReassembled/image05.png",
+            "file": "ImpressionReassembled/image05.webp",
             "width": 4096,
             "height": 3969,
             "alt": "Procedural image reconstruction, composition 5",
             "caption": ""
           },
           {
-            "file": "ImpressionReassembled/image06.png",
+            "file": "ImpressionReassembled/image06.webp",
             "width": 4096,
             "height": 2621,
             "alt": "Procedural image reconstruction, composition 6",
             "caption": ""
           },
           {
-            "file": "ImpressionReassembled/image07.png",
+            "file": "ImpressionReassembled/image07.webp",
             "width": 4096,
             "height": 5076,
             "alt": "Procedural image reconstruction, composition 7",
@@ -303,42 +303,42 @@
         "mode": "triple",
         "images": [
           {
-            "file": "ImpressionReassembled/Breakdown/Step00.jpg",
+            "file": "ImpressionReassembled/Breakdown/Step00.webp",
             "width": 3305,
             "height": 4096,
             "alt": "Image to procedural form, breakdown stage 0",
             "caption": ""
           },
           {
-            "file": "ImpressionReassembled/Breakdown/Step01.png",
+            "file": "ImpressionReassembled/Breakdown/Step01.webp",
             "width": 886,
             "height": 1097,
             "alt": "Image to procedural form, breakdown stage 1",
             "caption": ""
           },
           {
-            "file": "ImpressionReassembled/Breakdown/Step02.png",
+            "file": "ImpressionReassembled/Breakdown/Step02.webp",
             "width": 886,
             "height": 1097,
             "alt": "Image to procedural form, breakdown stage 2",
             "caption": ""
           },
           {
-            "file": "ImpressionReassembled/Breakdown/Step03.png",
+            "file": "ImpressionReassembled/Breakdown/Step03.webp",
             "width": 886,
             "height": 1097,
             "alt": "Image to procedural form, breakdown stage 3",
             "caption": ""
           },
           {
-            "file": "ImpressionReassembled/Breakdown/Step04.png",
+            "file": "ImpressionReassembled/Breakdown/Step04.webp",
             "width": 886,
             "height": 1097,
             "alt": "Image to procedural form, breakdown stage 4",
             "caption": ""
           },
           {
-            "file": "ImpressionReassembled/Breakdown/Step05.png",
+            "file": "ImpressionReassembled/Breakdown/Step05.webp",
             "width": 4096,
             "height": 5076,
             "alt": "Image to procedural form, breakdown stage 5",
@@ -375,7 +375,7 @@
       ]
     ],
     "hero": {
-      "file": "withinthelines/header.png",
+      "file": "withinthelines/header.webp",
       "width": 1920,
       "height": 1080,
       "alt": "Cyan procedural form with layered internal curves",
@@ -392,28 +392,28 @@
         "mode": "paired",
         "images": [
           {
-            "file": "withinthelines/01.png",
+            "file": "withinthelines/01.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Yellow star-shaped procedural study",
             "caption": ""
           },
           {
-            "file": "withinthelines/02.png",
+            "file": "withinthelines/02.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Red heart-shaped procedural study",
             "caption": ""
           },
           {
-            "file": "withinthelines/03.png",
+            "file": "withinthelines/03.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Green four-lobed procedural study",
             "caption": ""
           },
           {
-            "file": "withinthelines/04.png",
+            "file": "withinthelines/04.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Cyan angular procedural study",
@@ -430,70 +430,70 @@
         "mode": "triple",
         "images": [
           {
-            "file": "withinthelines/breakdown (1).jpg",
+            "file": "withinthelines/breakdown (1).webp",
             "width": 1024,
             "height": 1024,
             "alt": "Silhouette outline",
             "caption": "Silhouette outline"
           },
           {
-            "file": "withinthelines/breakdown (2).jpg",
+            "file": "withinthelines/breakdown (2).webp",
             "width": 1024,
             "height": 1024,
             "alt": "Point scattering",
             "caption": "Point scattering"
           },
           {
-            "file": "withinthelines/breakdown (3).jpg",
+            "file": "withinthelines/breakdown (3).webp",
             "width": 1024,
             "height": 1024,
             "alt": "Line slice",
             "caption": "Line slice"
           },
           {
-            "file": "withinthelines/breakdown (4).jpg",
+            "file": "withinthelines/breakdown (4).webp",
             "width": 1024,
             "height": 1024,
             "alt": "Contour bands",
             "caption": "Contour bands"
           },
           {
-            "file": "withinthelines/breakdown (5).jpg",
+            "file": "withinthelines/breakdown (5).webp",
             "width": 1024,
             "height": 1024,
             "alt": "Boolean result",
             "caption": "Boolean result"
           },
           {
-            "file": "withinthelines/breakdown (6).jpg",
+            "file": "withinthelines/breakdown (6).webp",
             "width": 1024,
             "height": 1024,
             "alt": "Point scattering inside shape",
             "caption": "Point scattering inside shape"
           },
           {
-            "file": "withinthelines/breakdown (7).jpg",
+            "file": "withinthelines/breakdown (7).webp",
             "width": 1024,
             "height": 1024,
             "alt": "Volume",
             "caption": "Volume"
           },
           {
-            "file": "withinthelines/breakdown (8).jpg",
+            "file": "withinthelines/breakdown (8).webp",
             "width": 1024,
             "height": 1024,
             "alt": "Volume trail based on velocity",
             "caption": "Volume trail based on velocity"
           },
           {
-            "file": "withinthelines/breakdown (9).jpg",
+            "file": "withinthelines/breakdown (9).webp",
             "width": 1024,
             "height": 1024,
             "alt": "Color adjustment",
             "caption": "Color adjustment"
           },
           {
-            "file": "withinthelines/breakdown 9).png",
+            "file": "withinthelines/breakdown 9).webp",
             "width": 1920,
             "height": 1080,
             "alt": "Final render",
@@ -510,7 +510,7 @@
         "mode": "full",
         "images": [
           {
-            "file": "withinthelines/15.png",
+            "file": "withinthelines/15.webp",
             "width": 1069,
             "height": 1076,
             "alt": "Houdini node network for the generative system",
@@ -550,7 +550,7 @@
       ]
     ],
     "hero": {
-      "file": "Cover/Huaguang.png",
+      "file": "Cover/Huaguang.webp",
       "width": 3840,
       "height": 2160,
       "alt": "Discovering the Myths of Fengdu"
@@ -567,63 +567,63 @@
         "mode": "triple",
         "images": [
           {
-            "file": "Huaguang/Narrative1.png",
+            "file": "Huaguang/Narrative1.webp",
             "width": 2293,
             "height": 1290,
             "alt": "Underworld chamber and illuminated stone gateway",
             "caption": ""
           },
           {
-            "file": "Huaguang/Narrative2.jpg",
+            "file": "Huaguang/Narrative2.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Carved circular chamber in the underworld",
             "caption": ""
           },
           {
-            "file": "Huaguang/Narrative3.jpg",
+            "file": "Huaguang/Narrative3.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Torch-lit figure before the monumental gateway",
             "caption": ""
           },
           {
-            "file": "Huaguang/Narrative4.jpg",
+            "file": "Huaguang/Narrative4.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Dark underworld crossing",
             "caption": ""
           },
           {
-            "file": "Huaguang/Narrative5.jpg",
+            "file": "Huaguang/Narrative5.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Flames sweeping through the carved chamber",
             "caption": ""
           },
           {
-            "file": "Huaguang/Narrative6.jpg",
+            "file": "Huaguang/Narrative6.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Huaguang in a supernatural confrontation",
             "caption": ""
           },
           {
-            "file": "Huaguang/Narrative7.png",
+            "file": "Huaguang/Narrative7.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Stone gateway opening onto the mythic realm",
             "caption": ""
           },
           {
-            "file": "Huaguang/Narrative8.jpg",
+            "file": "Huaguang/Narrative8.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Naihe Bridge framed by monumental statues",
             "caption": ""
           },
           {
-            "file": "Huaguang/Narrative9.jpg",
+            "file": "Huaguang/Narrative9.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Narrative sequence, shot 9",
@@ -693,7 +693,7 @@
       ]
     ],
     "hero": {
-      "file": "Cover/Luzuofu.png",
+      "file": "Cover/Luzuofu.webp",
       "width": 1920,
       "height": 803,
       "alt": "Lu Zuofu - Documentary Film"
@@ -710,63 +710,63 @@
         "mode": "triple",
         "images": [
           {
-            "file": "Luzuofu/Frame1.png",
+            "file": "Luzuofu/Frame1.webp",
             "width": 1920,
             "height": 803,
             "alt": "Lu Zuofu title sequence, frame 1",
             "caption": ""
           },
           {
-            "file": "Luzuofu/Frame2.png",
+            "file": "Luzuofu/Frame2.webp",
             "width": 1920,
             "height": 803,
             "alt": "Lu Zuofu title sequence, frame 2",
             "caption": ""
           },
           {
-            "file": "Luzuofu/Frame3.png",
+            "file": "Luzuofu/Frame3.webp",
             "width": 1920,
             "height": 803,
             "alt": "Lu Zuofu title sequence, frame 3",
             "caption": ""
           },
           {
-            "file": "Luzuofu/Frame4.jpg",
+            "file": "Luzuofu/Frame4.webp",
             "width": 3845,
             "height": 1608,
             "alt": "Lu Zuofu title sequence, frame 4",
             "caption": ""
           },
           {
-            "file": "Luzuofu/Frame5.jpg",
+            "file": "Luzuofu/Frame5.webp",
             "width": 3845,
             "height": 1608,
             "alt": "Lu Zuofu title sequence, frame 5",
             "caption": ""
           },
           {
-            "file": "Luzuofu/Frame6.jpg",
+            "file": "Luzuofu/Frame6.webp",
             "width": 3845,
             "height": 1608,
             "alt": "Lu Zuofu title sequence, frame 6",
             "caption": ""
           },
           {
-            "file": "Luzuofu/Frame7.jpg",
+            "file": "Luzuofu/Frame7.webp",
             "width": 3845,
             "height": 1608,
             "alt": "Lu Zuofu title sequence, frame 7",
             "caption": ""
           },
           {
-            "file": "Luzuofu/Frame8.png",
+            "file": "Luzuofu/Frame8.webp",
             "width": 1920,
             "height": 803,
             "alt": "Lu Zuofu title sequence, frame 8",
             "caption": ""
           },
           {
-            "file": "Luzuofu/Frame9.png",
+            "file": "Luzuofu/Frame9.webp",
             "width": 3737,
             "height": 1602,
             "alt": "Lu Zuofu title sequence, frame 9",
@@ -850,7 +850,7 @@
       ]
     ],
     "hero": {
-      "file": "Strong/Header.jpg",
+      "file": "Strong/Header.webp",
       "width": 1440,
       "height": 700,
       "alt": "Entrance to ESL Digital Worlds: Level Up at The Strong National Museum of Play",
@@ -867,7 +867,7 @@
         "mode": "full",
         "images": [
           {
-            "file": "Strong/​Demolition Derby.jpg",
+            "file": "Strong/​Demolition Derby.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Visitors playing Demolition Derby using physical steering wheels",
@@ -885,28 +885,28 @@
         "mode": "paired",
         "images": [
           {
-            "file": "Strong/DD_Look development1.jpg",
+            "file": "Strong/DD_Look development1.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Arena and vehicle look development",
             "caption": ""
           },
           {
-            "file": "Strong/DD_Look development2.png",
+            "file": "Strong/DD_Look development2.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Vehicle lineup in the arena",
             "caption": ""
           },
           {
-            "file": "Strong/DD_Look development3.png",
+            "file": "Strong/DD_Look development3.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Pixel-style vehicle color variations",
             "caption": ""
           },
           {
-            "file": "Strong/DD_Look development4.jpg",
+            "file": "Strong/DD_Look development4.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Vehicle designs and material treatments",
@@ -933,7 +933,7 @@
         "mode": "paired",
         "images": [
           {
-            "file": "Strong/Towerdefense.jpg",
+            "file": "Strong/Towerdefense.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Physical tower controls and the Tower Defense exhibition display",
@@ -954,35 +954,35 @@
         "mode": "collage",
         "images": [
           {
-            "file": "Strong/PDG workflow1.jpg",
+            "file": "Strong/PDG workflow1.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Procedurally generated terrain and enemy route",
             "caption": ""
           },
           {
-            "file": "Strong/PDG workflow2.jpg",
+            "file": "Strong/PDG workflow2.webp",
             "width": 3840,
             "height": 2160,
             "alt": "Tower defense level variation with curved routes",
             "caption": ""
           },
           {
-            "file": "Strong/PDG workflow3.png",
+            "file": "Strong/PDG workflow3.webp",
             "width": 2296,
             "height": 1293,
             "alt": "Terrain and path layout generated by the PDG workflow",
             "caption": ""
           },
           {
-            "file": "Strong/PDG workflow4.png",
+            "file": "Strong/PDG workflow4.webp",
             "width": 943,
             "height": 942,
             "alt": "Texture mask controlling terrain and path regions",
             "caption": ""
           },
           {
-            "file": "Strong/3D pringting.png",
+            "file": "Strong/3D pringting.webp",
             "width": 3002,
             "height": 1280,
             "alt": "Three tower models prepared for physical fabrication",
@@ -1037,7 +1037,7 @@
       ]
     ],
     "hero": {
-      "file": "Cover/ProceduralWorld.jpg",
+      "file": "Cover/ProceduralWorld.webp",
       "width": 2560,
       "height": 1441,
       "alt": "Procedural Worldbuilding"
@@ -1053,7 +1053,7 @@
         "mode": "paired",
         "images": [
           {
-            "file": "ProceduralWorld/HeightField Terrain Generation.png",
+            "file": "ProceduralWorld/HeightField Terrain Generation.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Houdini HeightField terrain generation setup",
@@ -1070,7 +1070,7 @@
         "mode": "paired",
         "images": [
           {
-            "file": "ProceduralWorld/Biome.png",
+            "file": "ProceduralWorld/Biome.webp",
             "width": 1292,
             "height": 974,
             "alt": "Biome distribution chart relating vegetation to temperature and precipitation",
@@ -1087,28 +1087,28 @@
         "mode": "triple",
         "images": [
           {
-            "file": "ProceduralWorld/Mask (1).png",
+            "file": "ProceduralWorld/Mask (1).webp",
             "width": 1133,
             "height": 1055,
             "alt": "Terrain material blending mask 1",
             "caption": ""
           },
           {
-            "file": "ProceduralWorld/Mask (2).png",
+            "file": "ProceduralWorld/Mask (2).webp",
             "width": 1133,
             "height": 1055,
             "alt": "Terrain material blending mask 2",
             "caption": ""
           },
           {
-            "file": "ProceduralWorld/Mask (3).png",
+            "file": "ProceduralWorld/Mask (3).webp",
             "width": 1133,
             "height": 1055,
             "alt": "Terrain material blending mask 3",
             "caption": ""
           },
           {
-            "file": "ProceduralWorld/Mask (4).png",
+            "file": "ProceduralWorld/Mask (4).webp",
             "width": 1133,
             "height": 1055,
             "alt": "Terrain material blending mask 4",
@@ -1123,21 +1123,21 @@
         "mode": "triple",
         "images": [
           {
-            "file": "ProceduralWorld/Harbor city.jpg",
+            "file": "ProceduralWorld/Harbor city.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Final rendered procedural harbor city",
             "caption": ""
           },
           {
-            "file": "ProceduralWorld/Mirrorlake.png",
+            "file": "ProceduralWorld/Mirrorlake.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Vegetation scattered across a mountain lake environment",
             "caption": ""
           },
           {
-            "file": "ProceduralWorld/Snowlake.png",
+            "file": "ProceduralWorld/Snowlake.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Rendered mountain and lake environment generated from terrain fields",
@@ -1154,7 +1154,7 @@
         "mode": "full",
         "images": [
           {
-            "file": "ProceduralWorld/Python HDA.gif",
+            "file": "ProceduralWorld/Python HDA.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Animated demonstration of Python-driven MaterialX network generation",
@@ -1171,84 +1171,84 @@
         "mode": "triple",
         "images": [
           {
-            "file": "ProceduralWorld/Breakdown/AO.jpg",
+            "file": "ProceduralWorld/Breakdown/AO.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, AO",
             "caption": "AO"
           },
           {
-            "file": "ProceduralWorld/Breakdown/cc.jpg",
+            "file": "ProceduralWorld/Breakdown/cc.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, cc",
             "caption": "CC"
           },
           {
-            "file": "ProceduralWorld/Breakdown/cover.jpg",
+            "file": "ProceduralWorld/Breakdown/cover.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, cover",
             "caption": "COVER"
           },
           {
-            "file": "ProceduralWorld/Breakdown/dd.jpg",
+            "file": "ProceduralWorld/Breakdown/dd.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, dd",
             "caption": "DD"
           },
           {
-            "file": "ProceduralWorld/Breakdown/did.jpg",
+            "file": "ProceduralWorld/Breakdown/did.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, did",
             "caption": "DID"
           },
           {
-            "file": "ProceduralWorld/Breakdown/rl.jpg",
+            "file": "ProceduralWorld/Breakdown/rl.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, rl",
             "caption": "RL"
           },
           {
-            "file": "ProceduralWorld/Breakdown/sd.jpg",
+            "file": "ProceduralWorld/Breakdown/sd.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, sd",
             "caption": "SD"
           },
           {
-            "file": "ProceduralWorld/Breakdown/sid.jpg",
+            "file": "ProceduralWorld/Breakdown/sid.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, sid",
             "caption": "SID"
           },
           {
-            "file": "ProceduralWorld/Breakdown/ti.jpg",
+            "file": "ProceduralWorld/Breakdown/ti.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, ti",
             "caption": "TI"
           },
           {
-            "file": "ProceduralWorld/Breakdown/alpha.jpg",
+            "file": "ProceduralWorld/Breakdown/alpha.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, alpha",
             "caption": "ALPHA"
           },
           {
-            "file": "ProceduralWorld/Breakdown/bg.jpg",
+            "file": "ProceduralWorld/Breakdown/bg.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, bg",
             "caption": "BG"
           },
           {
-            "file": "ProceduralWorld/Breakdown/m.jpg",
+            "file": "ProceduralWorld/Breakdown/m.webp",
             "width": 2560,
             "height": 1441,
             "alt": "Harbor city rendering breakdown, m",
@@ -1285,7 +1285,7 @@
       ]
     ],
     "hero": {
-      "file": "Embroidery/cover.jpg",
+      "file": "Embroidery/cover.webp",
       "width": 1920,
       "height": 1080,
       "alt": "Bird reconstructed with directional embroidery-like threads",
@@ -1312,35 +1312,35 @@
         "mode": "full",
         "images": [
           {
-            "file": "Embroidery/Shape Segmentation.png",
+            "file": "Embroidery/Shape Segmentation.webp",
             "width": 1024,
             "height": 1024,
             "alt": "Shape Segmentation",
             "caption": "Shape Segmentation"
           },
           {
-            "file": "Embroidery/Directional Guide Design.png",
+            "file": "Embroidery/Directional Guide Design.webp",
             "width": 1024,
             "height": 1024,
             "alt": "Directional Guide Design",
             "caption": "Directional Guide Design"
           },
           {
-            "file": "Embroidery/Procedural Thread Generation.png",
+            "file": "Embroidery/Procedural Thread Generation.webp",
             "width": 1024,
             "height": 1024,
             "alt": "Procedural Thread Generation",
             "caption": "Procedural Thread Generation"
           },
           {
-            "file": "Embroidery/Surface Reconstruction.png",
+            "file": "Embroidery/Surface Reconstruction.webp",
             "width": 1024,
             "height": 1024,
             "alt": "Surface reconstruction from accumulated directional threads",
             "caption": "Surface Reconstruction"
           },
           {
-            "file": "Embroidery/Final.png",
+            "file": "Embroidery/Final.webp",
             "width": 1103,
             "height": 1103,
             "alt": "Final surface reconstruction using directional threads",
@@ -1367,7 +1367,7 @@
     ],
     "metadata": [],
     "hero": {
-      "file": "Mosaic/Header.jpg",
+      "file": "Mosaic/Header.webp",
       "width": 1920,
       "height": 720,
       "alt": "Dynamic Mosaic Surface"
@@ -1383,7 +1383,7 @@
         "mode": "split",
         "images": [
           {
-            "file": "Mosaic/mosaic.png",
+            "file": "Mosaic/mosaic.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Dynamic Mosaic Surface ? Final Render",
@@ -1415,28 +1415,28 @@
         "mode": "triple",
         "images": [
           {
-            "file": "Mosaic/Breakdown/1.jpg",
+            "file": "Mosaic/Breakdown/1.webp",
             "width": 1024,
             "height": 1024,
             "alt": "Original Surface",
             "caption": "Original Surface"
           },
           {
-            "file": "Mosaic/Breakdown/2.jpg",
+            "file": "Mosaic/Breakdown/2.webp",
             "width": 1024,
             "height": 1024,
             "alt": "Fragmented Structure",
             "caption": "Fragmented Structure"
           },
           {
-            "file": "Mosaic/Breakdown/3.jpg",
+            "file": "Mosaic/Breakdown/3.webp",
             "width": 1024,
             "height": 1024,
             "alt": "Point Distribution",
             "caption": "Point Distribution"
           },
           {
-            "file": "Mosaic/Breakdown/4.jpg",
+            "file": "Mosaic/Breakdown/4.webp",
             "width": 1024,
             "height": 1024,
             "alt": "Mosaic Reconstruction",
@@ -1479,9 +1479,9 @@
       ]
     ],
     "hero": {
-      "file": "CAM/Temple Reconstruction2.png",
-      "width": 2613,
-      "height": 1470,
+      "file": "CAM/Temple Reconstruction2.webp",
+      "width": 1600,
+      "height": 900,
       "alt": "Reconstructed temple exterior within the surrounding landscape",
       "caption": ""
     },
@@ -1496,21 +1496,21 @@
         "mode": "triple",
         "images": [
           {
-            "file": "CAM/ViewingExperience1.jpeg",
+            "file": "CAM/ViewingExperience1.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Wide terrain view around the reconstructed site",
             "caption": "Wide — site context"
           },
           {
-            "file": "CAM/ViewingExperience2.png",
-            "width": 2465,
-            "height": 1286,
+            "file": "CAM/ViewingExperience2.webp",
+            "width": 1600,
+            "height": 835,
             "alt": "Temple entrance with reconstructed columns and carved pediment",
             "caption": "Mid — temple entrance"
           },
           {
-            "file": "CAM/ViewingExperience3.jpg",
+            "file": "CAM/ViewingExperience3.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Close view of the eagle and serpent sculpture in the reconstructed exhibition",
@@ -1530,7 +1530,7 @@
         "mode": "full",
         "images": [
           {
-            "file": "CAM/Craft Highlights.jpeg",
+            "file": "CAM/Craft Highlights.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Collection of reconstructed architectural fragments and sculptures",
@@ -1547,30 +1547,30 @@
         "mode": "paired",
         "images": [
           {
-            "file": "CAM/Temple Reconstruction1.png",
-            "width": 2713,
-            "height": 1526,
+            "file": "CAM/Temple Reconstruction1.webp",
+            "width": 1600,
+            "height": 900,
             "alt": "Reconstructed temple facade",
             "caption": ""
           },
           {
-            "file": "CAM/Temple Reconstruction2.png",
-            "width": 2613,
-            "height": 1470,
+            "file": "CAM/Temple Reconstruction2.webp",
+            "width": 1600,
+            "height": 900,
             "alt": "Reconstructed temple exterior and terrain",
             "caption": ""
           },
           {
-            "file": "CAM/Temple Reconstruction3.png",
-            "width": 2465,
-            "height": 1286,
+            "file": "CAM/Temple Reconstruction3.webp",
+            "width": 1600,
+            "height": 835,
             "alt": "Reconstructed columns and entrance relief",
             "caption": ""
           },
           {
-            "file": "CAM/Temple Reconstruction4.png",
-            "width": 2039,
-            "height": 1147,
+            "file": "CAM/Temple Reconstruction4.webp",
+            "width": 1600,
+            "height": 900,
             "alt": "Reconstructed temple interior",
             "caption": ""
           }
@@ -1585,77 +1585,77 @@
         "mode": "collage",
         "images": [
           {
-            "file": "CAM/site photo (1).png",
+            "file": "CAM/site photo (1).webp",
             "width": 671,
             "height": 1009,
             "alt": "Stone remains at the archaeological site",
             "caption": ""
           },
           {
-            "file": "CAM/site photo (2).png",
+            "file": "CAM/site photo (2).webp",
             "width": 696,
             "height": 748,
             "alt": "Archival photograph of fallen architectural fragments",
             "caption": ""
           },
           {
-            "file": "CAM/site photo (3).png",
+            "file": "CAM/site photo (3).webp",
             "width": 731,
             "height": 767,
             "alt": "Archival photograph of an architectural doorway",
             "caption": ""
           },
           {
-            "file": "CAM/site photo (4).png",
+            "file": "CAM/site photo (4).webp",
             "width": 732,
             "height": 844,
             "alt": "Photographed carved face fragment",
             "caption": ""
           },
           {
-            "file": "CAM/site photo (5).png",
+            "file": "CAM/site photo (5).webp",
             "width": 531,
             "height": 741,
             "alt": "Photographed carved architectural relief",
             "caption": ""
           },
           {
-            "file": "CAM/site photo (6).png",
+            "file": "CAM/site photo (6).webp",
             "width": 797,
             "height": 534,
             "alt": "Museum-held carved pediment relief",
             "caption": ""
           },
           {
-            "file": "CAM/site_design (1).jpg",
+            "file": "CAM/site_design (1).jpg.webp",
             "width": 1918,
             "height": 2216,
             "alt": "Architectural plan reference",
             "caption": ""
           },
           {
-            "file": "CAM/site_design (1).png",
+            "file": "CAM/site_design (1).png.webp",
             "width": 767,
             "height": 767,
             "alt": "Architectural elevation reference",
             "caption": ""
           },
           {
-            "file": "CAM/site_design (2).png",
+            "file": "CAM/site_design (2).webp",
             "width": 780,
             "height": 989,
             "alt": "Doorway and carving reference drawings",
             "caption": ""
           },
           {
-            "file": "CAM/SiteLandscape1.png",
+            "file": "CAM/SiteLandscape1.webp",
             "width": 726,
             "height": 745,
             "alt": "Monochrome site terrain study",
             "caption": ""
           },
           {
-            "file": "CAM/SiteLandscape2.jpeg",
+            "file": "CAM/SiteLandscape2.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Rendered site terrain and surrounding landscape",
@@ -1671,16 +1671,16 @@
         "diagram": "",
         "images": [
           {
-            "file": "CAM/Original Video.gif",
-            "width": 520,
-            "height": 550,
+            "file": "CAM/Original Video.mp4",
+            "width": 227,
+            "height": 240,
             "alt": "Original rotation video of the sculpture used for comparison with the 3D scan",
             "caption": "Original Rotation Footage"
           },
           {
-            "file": "CAM/3DModel.gif",
-            "width": 540,
-            "height": 720,
+            "file": "CAM/3DModel.mp4",
+            "width": 150,
+            "height": 200,
             "alt": "Rotating view of the sculpture model produced by 3D scanning",
             "caption": "3D Scanned Model"
           }
@@ -1746,7 +1746,7 @@
       ]
     ],
     "hero": {
-      "file": "Cover/NASM.png",
+      "file": "Cover/NASM.webp",
       "width": 1732,
       "height": 959,
       "alt": "Nation of Speed"
@@ -1763,63 +1763,63 @@
         "mode": "collage",
         "images": [
           {
-            "file": "NASM/3Drender/blackbird.png",
+            "file": "NASM/3Drender/blackbird.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Blackbird",
             "caption": "Blackbird"
           },
           {
-            "file": "NASM/3Drender/Cale28.png",
+            "file": "NASM/3Drender/Cale28.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Cale No. 28",
             "caption": "Cale No. 28"
           },
           {
-            "file": "NASM/3Drender/Greyhound.png",
+            "file": "NASM/3Drender/Greyhound.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Greyhound",
             "caption": "Greyhound"
           },
           {
-            "file": "NASM/3Drender/Hawk.png",
+            "file": "NASM/3Drender/Hawk.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Hawk",
             "caption": "Hawk"
           },
           {
-            "file": "NASM/3Drender/jumpsuit.png",
+            "file": "NASM/3Drender/jumpsuit.webp",
             "width": 700,
             "height": 1080,
             "alt": "Jumpsuit",
             "caption": "Jumpsuit"
           },
           {
-            "file": "NASM/3Drender/Marcoux.png",
+            "file": "NASM/3Drender/Marcoux.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Marcoux",
             "caption": "Marcoux"
           },
           {
-            "file": "NASM/3Drender/Pontiac.png",
+            "file": "NASM/3Drender/Pontiac.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Pontiac",
             "caption": "Pontiac"
           },
           {
-            "file": "NASM/3Drender/RT14.png",
+            "file": "NASM/3Drender/RT14.webp",
             "width": 1920,
             "height": 1080,
             "alt": "RT14",
             "caption": "RT14"
           },
           {
-            "file": "NASM/3Drender/Titan.png",
+            "file": "NASM/3Drender/Titan.webp",
             "width": 500,
             "height": 1080,
             "alt": "Titan",
@@ -1836,70 +1836,70 @@
         "mode": "collage",
         "images": [
           {
-            "file": "NASM/reference/reference (1).jpg",
+            "file": "NASM/reference/reference (1).jpg.webp",
             "width": 455,
             "height": 525,
             "alt": "Jumpsuit Reference",
             "caption": "Jumpsuit Reference"
           },
           {
-            "file": "NASM/reference/reference (1).png",
+            "file": "NASM/reference/reference (1).png.webp",
             "width": 736,
             "height": 483,
             "alt": "Stock Car References",
             "caption": "Stock Car References"
           },
           {
-            "file": "NASM/reference/reference (2).jpg",
+            "file": "NASM/reference/reference (2).jpg.webp",
             "width": 1225,
             "height": 1500,
             "alt": "Rocket Reference",
             "caption": "Rocket Reference"
           },
           {
-            "file": "NASM/reference/reference (3).jpg",
+            "file": "NASM/reference/reference (3).webp",
             "width": 2000,
             "height": 1500,
             "alt": "Aircraft Reference",
             "caption": "Aircraft Reference"
           },
           {
-            "file": "NASM/reference/reference (4).jpg",
+            "file": "NASM/reference/reference (4).jpg.webp",
             "width": 600,
             "height": 450,
             "alt": "Cale No. 28 Reference",
             "caption": "Cale No. 28 Reference"
           },
           {
-            "file": "NASM/reference/reference (4).png",
+            "file": "NASM/reference/reference (4).png.webp",
             "width": 1729,
             "height": 966,
             "alt": "Pontiac Reference",
             "caption": "Pontiac Reference"
           },
           {
-            "file": "NASM/reference/reference (5).jpg",
+            "file": "NASM/reference/reference (5).jpg.webp",
             "width": 500,
             "height": 328,
             "alt": "Greyhound Reference",
             "caption": "Greyhound Reference"
           },
           {
-            "file": "NASM/reference/reference (5).png",
+            "file": "NASM/reference/reference (5).png.webp",
             "width": 1715,
             "height": 955,
             "alt": "Hawk Reference",
             "caption": "Hawk Reference"
           },
           {
-            "file": "NASM/reference/reference (6).png",
+            "file": "NASM/reference/reference (6).webp",
             "width": 1520,
             "height": 924,
             "alt": "Aircraft Exhibit",
             "caption": "Aircraft Exhibit"
           },
           {
-            "file": "NASM/reference/reference (7).png",
+            "file": "NASM/reference/reference (7).webp",
             "width": 1642,
             "height": 967,
             "alt": "Engine Reference",
@@ -1925,14 +1925,14 @@
         "mode": "paired",
         "images": [
           {
-            "file": "NASM/reference/reference (2).png",
+            "file": "NASM/reference/reference (2).png.webp",
             "width": 2200,
             "height": 1178,
             "alt": "Gallery Entrance",
             "caption": "Gallery Entrance"
           },
           {
-            "file": "NASM/Exhibition Context.png",
+            "file": "NASM/Exhibition Context.webp",
             "width": 1732,
             "height": 959,
             "alt": "Exhibition Context",
@@ -1975,7 +1975,7 @@
       ]
     ],
     "hero": {
-      "file": "Cover/FAM.png",
+      "file": "Cover/FAM.webp",
       "width": 1920,
       "height": 1200,
       "alt": "Chunkey: Interactive Game"
@@ -1991,35 +1991,35 @@
         "mode": "collage",
         "images": [
           {
-            "file": "FAM/Refernence/Refernence (1).jpg",
+            "file": "FAM/Refernence/Refernence (1).jpg.webp",
             "width": 1799,
             "height": 1916,
             "alt": "Chunkey Stone Reference",
             "caption": "Chunkey Stone Reference"
           },
           {
-            "file": "FAM/Refernence/Refernence (1).png",
+            "file": "FAM/Refernence/Refernence (1).png.webp",
             "width": 602,
             "height": 200,
             "alt": "Cahokia Landscape",
             "caption": "Cahokia Landscape"
           },
           {
-            "file": "FAM/Refernence/Refernence (2).jpg",
+            "file": "FAM/Refernence/Refernence (2).webp",
             "width": 800,
             "height": 600,
             "alt": "Chunkey in Play",
             "caption": "Chunkey in Play"
           },
           {
-            "file": "FAM/Refernence/Refernence (3).jpg",
+            "file": "FAM/Refernence/Refernence (3).webp",
             "width": 345,
             "height": 165,
             "alt": "Historical Gameplay Illustration",
             "caption": "Historical Gameplay Illustration"
           },
           {
-            "file": "FAM/Refernence/Refernence (4).jpg",
+            "file": "FAM/Refernence/Refernence (4).webp",
             "width": 1600,
             "height": 604,
             "alt": "Cahokia Reconstruction",
@@ -2037,70 +2037,70 @@
         "mode": "triple",
         "images": [
           {
-            "file": "FAM/Visual/visual (1).png",
-            "width": 3827,
-            "height": 1930,
+            "file": "FAM/Visual/visual (1).webp",
+            "width": 1920,
+            "height": 968,
             "alt": "Environment Study 01",
             "caption": "Environment Study 01"
           },
           {
-            "file": "FAM/Visual/visual (3).png",
+            "file": "FAM/Visual/visual (3).webp",
             "width": 1920,
             "height": 1200,
             "alt": "Environment Study 03",
             "caption": "Environment Study 03"
           },
           {
-            "file": "FAM/Visual/visual (4).png",
-            "width": 3824,
-            "height": 1926,
+            "file": "FAM/Visual/visual (4).webp",
+            "width": 1920,
+            "height": 967,
             "alt": "Environment Study 04",
             "caption": "Environment Study 04"
           },
           {
-            "file": "FAM/Visual/visual (5).png",
-            "width": 3824,
-            "height": 1926,
+            "file": "FAM/Visual/visual (5).webp",
+            "width": 1920,
+            "height": 967,
             "alt": "Environment Study 05",
             "caption": "Environment Study 05"
           },
           {
-            "file": "FAM/Visual/visual (6).png",
-            "width": 3824,
-            "height": 1926,
+            "file": "FAM/Visual/visual (6).webp",
+            "width": 1920,
+            "height": 967,
             "alt": "Environment Study 06",
             "caption": "Environment Study 06"
           },
           {
-            "file": "FAM/Visual/visual (7).png",
-            "width": 3824,
-            "height": 1926,
+            "file": "FAM/Visual/visual (7).webp",
+            "width": 1920,
+            "height": 967,
             "alt": "Environment Study 07",
             "caption": "Environment Study 07"
           },
           {
-            "file": "FAM/Visual/visual (8).png",
-            "width": 3827,
-            "height": 1930,
+            "file": "FAM/Visual/visual (8).webp",
+            "width": 1920,
+            "height": 968,
             "alt": "Environment Study 08",
             "caption": "Environment Study 08"
           },
           {
-            "file": "FAM/Visual/tron (1).png",
-            "width": 3829,
-            "height": 1931,
+            "file": "FAM/Visual/tron (1).webp",
+            "width": 1920,
+            "height": 968,
             "alt": "Wireframe Look Development 01",
             "caption": "Wireframe Look Development 01"
           },
           {
-            "file": "FAM/Visual/tron (2).png",
+            "file": "FAM/Visual/tron (2).webp",
             "width": 1920,
             "height": 899,
             "alt": "Wireframe Look Development 02",
             "caption": "Wireframe Look Development 02"
           },
           {
-            "file": "FAM/Visual/tron (3).png",
+            "file": "FAM/Visual/tron (3).webp",
             "width": 1920,
             "height": 899,
             "alt": "Wireframe Look Development 03",
@@ -2121,30 +2121,30 @@
         "mode": "collage",
         "images": [
           {
-            "file": "FAM/Character1.jpg",
+            "file": "FAM/Character1.webp",
             "width": 4769,
             "height": 2040,
             "alt": "Character Study 01",
             "caption": "Character Study 01"
           },
           {
-            "file": "FAM/Character2.jpg",
+            "file": "FAM/Character2.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Character Study 02",
             "caption": "Character Study 02"
           },
           {
-            "file": "FAM/Asset1.png",
-            "width": 2611,
-            "height": 1705,
+            "file": "FAM/Asset1.webp",
+            "width": 1920,
+            "height": 1254,
             "alt": "Chunkey Stone",
             "caption": "Chunkey Stone"
           },
           {
-            "file": "FAM/Asset2.png",
-            "width": 1000,
-            "height": 4000,
+            "file": "FAM/Asset2.webp",
+            "width": 480,
+            "height": 1920,
             "alt": "Throwing Spear",
             "caption": "Throwing Spear"
           }
@@ -2178,7 +2178,7 @@
     ],
     "metadata": [],
     "hero": {
-      "file": "purlieu/Final Render1.jpg",
+      "file": "purlieu/Final Render1.webp",
       "width": 1920,
       "height": 1080,
       "alt": "Purlieu ? Forest and Guardian"
@@ -2194,28 +2194,28 @@
         "mode": "paired",
         "images": [
           {
-            "file": "purlieu/Final Render1.jpg",
+            "file": "purlieu/Final Render1.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Purlieu ? Final Render1",
             "caption": ""
           },
           {
-            "file": "purlieu/Final Render2.jpg",
+            "file": "purlieu/Final Render2.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Purlieu ? Final Render2",
             "caption": ""
           },
           {
-            "file": "purlieu/Final Render3.jpeg",
+            "file": "purlieu/Final Render3.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Purlieu ? Final Render3",
             "caption": ""
           },
           {
-            "file": "purlieu/Final Render4.jpeg",
+            "file": "purlieu/Final Render4.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Purlieu ? Final Render4",
@@ -2264,7 +2264,7 @@
       ]
     ],
     "hero": {
-      "file": "secret/Final Render.jpg",
+      "file": "secret/Final Render.webp",
       "width": 5331,
       "height": 3000,
       "alt": "Secret of Witch ? Final Render"
@@ -2282,56 +2282,56 @@
         "mode": "triple",
         "images": [
           {
-            "file": "secret/Ambient Occlusion.jpg",
+            "file": "secret/Ambient Occlusion.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Ambient Occlusion",
             "caption": "Ambient Occlusion"
           },
           {
-            "file": "secret/Base Light.jpg",
+            "file": "secret/Base Light.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Base Light",
             "caption": "Base Light"
           },
           {
-            "file": "secret/Diffuse Color.jpg",
+            "file": "secret/Diffuse Color.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Diffuse Color",
             "caption": "Diffuse Color"
           },
           {
-            "file": "secret/Subsurface Scattering.jpg",
+            "file": "secret/Subsurface Scattering.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Subsurface Scattering",
             "caption": "Subsurface Scattering"
           },
           {
-            "file": "secret/Specular.jpg",
+            "file": "secret/Specular.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Specular",
             "caption": "Specular"
           },
           {
-            "file": "secret/Reflection.jpg",
+            "file": "secret/Reflection.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Reflection",
             "caption": "Reflection"
           },
           {
-            "file": "secret/Global Illumination.jpg",
+            "file": "secret/Global Illumination.webp",
             "width": 1920,
             "height": 1080,
             "alt": "Global Illumination",
             "caption": "Global Illumination"
           },
           {
-            "file": "secret/Final Render.jpg",
+            "file": "secret/Final Render.webp",
             "width": 5331,
             "height": 3000,
             "alt": "Secret of Witch ? Final Render",
@@ -2409,7 +2409,7 @@
       ]
     ],
     "hero": {
-      "file": "Fairy island/Final (1).jpeg",
+      "file": "Fairy island/Final (1).webp",
       "width": 1920,
       "height": 1417,
       "alt": "Fairy Island Pop-up Exhibition"
@@ -2426,56 +2426,56 @@
         "mode": "paired",
         "images": [
           {
-            "file": "Fairy island/Final (1).jpeg",
+            "file": "Fairy island/Final (1).webp",
             "width": 1920,
             "height": 1417,
             "alt": "Fairy Island ? Final (1)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Final (2).jpg",
+            "file": "Fairy island/Final (2).webp",
             "width": 1464,
             "height": 1080,
             "alt": "Fairy Island ? Final (2)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Final (3).jpg",
+            "file": "Fairy island/Final (3).webp",
             "width": 1920,
             "height": 1418,
             "alt": "Fairy Island ? Final (3)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Final (4).jpg",
+            "file": "Fairy island/Final (4).webp",
             "width": 1920,
             "height": 1418,
             "alt": "Fairy Island ? Final (4)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Final (5).jpg",
+            "file": "Fairy island/Final (5).webp",
             "width": 1080,
             "height": 1527,
             "alt": "Fairy Island ? Final (5)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Final (6).jpg",
+            "file": "Fairy island/Final (6).webp",
             "width": 1464,
             "height": 1080,
             "alt": "Fairy Island ? Final (6)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Final (7).jpg",
+            "file": "Fairy island/Final (7).webp",
             "width": 1464,
             "height": 1080,
             "alt": "Fairy Island ? Final (7)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Final (8).jpg",
+            "file": "Fairy island/Final (8).webp",
             "width": 4065,
             "height": 3000,
             "alt": "Fairy Island ? Final (8)",
@@ -2490,49 +2490,49 @@
         "mode": "collage",
         "images": [
           {
-            "file": "Fairy island/Exhibition View (1).jpg",
+            "file": "Fairy island/Exhibition View (1).webp",
             "width": 1080,
             "height": 1080,
             "alt": "Fairy Island ? Exhibition View (1)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Exhibition View (2).jpg",
+            "file": "Fairy island/Exhibition View (2).webp",
             "width": 1080,
             "height": 1080,
             "alt": "Fairy Island ? Exhibition View (2)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Exhibition View (3).jpg",
+            "file": "Fairy island/Exhibition View (3).webp",
             "width": 1080,
             "height": 1349,
             "alt": "Fairy Island ? Exhibition View (3)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Exhibition View (4).jpg",
+            "file": "Fairy island/Exhibition View (4).webp",
             "width": 1080,
             "height": 1309,
             "alt": "Fairy Island ? Exhibition View (4)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Exhibition View (5).jpg",
+            "file": "Fairy island/Exhibition View (5).webp",
             "width": 1080,
             "height": 1080,
             "alt": "Fairy Island ? Exhibition View (5)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Exhibition View (6).jpg",
+            "file": "Fairy island/Exhibition View (6).webp",
             "width": 1060,
             "height": 1060,
             "alt": "Fairy Island ? Exhibition View (6)",
             "caption": ""
           },
           {
-            "file": "Fairy island/Exhibition View (7).jpg",
+            "file": "Fairy island/Exhibition View (7).webp",
             "width": 1080,
             "height": 1080,
             "alt": "Fairy Island ? Exhibition View (7)",
@@ -2570,7 +2570,7 @@
       ]
     ],
     "hero": {
-      "file": "Transformer/head.png",
+      "file": "Transformer/head.webp",
       "width": 1920,
       "height": 1080,
       "alt": "Transformers Online"
@@ -2596,7 +2596,7 @@
         "mode": "full",
         "images": [
           {
-            "file": "Transformer/UV Layout.png",
+            "file": "Transformer/UV Layout.webp",
             "width": 788,
             "height": 788,
             "alt": "UV Layout",
@@ -2613,7 +2613,7 @@
         "mode": "full",
         "images": [
           {
-            "file": "Transformer/Texel Density.png",
+            "file": "Transformer/Texel Density.webp",
             "width": 1586,
             "height": 1029,
             "alt": "Texel Density",
@@ -2631,7 +2631,7 @@
         "mode": "full",
         "images": [
           {
-            "file": "Transformer/Channel Packing.jpg",
+            "file": "Transformer/Channel Packing.webp",
             "width": 1024,
             "height": 1024,
             "alt": "Channel Packing",
@@ -2646,56 +2646,56 @@
         "mode": "triple",
         "images": [
           {
-            "file": "Transformer/ingameplay  (1).jpg",
+            "file": "Transformer/ingameplay  (1).jpg.webp",
             "width": 700,
             "height": 437,
             "alt": "Game View 01",
             "caption": "Game View 01"
           },
           {
-            "file": "Transformer/ingameplay  (1).png",
+            "file": "Transformer/ingameplay  (1).png.webp",
             "width": 1883,
             "height": 893,
             "alt": "Game View 02",
             "caption": "Game View 02"
           },
           {
-            "file": "Transformer/ingameplay  (2).jpg",
+            "file": "Transformer/ingameplay  (2).jpg.webp",
             "width": 1000,
             "height": 623,
             "alt": "Game View 03",
             "caption": "Game View 03"
           },
           {
-            "file": "Transformer/ingameplay  (2).png",
+            "file": "Transformer/ingameplay  (2).png.webp",
             "width": 1896,
             "height": 911,
             "alt": "Game View 04",
             "caption": "Game View 04"
           },
           {
-            "file": "Transformer/ingameplay  (3).jpg",
+            "file": "Transformer/ingameplay  (3).jpg.webp",
             "width": 1000,
             "height": 626,
             "alt": "Game View 05",
             "caption": "Game View 05"
           },
           {
-            "file": "Transformer/ingameplay  (3).png",
+            "file": "Transformer/ingameplay  (3).png.webp",
             "width": 1892,
             "height": 910,
             "alt": "Game View 06",
             "caption": "Game View 06"
           },
           {
-            "file": "Transformer/ingameplay  (4).jpg",
+            "file": "Transformer/ingameplay  (4).jpg.webp",
             "width": 1000,
             "height": 626,
             "alt": "Game View 07",
             "caption": "Game View 07"
           },
           {
-            "file": "Transformer/ingameplay  (4).png",
+            "file": "Transformer/ingameplay  (4).png.webp",
             "width": 1877,
             "height": 906,
             "alt": "Game View 08",
@@ -2736,7 +2736,7 @@
       ]
     ],
     "hero": {
-      "file": "Nuo/Nuo.png",
+      "file": "Nuo/Nuo.webp",
       "width": 1736,
       "height": 900,
       "alt": "Nuo digital sculpture"
@@ -2752,49 +2752,49 @@
         "mode": "collage",
         "images": [
           {
-            "file": "Nuo/Visual_ref1.jpeg",
+            "file": "Nuo/Visual_ref1.webp",
             "width": 960,
             "height": 1280,
             "alt": "Nuo Cultural Reference 01",
             "caption": "Nuo Cultural Reference 01"
           },
           {
-            "file": "Nuo/Visual_ref2.jpg",
+            "file": "Nuo/Visual_ref2.webp",
             "width": 2048,
             "height": 2730,
             "alt": "Nuo Cultural Reference 02",
             "caption": "Nuo Cultural Reference 02"
           },
           {
-            "file": "Nuo/Visual_ref3.jpeg",
+            "file": "Nuo/Visual_ref3.webp",
             "width": 1795,
             "height": 1205,
             "alt": "Nuo Cultural Reference 03",
             "caption": "Nuo Cultural Reference 03"
           },
           {
-            "file": "Nuo/Visual_ref尖角将军.jpg",
+            "file": "Nuo/Visual_ref尖角将军.webp",
             "width": 900,
             "height": 1355,
             "alt": "Nuo Cultural Reference 04",
             "caption": "Nuo Cultural Reference 04"
           },
           {
-            "file": "Nuo/Visual_ref傩面具.jpg",
+            "file": "Nuo/Visual_ref傩面具.webp",
             "width": 1280,
             "height": 1927,
             "alt": "Nuo Cultural Reference 05",
             "caption": "Nuo Cultural Reference 05"
           },
           {
-            "file": "Nuo/Visual_ref傩婆.JPG",
+            "file": "Nuo/Visual_ref傩婆.webp",
             "width": 900,
             "height": 1355,
             "alt": "Nuo Cultural Reference 06",
             "caption": "Nuo Cultural Reference 06"
           },
           {
-            "file": "Nuo/Visual_ref杨泗.jpg",
+            "file": "Nuo/Visual_ref杨泗.webp",
             "width": 900,
             "height": 1355,
             "alt": "Nuo Cultural Reference 07",
@@ -2820,14 +2820,14 @@
         "mode": "paired",
         "images": [
           {
-            "file": "Nuo/Nuo.png",
+            "file": "Nuo/Nuo.webp",
             "width": 1736,
             "height": 900,
             "alt": "Digital Sculpture",
             "caption": "Digital Sculpture"
           },
           {
-            "file": "Nuo/Installation (1).jpeg",
+            "file": "Nuo/Installation (1).webp",
             "width": 1280,
             "height": 670,
             "alt": "Installed Sculpture",
@@ -2844,28 +2844,28 @@
         "mode": "paired",
         "images": [
           {
-            "file": "Nuo/Installation (1).jpeg",
+            "file": "Nuo/Installation (1).webp",
             "width": 1280,
             "height": 670,
             "alt": "Installation View 01",
             "caption": ""
           },
           {
-            "file": "Nuo/Installation (2).png",
+            "file": "Nuo/Installation (2).webp",
             "width": 1267,
             "height": 721,
             "alt": "Installation View 02",
             "caption": ""
           },
           {
-            "file": "Nuo/Installation (3).jpg",
+            "file": "Nuo/Installation (3).webp",
             "width": 1600,
             "height": 780,
             "alt": "Installation View 03",
             "caption": ""
           },
           {
-            "file": "Nuo/Installation (4).jpg",
+            "file": "Nuo/Installation (4).webp",
             "width": 1600,
             "height": 900,
             "alt": "Installation View 04",

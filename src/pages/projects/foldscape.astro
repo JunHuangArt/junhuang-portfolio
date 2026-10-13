@@ -3,12 +3,12 @@ import ProjectGallery from '../../layouts/ProjectGallery.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const image = (file: string) => `${base}/images/webp/Foldscape/${encodeURIComponent(file.replace(/\.[^.]+$/, '.webp'))}`;
 const systemStages = [
-          { file: 'system (1).png', width: 1674, height: 1022, caption: 'OSM building extraction', alt: 'Building data extracted from OpenStreetMap' },
-          { file: 'system (2).png', width: 1716, height: 1033, caption: 'street network extraction', alt: 'Extracted street network defining the urban field' },
-          { file: 'system (3).png', width: 1714, height: 985, caption: 'height-based analysis', alt: 'Color-coded building footprints in the procedural system' },
-          { file: 'system (4).png', width: 1598, height: 1062, caption: 'spatial scattering', alt: 'Scattered elements distributed across the building footprints' },
-          { file: 'system (5).png', width: 1695, height: 1016, caption: 'volumetric trail generation', alt: 'Vertical trails generating folded architectural volumes' },
-          { file: 'system (6).png', width: 1920, height: 1080, caption: 'procedural folding and vertical stretching', alt: 'Final rendered procedural landscape of Chongqing' },
+          { file: 'system (1).webp', width: 1674, height: 1022, caption: 'OSM building extraction', alt: 'Building data extracted from OpenStreetMap' },
+          { file: 'system (2).webp', width: 1716, height: 1033, caption: 'street network extraction', alt: 'Extracted street network defining the urban field' },
+          { file: 'system (3).webp', width: 1714, height: 985, caption: 'height-based analysis', alt: 'Color-coded building footprints in the procedural system' },
+          { file: 'system (4).webp', width: 1598, height: 1062, caption: 'spatial scattering', alt: 'Scattered elements distributed across the building footprints' },
+          { file: 'system (5).webp', width: 1695, height: 1016, caption: 'volumetric trail generation', alt: 'Vertical trails generating folded architectural volumes' },
+          { file: 'system (6).webp', width: 1920, height: 1080, caption: 'procedural folding and vertical stretching', alt: 'Final rendered procedural landscape of Chongqing' },
         ];
 ---
 
@@ -16,7 +16,7 @@ const systemStages = [
   <main id="project">
     <figure class="hero" aria-label="Foldscape procedural city panorama">
       <div class="image-frame hero-frame">
-        <img src={image('header.png')} alt="Panoramic profile of the folded procedural city landscape" width="2090" height="385" fetchpriority="high" />
+        <img src={image('header.webp')} alt="Panoramic profile of the folded procedural city landscape" width="2090" height="385" fetchpriority="high" />
       </div>
       <figcaption class="image-label"><span>FROM DATA TO TERRAIN</span><span>DENSITYGENERATION</span></figcaption>
     </figure>
@@ -38,8 +38,8 @@ const systemStages = [
     </section>
 
     {[
-      { id: 'chongqing', number: '01', name: 'Chongqing', country: 'CHINA', coordinates: '29.56&#176; N, 106.55&#176; E', visual: 'Chongqing.png', map: 'Open Street Map_CH.png', mapWidth: 1716, mapHeight: 1033, heading: 'Layered | Mountainous Fabric', description: 'Irregular urban density shaped by steep terrain, layered roads, and hillside development.' },
-      { id: 'new-york', number: '02', name: 'New York', country: 'USA', coordinates: '40.71&#176; N, 74.01&#176; W', visual: 'NewYork.png', map: 'Open Street Map_NY.png', mapWidth: 1853, mapHeight: 1060, heading: 'Gridded | Vertical Fabric', description: 'Orthogonal blocks and concentrated vertical growth shaped by a rigid street grid and regular parcels.' },
+      { id: 'chongqing', number: '01', name: 'Chongqing', country: 'CHINA', coordinates: '29.56&#176; N, 106.55&#176; E', visual: 'Chongqing.webp', map: 'Open Street Map_CH.webp', mapWidth: 1716, mapHeight: 1033, heading: 'Layered | Mountainous Fabric', description: 'Irregular urban density shaped by steep terrain, layered roads, and hillside development.' },
+      { id: 'new-york', number: '02', name: 'New York', country: 'USA', coordinates: '40.71&#176; N, 74.01&#176; W', visual: 'NewYork.webp', map: 'Open Street Map_NY.webp', mapWidth: 1853, mapHeight: 1060, heading: 'Gridded | Vertical Fabric', description: 'Orthogonal blocks and concentrated vertical growth shaped by a rigid street grid and regular parcels.' },
     ].map(city => <section class="city-section inset" aria-labelledby={city.id + '-title'}>
       <header class="city-heading" data-reveal>
         <span class="micro city-number">{city.number}</span>
@@ -65,11 +65,11 @@ const systemStages = [
       <p class="section-text" data-reveal>Foldscape interprets urban density as a force acting on architecture. Buildings bend, stretch, and accumulate until the skyline becomes a compressed terrain. The resulting landscapes are not simulations of real urban conditions, but speculative forms generated through procedural rules.</p>
       <div class="pressure-maps">
       <figure data-reveal>
-        <div class="image-frame"><img src={image('osm.png')} alt="OpenStreetMap view of Chongqing's streets and river bends" width="1520" height="992" loading="lazy" decoding="async" /></div>
+        <div class="image-frame"><img src={image('osm.webp')} alt="OpenStreetMap view of Chongqing's streets and river bends" width="1520" height="992" loading="lazy" decoding="async" /></div>
         <figcaption>OPENSTREETMAP / SOURCE DATA</figcaption>
       </figure>
       <figure data-reveal>
-        <div class="image-frame"><img src={image('Open Street Map_CH.png')} alt="Extracted Chongqing street network from OpenStreetMap" width="1716" height="1033" loading="lazy" decoding="async" /></div>
+        <div class="image-frame"><img src={image('Open Street Map_CH.webp')} alt="Extracted Chongqing street network from OpenStreetMap" width="1716" height="1033" loading="lazy" decoding="async" /></div>
         <figcaption>CHONGQING / STREET NETWORK</figcaption>
       </figure>
       </div>
