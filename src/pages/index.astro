@@ -333,6 +333,9 @@ projects.sort((a, b) => latestYear(b.year) - latestYear(a.year));
         column-gap: 24px;
         row-gap: 42px;
       }
+      @media (min-width: 1676px) {
+        .project-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+      }
 
 
       /* =========================
