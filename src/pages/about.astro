@@ -117,24 +117,25 @@ const sections = [
   <main>
     <header class="intro">
       <div><h1>Jun Huang</h1><a class="email" href="mailto:juniushwang@gmail.com">juniushwang@gmail.com</a></div>
-      <div class="statement"><h2>Artist Statement</h2><p>Jun Huang is a digital artist with a background in 3D visualization, moving image, and digital cultural heritage. He uses procedural systems, 3D simulation, and real-time engines to explore how cultural narratives are constructed and experienced across museum exhibitions, cultural heritage reconstructions, and public art projects in the United States and China.</p></div>
+      <div class="statement"><h2>Artist Statement</h2><p>Jun Huang is a digital artist with a background in 3D visualization, moving image, and digital cultural heritage. He uses procedural systems, 3D simulation, and real-time engines to explore how cultural narratives are constructed and experienced across museum exhibitions, digital heritage projects, and public art projects in the United States and China.</p></div>
     </header>
     {sections.map(section => <section class="cv-section"><h2>{section.title}</h2><div>{section.rows.map(([year,title,detail]) => <article class="cv-row"><span class="year">{year}</span><div><h3>{title}</h3>{detail && <p>{detail}</p>}</div></article>)}</div></section>)}
   </main>
 </ProjectGallery>
 <style>
   main { max-width: 1500px; margin: auto; padding: 80px 38px 100px; }
-  .intro { display: grid; grid-template-columns: 1fr 1.5fr; gap: 8vw; margin-bottom: 100px; }
+  .intro { display: grid; grid-template-columns: 1fr 2fr; gap: 6vw; margin-bottom: 100px; }
   .label, .year, h2 { font: 11px/1.7 Consolas, monospace; letter-spacing: .09em; color: #baa78f; }
   h1 { margin: 12px 0 26px; font: 400 clamp(48px, 6vw, 88px)/1.1 Georgia, serif; letter-spacing: -.04em; }
   .email { font-size: 14px; color: #c6b299; border-bottom: 1px solid #baa78f; padding-bottom: 5px; }
   h2 { margin: 0 0 24px; text-transform: uppercase; }
   .statement { padding-top: 8px; }
-  .statement p { margin: 0; font-size: clamp(17px, 1.5vw, 22px); line-height: 1.8; color: #d0ccc5; }
+  .statement h2 { margin-left: 134px; }
+  .statement p { margin: 0 0 0 134px; font-size: clamp(17px, 1.5vw, 22px); line-height: 1.8; color: #d0ccc5; }
   .cv-section { display: grid; grid-template-columns: 1fr 2fr; gap: 6vw; padding-top: 28px; margin-top: 64px; border-top: 1px solid rgb(238 233 225 / 15%); }
   .cv-row { display: grid; grid-template-columns: 110px 1fr; gap: 24px; padding: 0 0 24px; margin-bottom: 24px; border-bottom: 1px solid rgb(238 233 225 / 8%); }
   h3 { font-size: 17px; font-weight: 400; margin: 0 0 8px; color: #eee9e1; }
   .cv-row p { margin: 0; color: #aaa6a0; font-size: 14px; line-height: 1.8; }
-  @media(max-width: 900px) { main { padding: 60px 24px 80px; } .cv-section { grid-template-columns: 1fr; gap: 8px; } }
-  @media(max-width: 650px) { main { padding: 45px 18px 60px; } .intro { grid-template-columns: 1fr; gap: 40px; margin-bottom: 60px; } .cv-row { grid-template-columns: 1fr; gap: 8px; } }
+  @media(max-width: 900px) { main { padding: 60px 24px 80px; } .intro { grid-template-columns: 1fr; gap: 40px; } .cv-section { grid-template-columns: 1fr; gap: 8px; } }
+  @media(max-width: 650px) { main { padding: 45px 18px 60px; } .intro { margin-bottom: 60px; } .statement h2, .statement p { margin-left: 0; } .cv-row { grid-template-columns: 1fr; gap: 8px; } }
 </style>
