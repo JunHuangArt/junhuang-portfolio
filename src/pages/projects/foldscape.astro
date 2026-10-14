@@ -2,7 +2,7 @@
 import ProjectGallery from '../../layouts/ProjectGallery.astro';
 import HeritageDiagram from '../../components/HeritageDiagram.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const image = (file: string) => `${base}/images/webp/Foldscape/${encodeURIComponent(file.replace(/\.[^.]+$/, '.webp'))}`;
+const image = (file: string) => `${base}/images/Foldscape/${encodeURIComponent(file.replace(/\.[^.]+$/, '.webp'))}`;
 const systemStages = [
           { file: 'system (1).webp', width: 1674, height: 1022, caption: 'OSM building extraction', alt: 'Building data extracted from OpenStreetMap' },
           { file: 'system (2).webp', width: 1716, height: 1033, caption: 'street network extraction', alt: 'Extracted street network defining the urban field' },
