@@ -1,0 +1,389 @@
+---
+import projects from '../data/projects.json';
+import ProjectGallery from '../layouts/ProjectGallery.astro';
+import ProjectImage from '../components/ProjectImage.astro';
+import HeritageDiagram from '../components/HeritageDiagram.astro';
+import { productionPipelines } from '../data/production-pipelines';
+export function getStaticPaths() {
+  return projects.map(project => ({ params: { slug: project.slug }, props: { project } }));
+}
+const { project } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const mediaUrl = (file: string) => `${base}/images/${file.split('/').map(encodeURIComponent).join('/')}`;
+const isFilm = ['cinema', 'film', 'archive'].includes(project.style);
+const featuredGallery = project.slug === 'procedural-worldbuilding' ? project.chapters.find(chapter => !chapter.title) : undefined;
+const chapterVideos: Record<string, string> = project.slug === 'esl-digital-worlds' ? {
+  'Crowd Simulation & Atmosphere': 'https://www.youtube.com/embed/1E7xRcAERUc',
+  'Visual Clarity & Strategy': 'https://www.youtube.com/embed/pIy1PV7LAEw',
+} : project.slug === 'chunkey' ? {
+  'Gameplay & Visitor Experience': 'https://www.youtube.com/embed/MRofnLfzW6U?start=115&end=166&autoplay=1&mute=1&playsinline=1',
+} : project.slug === 'transformers-online' ? {
+  'Hard-Surface Environment Modeling': project.videos[1],
+} : {};
+const luShots = Array.from({ length: 12 }, (_, index) => String(index + 1).padStart(2, '0'));
+const collageRows = (images: typeof project.hero[], columns = 3) => {
+  const rows: (typeof images)[] = [];
+  if (project.slug === 'fairy-island' && images.length === 7) return [images.slice(0, 3), images.slice(3)];
+  if (project.slug === 'chunkey' && images.length === 5) return [images];
+  if (project.slug === 'chunkey' && images.length === 4) return [images.slice(0, 2), images.slice(2)];
+  if (project.slug === 'nation-of-speed') {
+    // Use complete rows for both collages.
+    const sizes = images.length === 10 ? [5, 5] : [3, 3, 3];
+    let start = 0;
+    for (const size of sizes) {
+      rows.push(images.slice(start, start + size));
+      start += size;
+    }
+    return rows;
+  }
+  if (project.slug === 'esl-digital-worlds') {
+    const workflow = images.filter(image => image.file !== 'Strong/3D pringting.webp');
+    for (let index = 0; index < workflow.length; index += 2) rows.push(workflow.slice(index, index + 2));
+    return [...rows, ...images.filter(image => image.file === 'Strong/3D pringting.webp').map(image => [image])];
+  }
+  if (project.slug === 'impression-reassembled') {
+    const compact = images.filter(image => image.width / image.height < 2);
+    const wide = images.filter(image => image.width / image.height >= 2);
+    for (let index = 0; index < compact.length; index += columns) rows.push(compact.slice(index, index + columns));
+    return [...rows, ...wide.map(image => [image])];
+  }
+  for (let index = 0; index < images.length; index += columns) rows.push(images.slice(index, index + columns));
+  return rows;
+};
+---
+
+<ProjectGallery title={project.title} description={project.intro[0]}>
+  <main id="project" class:list={['project-page', project.style]}>
+    {project.slug !== 'nation-of-speed' && <div class:list={['hero', { 'tall-hero': project.slug === 'within-the-lines', 'contained-hero': project.slug === 'nuo', 'phoenix-hero': project.slug === 'phoenix', 'temple-hero': project.slug === 'khirbet-et-tannur', 'transformers-hero': project.slug === 'transformers-online', 'worldbuilding-hero': project.slug === 'procedural-worldbuilding', 'luzuofu-hero': project.slug === 'lu-zuofu', 'witch-hero': project.slug === 'secret-of-witch' }]}><ProjectImage image={project.hero} eager /></div>}
+    <section class:list={['introduction', 'inset', { 'portrait-introduction': project.slug === 'nation-of-speed' }]} aria-labelledby="project-title">
+      <div class="title-block" data-reveal>
+        {project.year && <p class="micro">{project.year}</p>}
+        <h1 id="project-title">{project.title}</h1>
+        <p class="subtitle">{project.subtitle}</p>
+      </div>
+      <div class="intro-copy" data-reveal>
+        {project.intro.map(text => <p>{text}</p>)}
+        {project.metadata.length > 0 && <dl class="metadata">
+          {project.metadata.map(([label, value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}
+        </dl>}
+      </div>
+      {project.slug === 'nation-of-speed' && <div class="portrait-film" data-reveal>
+        <iframe class="embedded-player" src={`${project.videos[0]}?autoplay=1&mute=1&playsinline=1`} title="Nation of Speed — Exhibition Film" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" />
+      </div>}
+    </section>
+
+    {project.videos.filter((src, index) => project.slug !== 'nation-of-speed' && (!['lu-zuofu', 'phoenix', 'purlieu', 'nuo'].includes(project.slug) || index === 0) && !Object.values(chapterVideos).includes(src)).map((src, index) => <section class="film-player inset" aria-label={`${project.title} film ${index + 1}`} data-reveal>
+      {!src.startsWith('https://video.wixstatic.com/') ? <iframe
+        class="embedded-player"
+        src={project.slug === 'procedural-worldbuilding' ? `${src}?autoplay=1&mute=1&playsinline=1` : src}
+        title={`${project.title} film ${index + 1}`}
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; fullscreen; picture-in-picture"
+        allowfullscreen
+      /> : <video controls playsinline preload="none" poster={mediaUrl(project.hero.file)} aria-label={project.title}>
+        <source src={src} type="video/mp4" />
+        <a href={src}>Watch {project.title}</a>
+      </video>}
+    </section>)}
+
+    {featuredGallery && <div class="chapter triple inset"><div class="chapter-images">
+      {featuredGallery.images.map(image => <div class="visual" data-reveal><ProjectImage image={image} /></div>)}
+    </div></div>}
+    {project.chapters.filter(chapter => chapter !== featuredGallery).map((chapter, index) => (
+      <>
+      {project.slug === 'purlieu' && chapter.title === 'Technical Approach' && project.videos[1] && <figure class="film-player inset" data-reveal>
+        <iframe class="embedded-player" src={project.videos[1]} title="Purlieu — 3D character design" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" />
+        <figcaption class="character-caption">3D character design</figcaption>
+      </figure>}
+      <section class:list={['chapter', chapter.mode, {
+        'inset': chapter.mode !== 'full',
+        'uniform-landscape': (project.style === 'heritage' && ['Viewing Experience', 'Temple Reconstruction'].includes(chapter.title)) || (project.slug === 'chunkey' && chapter.title === 'Visual System & Look Development') || (project.slug === 'transformers-online' && chapter.title === 'Game Views'),
+        'uniform-specimens': project.style === 'heritage' && chapter.title === 'Original Footage & 3D Scan',
+        'square-crop': project.slug === 'within-the-lines' && chapter.title === 'From Outline to Volume',
+        'motifs-section': project.slug === 'huaguang' && chapter.title === 'Mythic Motifs',
+        'mosaic-concept': project.slug === 'dynamic-mosaic' && chapter.title === 'Concept',
+        'compact-references': project.slug === 'nation-of-speed' && chapter.title === 'Visual References',
+        'render-passes': project.slug === 'secret-of-witch' && chapter.title === 'Technical Approach',
+        'prop-studies': project.slug === 'secret-of-witch' && chapter.title === 'Props & Material Studies',
+        'fairy-concept': project.slug === 'fairy-island' && chapter.title === 'Artistic Concept',
+        'nuo-aligned': project.slug === 'nuo' && ['Digital Modeling', 'From 3D Model to Physical Sculpture', 'Installation & Presence'].includes(chapter.title),
+        'justified-references': (project.slug === 'nuo' && chapter.title === 'Nuo Culture & Visual Language') || (project.slug === 'khirbet-et-tannur' && chapter.title === 'Archaeological References & Site Landscape'),
+        'game-views': project.slug === 'transformers-online' && chapter.title === 'Game Views',
+        'phoenix-origin': project.slug === 'phoenix' && chapter.title === 'Origin: From the Bayu Divine Bird',
+        'phoenix-narrative': project.slug === 'phoenix' && chapter.title === 'Narrative Structure',
+        'phoenix-taiji': project.slug === 'phoenix' && chapter.title === 'From Taiji Diagram to Motion Guide',
+        'phoenix-presence': project.slug === 'phoenix' && chapter.title === 'Public Presence',
+      }]} aria-label={chapter.title || `${project.title} visual sequence ${index + 1}`}>
+        {(chapter.title || chapter.text.length > 0) && <div class:list={['chapter-copy', {'inset': chapter.mode === 'full'}]} data-reveal>
+          {chapter.title && <div class="chapter-heading"><span class="micro">{String(index + 1).padStart(2, '0')}</span><h2>{chapter.title}</h2></div>}
+          {project.slug === 'huaguang' && chapter.title === 'Mythic Motifs' ? <div class="motifs-grid">
+            {chapter.text.filter((_, index) => index % 2 === 0).map((title, index) => <article class="motif"><h3>{title}</h3><p>{chapter.text[index * 2 + 1]}</p></article>)}
+          </div> : !chapter.diagram && ((project.style === 'film' && chapter.title === 'Technical Approach') ?
+            <details><summary>Technical Approach</summary>{chapter.text.map(text => <p>{text}</p>)}</details> :
+            chapter.text.map(text => text.startsWith('* ') ? <p class="list-item">{text.slice(2)}</p> : <p>{text}</p>))}
+        </div>}
+        {chapter.diagram && <div data-reveal><HeritageDiagram kind={chapter.diagram} stages={productionPipelines[project.slug as keyof typeof productionPipelines]} images={['digital-embroidery', 'phoenix'].includes(project.slug) ? chapter.images : undefined} landscapeImages={project.slug === 'phoenix'} /></div>}
+        {chapter.mode === 'collage' && chapter.images.length > 0 ? <div class:list={['collage-images', { 'white-collage': project.slug === 'impression-reassembled', 'impression-collage': project.slug === 'impression-reassembled', 'responsive-exhibition': ['fairy-island', 'nuo', 'impression-reassembled'].includes(project.slug) || (project.slug === 'khirbet-et-tannur' && chapter.title === 'Archaeological References & Site Landscape') }]} data-reveal>
+          {collageRows(chapter.images, project.slug === 'khirbet-et-tannur' && chapter.title === 'Archaeological References & Site Landscape' ? 6 : project.slug === 'impression-reassembled' ? 2 : 3).map(row => <div class="collage-row" style={`grid-template-columns: ${row.map(image => `${image.width / image.height}fr`).join(' ')};`}>
+            {row.map(image => <div class="collage-cell" style={`aspect-ratio: ${image.width} / ${image.height}; --image-ratio: ${image.width / image.height};`}><ProjectImage image={image} /></div>)}
+          </div>)}
+        </div> : chapter.images.length > 0 && !(['digital-embroidery', 'phoenix'].includes(project.slug) && chapter.diagram === 'pipeline') && <div class="chapter-images">
+          {chapter.images.map((image, imageIndex) => <div class="visual" data-reveal={image.file === 'Embroidery/Final.webp' ? undefined : true}>
+            {image.file.endsWith('.mp4') ? <figure class="scan-video">
+              <video autoplay muted loop playsinline preload="metadata" disablepictureinpicture aria-label={image.alt}>
+                <source src={mediaUrl(image.file)} type="video/mp4" />
+              </video>
+              {image.caption && <figcaption>{image.caption}</figcaption>}
+            </figure> : <ProjectImage image={image} eager={image.file === 'Embroidery/Final.webp'} caption={image.caption || (project.style === 'computational' ? `${String(imageIndex + 1).padStart(2,'0')} / ${chapter.title}` : undefined)} />}
+          </div>)}
+        </div>}
+        {chapterVideos[chapter.title] && <div class:list={['film-player', 'chapter-player', { 'inset': chapter.mode === 'full' }]} data-reveal>
+          <iframe class="embedded-player" src={chapterVideos[chapter.title]} title={`${project.title} / ${chapter.title}`} loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" />
+        </div>}
+        {project.slug === 'phoenix' && chapter.title === 'Motion' && <div class="chapter-images">
+          {[1, 2].map(number => <div data-reveal>
+            <video autoplay muted loop playsinline preload="metadata" disablepictureinpicture aria-label={`Phoenix — Motion Study ${number}`}>
+              <source src={mediaUrl(`Phoenix/Motion${number}.mp4`)} type="video/mp4" />
+            </video>
+          </div>)}
+        </div>}
+        {project.slug === 'nuo' && chapter.title === 'Digital Modeling' && <div class="chapter-images">
+          {[1, 2, 3].map(number => <div class="nuo-video-frame" data-reveal>
+            <video class="nuo-modeling-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture aria-label={`Nuo — Digital Modeling ${number}`}>
+              <source src={mediaUrl(`Nuo/Digital Modeling${number}.mp4`)} type="video/mp4" />
+            </video>
+          </div>)}
+        </div>}
+        {project.slug === 'lu-zuofu' && chapter.title === 'Motion & Symbolism' && <div class="shot-gallery">
+          <div class="chapter-images">
+            {luShots.map(number => <figure data-reveal>
+              <video class="shot-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture aria-label={`Lu Zuofu / LZF sc${number}`}>
+                <source src={mediaUrl(`Luzuofu/LZF_sc${number}_4k.mp4`)} type="video/mp4" />
+              </video>
+            </figure>)}
+          </div>
+        </div>}
+      </section>
+      </>
+    ))}
+
+    <div class="project-end inset">
+      <a href={`${base}/`}>← All projects</a>
+    </div>
+  </main>
+</ProjectGallery>
+
+<style>
+  .project-page { --line: rgb(238 233 225 / 13%); --muted: #aaa6a0; --accent: #baa78f; }
+  .inset { padding-inline: 38px; }
+  .hero { width: 100%; overflow: hidden; }
+  .introduction { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(32px, 4vw, 72px); width: 100%; max-width: 1440px; margin-inline: auto; padding-block: 80px 110px; align-items: start; }
+  .micro { margin: 0; font: 10px/1.6 Consolas, monospace; letter-spacing: .14em; color: var(--accent); }
+  h1 { margin: 14px 0 24px; font: 400 clamp(38px, 4vw, 64px)/1.12 "Bodoni MT", Didot, Georgia, serif; letter-spacing: -.035em; text-wrap: balance; overflow-wrap: break-word; }
+  .subtitle { font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 520px; }
+  .intro-copy { max-width: 670px; }
+  .intro-copy, .title-block { min-width: 0; }
+  .intro-copy > p { font-size: clamp(15px, 1.2vw, 18px); line-height: 1.8; margin: 0 0 22px; color: #ccc8c1; }
+  .metadata { margin: 34px 0 0; font-size: 11px; line-height: 1.7; }
+  .metadata > div { display: grid; grid-template-columns: 95px 1fr; gap: 20px; border-top: 1px solid var(--line); padding: 12px 0; }
+  dt { color: var(--accent); text-transform: uppercase; font-family: Consolas, monospace; letter-spacing: .08em; }
+  dd { margin: 0; color: var(--muted); }
+  .film-player { margin-bottom: 110px; }
+  .character-caption { padding-top: 14px; text-align: center; color: var(--muted); font-size: 13px; line-height: 1.7; }
+  .embedded-player { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
+  video { display: block; width: 100%; max-height: 85svh; background: #000; }
+  .chapter { margin-bottom: 110px; }
+  .shot-gallery { margin-bottom: 100px; }
+  .shot-gallery figure { margin: 0; min-width: 0; }
+  .shot-gallery .shot-video { display: block; width: 100%; height: auto; object-fit: contain; }
+  .chapter-copy { max-width: 860px; margin-bottom: 38px; }
+  .chapter-heading { border-top: 1px solid var(--line); padding-top: 18px; display: flex; align-items: baseline; gap: 22px; margin-bottom: 24px; }
+  h2 { font-weight: 400; font-size: clamp(23px, 2.3vw, 36px); line-height: 1.2; letter-spacing: -.025em; margin: 0; }
+  .chapter-copy p { font-size: 15px; line-height: 1.85; color: #bbb7b0; margin: 0 0 16px; }
+  .motifs-section .chapter-copy { max-width: 1440px; margin-inline: auto; }
+  .motifs-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
+  .motif { min-width: 0; }
+  .motif h3 { margin: 0 0 16px; font-size: 20px; line-height: 1.4; font-weight: 400; color: #eee9e1; }
+  @media (max-width: 900px) { .motifs-grid { grid-template-columns: 1fr; gap: 24px; } }
+  .list-item { padding-left: 20px; border-left: 1px solid var(--line); }
+  .chapter-images { display: grid; gap: 36px; align-items: start; }
+  .paired .chapter-images { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .triple .chapter-images { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .offset .chapter-images { grid-template-columns: 5fr 7fr; gap: 5vw; }
+  .offset .visual:nth-child(even) { padding-top: 100px; }
+  .vertical .chapter-images { grid-template-columns: 4fr 5fr; gap: 8vw; max-width: 1150px; margin: auto; }
+  .vertical .visual:nth-child(even) { padding-top: 160px; }
+  .vertical :global(img) { aspect-ratio: 3 / 4; object-fit: cover; }
+  .split { display: grid; grid-template-columns: 1fr 1.9fr; gap: 7vw; align-items: center; }
+  .split .chapter-copy { margin-bottom: 0; }
+  .phoenix-origin.split { width: 100%; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: clamp(32px, 4vw, 64px); align-items: start; }
+  .phoenix-origin .chapter-copy { min-width: 0; max-width: 680px; }
+  .phoenix-origin .chapter-images { width: min(100%, 480px); justify-self: end; padding-top: 18px; }
+  .phoenix-taiji :global(.frame), .phoenix-presence :global(.frame) { position: relative; }
+  .phoenix-taiji :global(.frame) { aspect-ratio: 1 / 1; }
+  .phoenix-presence :global(.frame) { aspect-ratio: 16 / 9; }
+  .phoenix-taiji :global(img), .phoenix-presence :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; }
+  .phoenix-taiji :global(img) { object-fit: cover; object-position: center; }
+  .phoenix-presence :global(img) { object-fit: cover; }
+  .mosaic-concept.split { display: block; max-width: 1440px; margin-inline: auto; }
+  .material .mosaic-concept .chapter-copy { max-width: none; margin-bottom: 36px; }
+  .mosaic-concept .chapter-copy > p { max-width: 780px; }
+  .detail .chapter-images { grid-template-columns: 3fr 2fr; gap: 5vw; }
+  .detail .visual { overflow: hidden; }
+  .detail :global(img) { aspect-ratio: 4 / 3; object-fit: cover; transform: scale(1.3); }
+  .detail .visual:nth-child(2) :global(img) { transform: scale(1.8); }
+  /* Aligned images for visual comparisons; preserve specimen and diagram boundaries. */
+  .uniform-landscape :global(.frame), .uniform-specimens :global(.frame) { position: relative; width: 100%; }
+  .uniform-landscape :global(.frame) { aspect-ratio: 16 / 9; }
+  .uniform-specimens :global(.frame) { aspect-ratio: 4 / 3; background: #171719; }
+  .uniform-landscape :global(img), .uniform-specimens :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .uniform-landscape :global(img) { object-fit: cover; }
+  .uniform-specimens :global(img) { object-fit: contain; }
+  /* Justified rows meet edge to edge, retaining each reference's original proportions. */
+  .collage-images { display: grid; gap: 0; overflow: hidden; }
+  .white-collage, .white-collage :global(.frame) { background: #fff; }
+  .collage-row { display: grid; gap: 0; align-items: stretch; }
+  .collage-cell { min-width: 0; overflow: hidden; }
+  .collage-row :global(figure), .collage-row :global(.frame) { height: 100%; }
+  .collage-row :global(.frame) { position: relative; }
+  .collage-row :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .project-end { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; padding-block: 0 55px; font: 11px/1.7 Consolas, monospace; letter-spacing: .08em; color: #e3ccb0; }
+  details { color: var(--muted); } summary { cursor: pointer; padding: 12px 0; margin-bottom: 20px; }
+  /* Film pages read as sequences, with subdued credits and fades only. */
+  .cinema .introduction, .film .introduction, .archive .introduction { grid-template-columns: 1fr; max-width: 1000px; margin: auto; gap: 35px; text-align: center; }
+  .cinema .intro-copy, .film .intro-copy, .archive .intro-copy { margin-inline: auto; }
+  .cinema .subtitle, .film .subtitle, .archive .subtitle { margin-inline: auto; }
+  .cinema .metadata, .film .metadata, .archive .metadata { text-align: left; }
+  .cinema .chapter, .film .chapter, .archive .chapter { margin-bottom: 140px; }
+  .cinema :global(img:hover), .film :global(img:hover), .archive :global(img:hover) { transform: none; }
+  .archive h2 { font-family: Consolas, monospace; font-size: 19px; letter-spacing: .02em; }
+  /* Digital exhibitions alternate scale; environment work retains natural ratios. */
+  .exhibition .intro-copy { font-size: 14px; }
+  .landscape .full .chapter-images { gap: 80px; }
+  .computational h1, .computational h2 { font-family: "Helvetica Neue", "Segoe UI", sans-serif; letter-spacing: -.04em; }
+  .computational .chapter-copy, .material .chapter-copy { max-width: 750px; }
+  .specimen .full .chapter-images { width: min(100% - 76px, 1050px); margin: auto; }
+  .specimen .chapter { margin-bottom: 140px; }
+  .sculpture .full .chapter-images { max-width: 1100px; margin: auto; }
+  .compact .chapter { margin-bottom: 60px; }
+  .compact .introduction { padding-bottom: 65px; }
+  /* Let galleries gain columns on wide displays instead of enlarging each image. */
+  .paired .chapter-images { grid-template-columns: repeat(auto-fit, minmax(min(100%, 560px), 1fr)); }
+  .triple .chapter-images { grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); }
+  .full .chapter-images { grid-template-columns: repeat(auto-fit, minmax(min(100%, 700px), 1fr)); }
+  .chapter-images { gap: clamp(16px, 2vw, 36px); }
+  .chapter-images .visual { min-width: 0; }
+  .chapter-images :global(img) { max-height: 75svh; object-fit: contain; }
+  .nuo-aligned .chapter-images :global(.frame) { position: relative; width: 100%; aspect-ratio: 16 / 9; }
+  .nuo-aligned .chapter-images :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: cover; }
+  .nuo-aligned .chapter-images video { width: 100%; aspect-ratio: 16 / 9; height: auto; max-height: none; object-fit: contain; background: transparent; }
+  .nuo-video-frame { position: relative; width: 100%; aspect-ratio: 2 / 1; }
+  .nuo-aligned .chapter-images .nuo-modeling-video { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: auto; max-width: 100%; height: 100%; max-height: none; aspect-ratio: auto; object-fit: contain; background: transparent; }
+  .fairy-concept .chapter-images :global(.frame), .game-views .chapter-images :global(.frame) { position: relative; width: 100%; aspect-ratio: 4 / 3; }
+  .fairy-concept .chapter-images :global(img), .game-views .chapter-images :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: cover; object-position: center; }
+  .prop-studies .chapter-images { max-width: 1200px; margin-inline: auto; }
+  .prop-studies .chapter-images :global(.frame) { position: relative; width: 100%; aspect-ratio: 4 / 3; }
+  .prop-studies .chapter-images :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: contain; }
+  .render-passes .chapter-images { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+  .render-passes .chapter-images > .visual { width: calc((100% - 72px) / 4); }
+  @media (max-width: 1100px) { .render-passes .chapter-images > .visual { width: calc((100% - 24px) / 2); } }
+  @media (max-width: 650px) { .render-passes .chapter-images > .visual { width: 100%; } }
+  .phoenix-taiji .chapter-images :global(.frame) { width: 100%; aspect-ratio: 1 / 1; }
+  .phoenix-taiji .chapter-images { width: min(100%, 1080px); margin-inline: auto; }
+  .phoenix-taiji .chapter-images :global(img) { width: 100%; height: 100%; max-height: none; object-fit: cover; object-position: center; }
+  .phoenix-presence .chapter-images :global(img) { max-height: none; object-fit: cover; }
+  .uniform-landscape :global(img) { max-height: none; object-fit: cover; }
+  .uniform-specimens :global(img) { max-height: none; }
+  .scan-video { margin: 0; }
+  .scan-video video { width: 100%; aspect-ratio: 4 / 3; max-height: none; object-fit: contain; background: transparent; }
+  .scan-video figcaption { padding-top: 14px; text-align: center; color: var(--muted); font: 10px/1.6 Consolas, monospace; letter-spacing: .08em; }
+  .square-crop :global(.frame) { position: relative; width: 100%; aspect-ratio: 1 / 1; }
+  .square-crop :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: cover; object-position: center; }
+  .hero { background: #111113; }
+  .hero :global(figure) { width: 100%; margin: 0; }
+  .hero :global(.frame) { position: relative; height: clamp(220px, 55svh, 720px); }
+  .hero.tall-hero :global(.frame) { height: clamp(330px, 82.5svh, 1080px); }
+  .hero :global(img) { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: cover; object-position: center; }
+  .hero :global(img:hover) { transform: none; }
+  .hero.contained-hero, .hero.contained-hero :global(.frame) { background: #3e3e3e; }
+  .hero.contained-hero :global(img) { object-fit: contain; }
+  .hero.phoenix-hero :global(img) { object-fit: cover; object-position: 64% 20%; }
+  .hero.temple-hero :global(img) { object-position: 50% 80%; }
+  .hero.transformers-hero :global(img) { object-position: 65% 25%; }
+  .hero.worldbuilding-hero :global(img) { object-position: 38% 20%; }
+  .hero.luzuofu-hero :global(img) { object-position: 64% 20%; }
+  .hero.witch-hero :global(img) { object-position: 57% 85%; }
+  .film-player { width: min(100%, calc(80svh * 16 / 9 + 76px)); margin-inline: auto; }
+  .film-player.chapter-player { margin-bottom: 0; }
+  .collage-images { width: min(100%, 1600px); margin-inline: auto; }
+  .collage-images.responsive-exhibition { width: 100%; max-width: none; display: flex; flex-wrap: wrap; justify-content: center; }
+  .responsive-exhibition .collage-row { display: contents; }
+  .responsive-exhibition .collage-cell { flex: 0 0 calc(100% / var(--collage-columns, 1)); aspect-ratio: 4 / 5 !important; }
+  .justified-references .responsive-exhibition { gap: 12px; align-items: flex-start; }
+  .justified-references.split { display: block; }
+  .justified-references.split .chapter-copy { margin-bottom: 36px; }
+  .justified-references .collage-cell { flex: 0 0 auto; height: var(--collage-height, 220px); width: calc(var(--collage-height, 220px) * var(--image-ratio)); aspect-ratio: auto !important; }
+  .justified-references .collage-cell :global(figure), .justified-references .collage-cell :global(.frame) { height: 100%; }
+  .justified-references .collage-cell :global(img) { position: static; width: 100%; height: 100%; max-height: none; object-fit: contain; }
+  .collage-images.impression-collage { width: 100%; max-width: none; gap: 0; align-items: flex-start; }
+  .impression-collage .collage-cell { flex: 0 0 auto; aspect-ratio: auto !important; }
+  .impression-collage .collage-cell :global(figure), .impression-collage .collage-cell :global(.frame) { height: 100%; }
+  .impression-collage .collage-cell :global(img) { position: static; width: 100%; height: 100%; max-height: none; object-fit: contain; }
+  @media (max-width: 800px) {
+    .compact-references .collage-row { display: flex; flex-wrap: wrap; }
+    .compact-references .collage-cell { flex: 0 0 50%; }
+  }
+  @media (min-width: 1800px) {
+    .phoenix-origin.split { grid-template-columns: minmax(0, 860px) minmax(0, 440px); justify-content: center; }
+    .chapter:not(.split) .chapter-copy { margin-inline: auto; max-width: 1364px; }
+    .chapter-copy p { max-width: 75ch; }
+    .offset .chapter-images, .vertical .chapter-images, .detail .chapter-images { grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 32px; max-width: none; }
+    .offset .visual:nth-child(even), .vertical .visual:nth-child(even) { padding-top: 0; }
+  }
+  @media (max-width: 900px) {
+    .phoenix-origin.split { grid-template-columns: 1fr; gap: 28px; }
+    .phoenix-origin .chapter-images { justify-self: center; padding-top: 0; }
+    .inset { padding-inline: 24px; }
+    .introduction { gap: 40px; padding-block: 60px 80px; }
+    .chapter { margin-bottom: 80px; }
+    .split { gap: 30px; }
+  }
+  @media (max-width: 650px) {
+    .inset { padding-inline: 18px; }
+    .introduction { grid-template-columns: 1fr; gap: 24px; padding-block: 45px 60px; }
+    .chapter, .cinema .chapter, .film .chapter, .archive .chapter, .specimen .chapter { margin-bottom: 65px; }
+    .split { grid-template-columns: 1fr; gap: 28px; }
+    .offset .chapter-images, .vertical .chapter-images, .detail .chapter-images { grid-template-columns: 1fr; gap: 28px; }
+    .offset .visual:nth-child(even), .vertical .visual:nth-child(even) { padding-top: 0; }
+    .paired .chapter-images, .triple .chapter-images { gap: 14px; }
+    .specimen .full .chapter-images { width: calc(100% - 36px); }
+    .film-player { margin-bottom: 60px; }
+    .cinema .introduction, .film .introduction, .archive .introduction { text-align: left; }
+    .chapter-heading { gap: 14px; }
+  }
+  .introduction.portrait-introduction { max-width: 1320px; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); grid-template-rows: auto 1fr; column-gap: clamp(40px, 6vw, 100px); row-gap: 28px; padding-block: 60px 100px; }
+  .portrait-introduction .title-block { grid-column: 1; grid-row: 1; }
+  .portrait-introduction .intro-copy { grid-column: 1; grid-row: 2; max-width: 650px; }
+  .portrait-introduction h1 { font-size: clamp(40px, 4.5vw, 68px); }
+  .portrait-film { grid-column: 2; grid-row: 1 / 3; width: min(100%, calc(78svh * 9 / 16)); justify-self: center; }
+  .portrait-film .embedded-player { aspect-ratio: 9 / 16; }
+  @media (max-width: 900px) {
+    .introduction.portrait-introduction { grid-template-columns: 1fr; grid-template-rows: auto; gap: 28px; padding-block: 45px 65px; max-width: 720px; }
+    .portrait-introduction .title-block, .portrait-introduction .intro-copy, .portrait-film { grid-column: 1; grid-row: auto; }
+    .portrait-film { margin-top: 12px; width: min(100%, 400px, calc(78svh * 9 / 16)); }
+  }
+</style>
+
+<script>
+  import '../scripts/balanced-gallery';
+  import { animate, inView } from 'motion';
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const film = document.querySelector('.cinema, .film, .archive');
+  const animations: ReturnType<typeof animate>[] = [];
+  const stop = inView('[data-reveal]', element => {
+    if (reduced.matches) return;
+    animations.push(animate(element, film ? { opacity: [0.4, 1] } : { opacity: [0.4, 1], transform: ['translateY(16px)', 'translateY(0)'] }, { duration: 0.8, ease: [0.22, 1, 0.36, 1] }));
+  });
+  reduced.addEventListener('change', () => { if (reduced.matches) { stop(); animations.forEach(animation => animation.complete()); } });
+</script>

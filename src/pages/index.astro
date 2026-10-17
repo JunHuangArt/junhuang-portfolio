@@ -13,7 +13,7 @@ const projects = [
     subtitle: "OSM Data Visualization",
     folder: "Foldscape",
     cover: "Chongqing.webp",
-    href: "/projects/foldscape",
+    href: "/foldscape",
   },
 
   {
@@ -22,7 +22,7 @@ const projects = [
     subtitle: "Cultural Exchange between China and Mexico",
     folder: "Cover",
     cover: "Phoenix.webp",
-    href: "/projects/phoenix",
+    href: "/phoenix",
   },
 
   {
@@ -31,7 +31,7 @@ const projects = [
     subtitle: "Generative Art",
     folder: "Cover",
     cover: "ImpressionReassembled.webp",
-    href: "/projects/impression-reassembled",
+    href: "/impression-reassembled",
   },
 
   {
@@ -40,7 +40,7 @@ const projects = [
     subtitle: "Procedural Surface Reconstruction",
     folder: "Cover",
     cover: "Embroidery.webp",
-    href: "/projects/digital-embroidery",
+    href: "/digital-embroidery",
   },
 
   {
@@ -49,7 +49,7 @@ const projects = [
     subtitle: "Fragmented Surface Reconstruction",
     folder: "Cover",
     cover: "mosaic.webp",
-    href: "/projects/dynamic-mosaic",
+    href: "/dynamic-mosaic",
   },
 
   {
@@ -58,7 +58,7 @@ const projects = [
     subtitle: "Cincinnati Art Museum",
     folder: "Cover",
     cover: "CAM.webp",
-    href: "/projects/khirbet-et-tannur",
+    href: "/khirbet-et-tannur",
   },
 
   {
@@ -67,7 +67,7 @@ const projects = [
     subtitle: "Smithsonian National Air and Space Museum",
     folder: "Cover",
     cover: "NASM.webp",
-    href: "/projects/nation-of-speed",
+    href: "/nation-of-speed",
   },
 
   {
@@ -76,7 +76,7 @@ const projects = [
     subtitle: "First Americans Museum",
     folder: "Cover",
     cover: "FAM.webp",
-    href: "/projects/chunkey",
+    href: "/chunkey",
   },
 
   {
@@ -85,7 +85,7 @@ const projects = [
     subtitle: "The Strong National Museum of Play",
     folder: "Cover",
     cover: "Strong.webp",
-    href: "/projects/esl-digital-worlds",
+    href: "/esl-digital-worlds",
   },
 
   {
@@ -94,7 +94,7 @@ const projects = [
     subtitle: "New York",
     folder: "Cover",
     cover: "Fairy island.webp",
-    href: "/projects/fairy-island",
+    href: "/fairy-island",
   },
 
   {
@@ -103,7 +103,7 @@ const projects = [
     subtitle: "Tencent Game",
     folder: "Cover",
     cover: "Transformer.webp",
-    href: "/projects/transformers-online",
+    href: "/transformers-online",
   },
 
   {
@@ -112,7 +112,7 @@ const projects = [
     subtitle: "Dashahe Chinese Nuo City",
     folder: "Cover",
     cover: "Nuo.webp",
-    href: "/projects/nuo",
+    href: "/nuo",
   },
 
   {
@@ -121,7 +121,7 @@ const projects = [
     subtitle: "Heightfields & VEX",
     folder: "Cover",
     cover: "ProceduralWorld.webp",
-    href: "/projects/procedural-worldbuilding",
+    href: "/procedural-worldbuilding",
   },
 
   {
@@ -130,7 +130,7 @@ const projects = [
     subtitle: "Digital Cultural Storytelling",
     folder: "Cover",
     cover: "Huaguang.webp",
-    href: "/projects/huaguang",
+    href: "/huaguang",
   },
 
   {
@@ -139,12 +139,12 @@ const projects = [
     subtitle: "CCTV-9 Documentary Series",
     folder: "Cover",
     cover: "Luzuofu.webp",
-    href: "/projects/lu-zuofu",
+    href: "/lu-zuofu",
   },
 ];
 // Include the newly migrated projects while preserving the existing homepage design.
 for (const project of projectPages) {
-  if (projects.some(item => item.href === `/projects/${project.slug}`)) continue;
+  if (projects.some(item => item.href === `/${project.slug}`)) continue;
   const [folder, ...filename] = project.hero.file.split('/');
   projects.push({
     title: project.title,
@@ -152,7 +152,7 @@ for (const project of projectPages) {
     subtitle: project.subtitle,
     folder,
     cover: filename.join('/'),
-    href: `/projects/${project.slug}`,
+    href: `/${project.slug}`,
   });
 }
 // Sort year ranges by their most recent year; retain existing order for ties.

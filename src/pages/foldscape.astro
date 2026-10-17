@@ -1,6 +1,6 @@
 ---
-import ProjectGallery from '../../layouts/ProjectGallery.astro';
-import HeritageDiagram from '../../components/HeritageDiagram.astro';
+import ProjectGallery from '../layouts/ProjectGallery.astro';
+import HeritageDiagram from '../components/HeritageDiagram.astro';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const image = (file: string) => `${base}/images/Foldscape/${encodeURIComponent(file.replace(/\.[^.]+$/, '.webp'))}`;
 const systemStages = [
@@ -202,7 +202,7 @@ const systemPipeline = systemStages.map((stage, index) => ({
 </style>
 
 <script>
-  import '../../scripts/balanced-gallery';
+  import '../scripts/balanced-gallery';
   import { animate, inView } from 'motion';
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const animations: ReturnType<typeof animate>[] = [];
