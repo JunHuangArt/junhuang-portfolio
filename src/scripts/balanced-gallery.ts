@@ -22,7 +22,7 @@ grids.forEach(grid => { if (!grid.matches('.render-passes .chapter-images')) obs
 const collageObserver = new ResizeObserver(entries => {
   for (const entry of entries) {
     const gallery = entry.target as HTMLElement;
-    if (gallery.closest('.nuo-references') || gallery.matches('.impression-collage')) {
+    if (gallery.closest('.justified-references') || gallery.matches('.impression-collage')) {
       const impression = gallery.matches('.impression-collage');
       const allCells = [...gallery.querySelectorAll<HTMLElement>('.collage-cell')];
       const ratioOf = (cell: HTMLElement) => parseFloat(cell.style.getPropertyValue('--image-ratio')) || 1;
@@ -36,8 +36,19 @@ const collageObserver = new ResizeObserver(entries => {
       const minimumRows = impression && !separateWideImages && cells.length > 1 ? 2 : 1;
       const rowCount = Math.max(minimumRows, Math.min(cells.length, Math.round(ratios.reduce((sum, ratio) => sum + ratio, 0) * targetHeight / width)));
       let start = 0;
-      for (let row = 0; row < rowCount; row++) {
-        const length = Math.ceil((cells.length - start) / (rowCount - row));
+      for (let row = 0; start < cells.length; row++) {
+        let length = impression ? Math.ceil((cells.length - start) / (rowCount - row)) : 1;
+        if (!impression) {
+          let ratioSum = ratios[start];
+          while (start + length < cells.length) {
+            const currentHeight = (width - gap * (length - 1)) / ratioSum;
+            const nextSum = ratioSum + ratios[start + length];
+            const nextHeight = (width - gap * length) / nextSum;
+            if (Math.abs(currentHeight - targetHeight) <= Math.abs(nextHeight - targetHeight)) break;
+            ratioSum = nextSum;
+            length++;
+          }
+        }
         const rowRatios = ratios.slice(start, start + length);
         const height = (width - gap * (length - 1)) / rowRatios.reduce((sum, ratio) => sum + ratio, 0);
         for (let index = start; index < start + length; index++) {
@@ -55,7 +66,7 @@ const collageObserver = new ResizeObserver(entries => {
       continue;
     }
     const count = gallery.querySelectorAll('.collage-cell').length;
-    const minimum = gallery.closest('.nuo-references') ? 220 : 320;
+    const minimum = gallery.closest('.justified-references') ? 220 : 320;
     const columns = Math.max(1, Math.min(count, Math.floor(entry.contentRect.width / minimum)));
     gallery.style.setProperty('--collage-columns', String(columns));
   }

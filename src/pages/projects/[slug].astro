@@ -54,7 +54,7 @@ const collageRows = (images: typeof project.hero[], columns = 3) => {
 
 <ProjectGallery title={project.title} description={project.intro[0]}>
   <main id="project" class:list={['project-page', project.style]}>
-    {project.slug !== 'nation-of-speed' && <div class:list={['hero', { 'tall-hero': project.slug === 'within-the-lines', 'contained-hero': project.slug === 'nuo', 'phoenix-hero': project.slug === 'phoenix' }]}><ProjectImage image={project.hero} eager /></div>}
+    {project.slug !== 'nation-of-speed' && <div class:list={['hero', { 'tall-hero': project.slug === 'within-the-lines', 'contained-hero': project.slug === 'nuo', 'phoenix-hero': project.slug === 'phoenix', 'temple-hero': project.slug === 'khirbet-et-tannur', 'transformers-hero': project.slug === 'transformers-online', 'worldbuilding-hero': project.slug === 'procedural-worldbuilding', 'luzuofu-hero': project.slug === 'lu-zuofu', 'witch-hero': project.slug === 'secret-of-witch' }]}><ProjectImage image={project.hero} eager /></div>}
     <section class:list={['introduction', 'inset', { 'portrait-introduction': project.slug === 'nation-of-speed' }]} aria-labelledby="project-title">
       <div class="title-block" data-reveal>
         {project.year && <p class="micro">{project.year}</p>}
@@ -108,7 +108,7 @@ const collageRows = (images: typeof project.hero[], columns = 3) => {
         'prop-studies': project.slug === 'secret-of-witch' && chapter.title === 'Props & Material Studies',
         'fairy-concept': project.slug === 'fairy-island' && chapter.title === 'Artistic Concept',
         'nuo-aligned': project.slug === 'nuo' && ['Digital Modeling', 'From 3D Model to Physical Sculpture', 'Installation & Presence'].includes(chapter.title),
-        'nuo-references': project.slug === 'nuo' && chapter.title === 'Nuo Culture & Visual Language',
+        'justified-references': (project.slug === 'nuo' && chapter.title === 'Nuo Culture & Visual Language') || (project.slug === 'khirbet-et-tannur' && chapter.title === 'Archaeological References & Site Landscape'),
         'game-views': project.slug === 'transformers-online' && chapter.title === 'Game Views',
         'phoenix-origin': project.slug === 'phoenix' && chapter.title === 'Origin: From the Bayu Divine Bird',
         'phoenix-narrative': project.slug === 'phoenix' && chapter.title === 'Narrative Structure',
@@ -124,7 +124,7 @@ const collageRows = (images: typeof project.hero[], columns = 3) => {
             chapter.text.map(text => text.startsWith('* ') ? <p class="list-item">{text.slice(2)}</p> : <p>{text}</p>))}
         </div>}
         {chapter.diagram && <div data-reveal><HeritageDiagram kind={chapter.diagram} stages={productionPipelines[project.slug as keyof typeof productionPipelines]} images={['digital-embroidery', 'phoenix'].includes(project.slug) ? chapter.images : undefined} landscapeImages={project.slug === 'phoenix'} /></div>}
-        {chapter.mode === 'collage' && chapter.images.length > 0 ? <div class:list={['collage-images', { 'white-collage': project.slug === 'impression-reassembled', 'impression-collage': project.slug === 'impression-reassembled', 'responsive-exhibition': ['fairy-island', 'nuo', 'impression-reassembled'].includes(project.slug) }]} data-reveal>
+        {chapter.mode === 'collage' && chapter.images.length > 0 ? <div class:list={['collage-images', { 'white-collage': project.slug === 'impression-reassembled', 'impression-collage': project.slug === 'impression-reassembled', 'responsive-exhibition': ['fairy-island', 'nuo', 'impression-reassembled'].includes(project.slug) || (project.slug === 'khirbet-et-tannur' && chapter.title === 'Archaeological References & Site Landscape') }]} data-reveal>
           {collageRows(chapter.images, project.slug === 'khirbet-et-tannur' && chapter.title === 'Archaeological References & Site Landscape' ? 6 : project.slug === 'impression-reassembled' ? 2 : 3).map(row => <div class="collage-row" style={`grid-template-columns: ${row.map(image => `${image.width / image.height}fr`).join(' ')};`}>
             {row.map(image => <div class="collage-cell" style={`aspect-ratio: ${image.width} / ${image.height}; --image-ratio: ${image.width / image.height};`}><ProjectImage image={image} /></div>)}
           </div>)}
@@ -309,18 +309,23 @@ const collageRows = (images: typeof project.hero[], columns = 3) => {
   .hero.contained-hero, .hero.contained-hero :global(.frame) { background: #3e3e3e; }
   .hero.contained-hero :global(img) { object-fit: contain; }
   .hero.phoenix-hero :global(img) { object-fit: cover; object-position: 64% 20%; }
+  .hero.temple-hero :global(img) { object-position: 50% 80%; }
+  .hero.transformers-hero :global(img) { object-position: 65% 25%; }
+  .hero.worldbuilding-hero :global(img) { object-position: 38% 20%; }
+  .hero.luzuofu-hero :global(img) { object-position: 64% 20%; }
+  .hero.witch-hero :global(img) { object-position: 57% 85%; }
   .film-player { width: min(100%, calc(80svh * 16 / 9 + 76px)); margin-inline: auto; }
   .film-player.chapter-player { margin-bottom: 0; }
   .collage-images { width: min(100%, 1600px); margin-inline: auto; }
   .collage-images.responsive-exhibition { width: 100%; max-width: none; display: flex; flex-wrap: wrap; justify-content: center; }
   .responsive-exhibition .collage-row { display: contents; }
   .responsive-exhibition .collage-cell { flex: 0 0 calc(100% / var(--collage-columns, 1)); aspect-ratio: 4 / 5 !important; }
-  .nuo-references .responsive-exhibition { gap: 12px; align-items: flex-start; }
-  .nuo-references.split { display: block; }
-  .nuo-references.split .chapter-copy { margin-bottom: 36px; }
-  .nuo-references .collage-cell { flex: 0 0 auto; height: var(--collage-height, 220px); width: calc(var(--collage-height, 220px) * var(--image-ratio)); aspect-ratio: auto !important; }
-  .nuo-references .collage-cell :global(figure), .nuo-references .collage-cell :global(.frame) { height: 100%; }
-  .nuo-references .collage-cell :global(img) { position: static; width: 100%; height: 100%; max-height: none; object-fit: contain; }
+  .justified-references .responsive-exhibition { gap: 12px; align-items: flex-start; }
+  .justified-references.split { display: block; }
+  .justified-references.split .chapter-copy { margin-bottom: 36px; }
+  .justified-references .collage-cell { flex: 0 0 auto; height: var(--collage-height, 220px); width: calc(var(--collage-height, 220px) * var(--image-ratio)); aspect-ratio: auto !important; }
+  .justified-references .collage-cell :global(figure), .justified-references .collage-cell :global(.frame) { height: 100%; }
+  .justified-references .collage-cell :global(img) { position: static; width: 100%; height: 100%; max-height: none; object-fit: contain; }
   .collage-images.impression-collage { width: 100%; max-width: none; gap: 0; align-items: flex-start; }
   .impression-collage .collage-cell { flex: 0 0 auto; aspect-ratio: auto !important; }
   .impression-collage .collage-cell :global(figure), .impression-collage .collage-cell :global(.frame) { height: 100%; }
